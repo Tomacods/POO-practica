@@ -6,5 +6,6 @@ public class ejercicio6{
         System.out.print("Ingrese su nombre: ");
         String nombre = scanner.nextLine();
         System.out.println("Bienvenida/o, " + nombre);
+        scanner.close();
     }
 }
