@@ -5,12 +5,12 @@ public class ejercicio10 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese su peso en kilogramos: ");
-        int peso = scanner.nextInt();
+        double peso = scanner.nextDouble();
 
         System.out.print("Ingrese su altura en metros: ");
-        int altura = scanner.nextInt();
+        double altura = scanner.nextDouble();
 
-        int imc = peso / (altura * altura);
+        double imc = peso / (altura * altura);
 
         System.out.println("Su índice de masa corporal es: " + imc);
     }
