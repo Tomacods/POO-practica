@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Random;
+import java.util.Random; // importacion de la clase Random
 
 public class Clase2 {
 
@@ -19,7 +19,7 @@ public class Clase2 {
 		// Ejemplo de escritura
 		File archivo = new File("C:\\archivo.txt");
 	
-		PrintWriter pw;
+		PrintWriter pw; // Clase para escribir en el archivo
 
 		if (archivo.exists()) {
 			FileWriter escribir = new FileWriter(archivo, true);

@@ -1,11 +1,11 @@
-import java.util.Scanner;
+import java.util.Scanner; //importacion de la clase Scanner
 
 public class Clase1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //Metodo principal de la clase
 		
 		//Ejemplo de if
-		if (2 == 2) {
+		if (2 == 2) { //Comparacion de dos valores
 			//Impresion por consola
 			System.out.println("entro");
 		} else {
@@ -25,7 +25,7 @@ public class Clase1 {
 		int i = 0;
 		while (i < 5) {
 			System.out.println("i vale  = " + i);
-			i++;
+			i++; //incremento de la variable
 		}
 		
 		//Ejemplo de repetir
