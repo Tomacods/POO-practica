@@ -1,10 +1,11 @@
 
-import java.util.ArrayList;
+import java.util.ArrayList; // importacion de la clase ArrayList
 
-public class Categoria {
+public class Categoria { // clase Categoria
     
-    private String titulo;
-    private ArrayList<Serie> series;
+    private String titulo; // titulo de la categoria
+    private ArrayList<Serie> series; // lista de series
+
 
     public Categoria(String titulo){
         this.titulo = titulo;
