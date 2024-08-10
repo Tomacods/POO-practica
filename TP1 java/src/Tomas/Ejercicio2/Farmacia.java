@@ -1,9 +1,8 @@
 public class Farmacia {
-
     public static void main(String[] args) throws Exception{
-        Producto p1 = new Producto("Adermicina", 300, "mg", 1000.0);
-        Producto p2 = new Producto("Ibuprofeno", 600, "mg", 2500.0);
-        Producto p3 = new Producto("Diclofenac", 75, "mg", 3000.0);
+        Productos p1 = new Productos("Adermicina", 300, "mg", 1000.0);
+        Productos p2 = new Productos("Ibuprofeno", 600, "mg", 2500.0);
+        Productos p3 = new Productos("Diclofenac", 75, "mg", 3000.0);
 
         Ticket ticket = new Ticket(637278);
 
@@ -14,3 +13,4 @@ public class Farmacia {
         ticket.imprimir();
     }
 }
+
