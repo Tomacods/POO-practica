@@ -3,4 +3,6 @@ los criterios de encapsulamiento son:
 combinar datos y comportamiento en un paquete y ocultar los detalles de la implementacion del usuario obejto.
 oculta lo que hace un obejto de lo que hacen los otros objetos "del mundo exterior", tambien llamado ocultamiento de datos.
 acá se incorporan las clases u objetos, una clase es un modelo de una entidad definida por su estado y comportamiento, No es un ejemplo especifico de una entidad, es una "plantilla" para todas las instancias de esta entidad, solo hay una definicion de clase
-un objeto por otro lado es una instancia de una clase, pueden existir varias instancias de una clase.
+un objeto por otro lado es una instancia de una clase, pueden existir varias instancias de una clase. pilar fundamental de la programacion orientada a objetos.
+
+posible pregunta de final, 
