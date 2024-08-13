@@ -13,11 +13,11 @@ public class AppTomasP5 {
 
 
     System.out.println(persona1.toString());
-    System.out.println("Edad: " + persona1.getEdad());
+    System.out.println("Edad: " + persona1.getEdad()); //parte del ejercicio 7 del trabajo practico 2
     System.out.println(persona2.toString());
-    System.out.println("Edad: " + persona2.getEdad());
+    System.out.println("Edad: " + persona2.getEdad()); //parte del ejercicio 7 del trabajo practico 2
     System.out.println(persona3.toString());
-    System.out.println("Edad: " + persona3.getEdad());
+    System.out.println("Edad: " + persona3.getEdad()); //parte del ejercicio 7 del trabajo practico 2
     }
 }
 
