@@ -8,8 +8,12 @@ public class Materia {
         this.codigo = codigo;
     }
 
-    public boolean getNombre(){
-        return true;
+    public String getNombre(){
+        return nombre;
+    }
+
+    public String getCodigo(){
+        return codigo;
     }
 
     public void setNombre(String nombre){

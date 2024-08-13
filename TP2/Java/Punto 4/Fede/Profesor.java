@@ -16,15 +16,23 @@ public class Profesor {
     }
 
     public String getNombre(){
-        return this.apellido;
+        return nombre;
     }
 
-    public void setMateria(Materia materia){
-        return this.materias;
+    public void setApellido(String apellido){
+        this.apellido = apellido;
+    }
+
+    public String getApellido(){
+        return apellido;
+    }
+
+    public void setMateria(ArrayList<Materia> materias){
+        this.materias = materias;
     }
 
     public ArrayList<Materia> getMateria(){
-        return this.materias;
+        return materias;
     }
 
     public void addMateria(Materia materia){
