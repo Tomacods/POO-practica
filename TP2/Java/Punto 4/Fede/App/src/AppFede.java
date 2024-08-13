@@ -25,9 +25,9 @@ public class AppFede {
         for(ProfesorFede pro:profesores){
             System.out.println(pro.getApellido()+", "+pro.getNombre());
             System.out.println("Materias: ");
-            //for(Materia mat:pro.getMateria()){
-             //   System.out.println((mat.getNombre()));
-           // }
+            for(MateriaFede mat:pro.getMateria()){
+                System.out.println((mat.getNombre()));
+            }
         }
     }
 }
