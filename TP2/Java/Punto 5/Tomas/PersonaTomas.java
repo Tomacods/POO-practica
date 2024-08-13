@@ -32,4 +32,9 @@ public class PersonaTomas {
     public String toString() {
         return "Nombre: " + nombre + ", Apellido: " + apellido + ", Fecha de Nacimiento: " + fechaNacimiento;
     }
+    public int getEdad() {
+        return LocalDate.now().getYear() - fechaNacimiento.getYear();
+    }
 }
+/*  a la clase persona del ejercicio 6 añada un nuevo metodo que retorne la edad haciendo uso de la fecha de nacimiento
+  imprima en consola la edad de tres instacias de la clase persona */
