@@ -8,6 +8,7 @@ p4 = Producto("Ibuprofeno",600,"mg", 100)
 p5 = Producto("Diclofenac",75,"mg" , 200)
 
 
+
 ticket = Ticket(64437)
 
 ticket.agregarProducto(p1)

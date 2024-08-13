@@ -1,5 +1,4 @@
-import java.security.PublicKey;
-import java.util.ArrayList; // importacion de la clase ArrayList
+import java.util.ArrayList;
 
 
 public class Catalogo {

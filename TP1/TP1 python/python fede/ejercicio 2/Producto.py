@@ -1,6 +1,6 @@
 class Producto:
     
-    def __init__(self, articulo, dosis, unidadDosis, precio):
+    def __init__(self, articulo, dosis, unidadDosis, precio): #constructor de la clase
         self.articulo = articulo
         self.dosis = dosis
         self.unidadDosis = unidadDosis
