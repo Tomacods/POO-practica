@@ -1,16 +1,17 @@
 import java.util.ArrayList;
-public class App {
+
+public class AppTomas {
     public static void main(String[] args) throws Exception {
-        Materia poo = new Materia("POO", "1234");
-        Materia algebra = new Materia("BD", "5678");
-        Materia introduccion = new Materia("Introduccion a la programacion", "91011");
-        Materia algoritmica = new Materia("Algoritmica", "1314");
+        MateriaTomas poo = new MateriaTomas("POO", "1234");
+        MateriaTomas algebra = new MateriaTomas("BD", "5678");
+        MateriaTomas introduccion = new MateriaTomas("Introduccion a la programacion", "91011");
+        MateriaTomas algoritmica = new MateriaTomas("Algoritmica", "1314");
 
-        java.util.ArrayList<Profesor> profesores = new ArrayList<>();
+        java.util.ArrayList<ProfesorTomas> profesores = new ArrayList<>();
 
-        Profesor profesor1 = new Profesor("Pedro", "Hernandez");
-        Profesor profesor2 = new Profesor("Romina", "Alvarez");
-        Profesor profesor3 = new Profesor("Laura", "Perez");
+        ProfesorTomas profesor1 = new ProfesorTomas("Pedro", "Hernandez");
+        ProfesorTomas profesor2 = new ProfesorTomas("Romina", "Alvarez");
+        ProfesorTomas profesor3 = new ProfesorTomas("Laura", "Perez");
 
         profesor1.addMateria(poo);
         profesor1.addMateria(algebra);
@@ -24,11 +25,11 @@ public class App {
         
         profesores.add(profesor3);
 
-        for (Profesor pro : profesores){
+        for (ProfesorTomas pro : profesores){
             System.out.println("Profesor: " + pro.getNombre() + " " + pro.getApellido());
             System.out.println("Materias:");
 
-            for (Materia materia : pro.getMaterias()){
+            for (MateriaTomas materia : pro.getMaterias()){
                 System.out.println(materia.getNombre() ); }
     }       
     }     

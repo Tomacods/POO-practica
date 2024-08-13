@@ -1,8 +1,8 @@
-public class Materia {
+public class MateriaTomas {
     private String nombre;
     private String codigo;
     
-    public Materia(String nombre, String codigo) {
+    public MateriaTomas(String nombre, String codigo) {
         this.nombre = nombre;
         this.codigo = codigo;
     }

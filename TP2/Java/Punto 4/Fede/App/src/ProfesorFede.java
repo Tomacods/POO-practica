@@ -1,12 +1,13 @@
+
 import java.util.ArrayList;
 
-public class Profesor {
+public class ProfesorFede {
 
     private String nombre = "";
     private String apellido = "";
-    private ArrayList<Materia> materias = new ArrayList<>();
+    private ArrayList<MateriaFede> materias = new ArrayList<>();
 
-    private Profesor(String nombre, String apellido){
+    public ProfesorFede(String nombre, String apellido){
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -27,15 +28,15 @@ public class Profesor {
         return apellido;
     }
 
-    public void setMateria(ArrayList<Materia> materias){
+    public void setMateria(ArrayList<MateriaFede> materias){
         this.materias = materias;
     }
 
-    public ArrayList<Materia> getMateria(){
+    public ArrayList<MateriaFede> getMateria(){
         return materias;
     }
 
-    public void addMateria(Materia materia){
+    public void addMateria(MateriaFede materia){
         this.materias.add(materia);
     }
 }

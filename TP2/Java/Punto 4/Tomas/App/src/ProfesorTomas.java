@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Profesor {
+public class ProfesorTomas {
     private String nombre = "";
     private String apellido = "";
-    private ArrayList<Materia> materias = new ArrayList<>();
+    private ArrayList<MateriaTomas> materias = new ArrayList<>();
 
-    public Profesor(String nombre, String apellido) {
+    public ProfesorTomas(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
@@ -15,10 +15,10 @@ public class Profesor {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public void setMaterias(ArrayList<Materia> materias) {
+    public void setMaterias(ArrayList<MateriaTomas> materias) {
         this.materias = materias;
     }
-    public ArrayList<Materia> getMaterias() {
+    public ArrayList<MateriaTomas> getMaterias() {
         return materias;
     }
     public String getNombre() {
@@ -27,7 +27,7 @@ public class Profesor {
     public String getApellido() {
         return apellido;
     }
-    public void addMateria(Materia materia) {
+    public void addMateria(MateriaTomas materia) {
         materias.add(materia);
     }
 }

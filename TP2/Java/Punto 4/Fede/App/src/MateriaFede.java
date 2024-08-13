@@ -1,9 +1,10 @@
-public class Materia {
+
+public class MateriaFede  {
     
     private String nombre;
     private String codigo;
 
-    public Materia(String nombre, String codigo){
+    public MateriaFede(String nombre, String codigo){
         this.nombre = nombre;
         this.codigo = codigo;
     }
