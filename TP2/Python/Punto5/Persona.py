@@ -28,6 +28,4 @@ class Persona:
         self.__fecha_nacimiento = fecha_nacimiento
 
     def toString(self):
-        return f"Nombre: {self.__nombre}, Apellido: {self.__apellido}, Fecha de nacimiento: {self.__fecha_nacimiento}"
-    def imprimir(self):
-        print("{}  {}  {}".format(self.__nombre,self.__apellido,self.__fecha_nacimiento))
+        print("Nombre: {} Apellido: {} Fecha de nacimiento: {}".format(self.__nombre,self.__apellido,self.__fecha_nacimiento))
