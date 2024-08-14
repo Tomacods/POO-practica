@@ -9,10 +9,10 @@ class Persona:
 def nombre(self):
     return self.__nombre
 @nombre.setter
-def set_nombre(self,nombre):
+def nombre(self,nombre):
     self.__nombre = nombre
 @property
-def FechaNacimiento(self):
+def fecha_nacimiento(self):
     return self.__fecha_nacimiento
 
 @property
@@ -20,11 +20,11 @@ def apellido(self):
     return self.__apellido 
 
 @apellido.setter
-def set_apellido(self,apellido):
+def apellido(self,apellido):
     self.__apellido = apellido
 
-@FechaNacimiento.setter
-def set_FechaNacimiento(self, fecha_nacimiento):
+@fecha_nacimiento.setter
+def FechaNacimiento(self, fecha_nacimiento):
     self.__fecha_nacimiento = fecha_nacimiento
 
 def toString(self):
