@@ -54,5 +54,44 @@ public class CargarFamilias {
     public int ContarFamilias (){ //parte del ejercicio 9 del trabajo practico 2
         return familias.size();
     }
+    public void PuedenTrabajar () { //parte del ejercicio 10 del trabajo practico 2
+        for (PersonaCenso persona : personas) {
+            if (persona.getEdad() >= 16 && persona.getEdad() <= 65) {
+                if (persona.getEstudia_Trabaja()) {
+                    System.out.println(persona.getNombre() + " " + persona.getApellido() + " puede trabajar");
+                } else {
+                    System.out.println(persona.getNombre() + " " + persona.getApellido() + " no puede trabajar");
+                }
+            }
+        }
+        
+    }
+    public void PuedenManejar () { //parte del ejercicio 10 del trabajo practico 2
+        for (PersonaCenso persona : personas) {
+            if (persona.getEdad() >= 17) {
+                System.out.println(persona.getNombre() + " " + persona.getApellido() + " puede manejar");
+            } else {
+                System.out.println(persona.getNombre() + " " + persona.getApellido() + " no puede manejar");
+            }
+        }
+    }
+
     
+    public void PuedeTrabajar2(String nombre, String apellido) { //la misma funcion que antes pero esta vez con parametros
+        System.out.println("Nombre: " + nombre + " Apellido: " + apellido);
+        for (PersonaCenso persona : personas) {
+            if (persona.getNombre().equals(nombre) && persona.getApellido().equals(apellido)) {
+                if (persona.getEdad() >= 16 && persona.getEdad() <= 65) {
+                    if (persona.getEstudia_Trabaja()) {
+                        System.out.println(persona.getNombre() + " " + persona.getApellido() + " puede trabajar");
+                    } else {
+                        System.out.println(persona.getNombre() + " " + persona.getApellido() + " no puede trabajar");
+                    }
+                }
+            }
+        }
+    }
+
+
 }
+

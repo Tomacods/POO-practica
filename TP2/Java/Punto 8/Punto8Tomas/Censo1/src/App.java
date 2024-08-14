@@ -34,9 +34,9 @@ public class App {
             cargarFamilias3.addPersona(persona7);
             cargarFamilias3.addPersona(persona8);
 
-            //agregar familias al array de familias
+            //agregar familias al array de familias 
             //cargarFamilias.addFamilia(cargarFamilias);
-           // cargarFamilias.addFamilia(cargarFamilias2);
+            // cargarFamilias.addFamilia(cargarFamilias2);
             //cargarFamilias.addFamilia(cargarFamilias3);
             
         /* for (PersonaCenso per : personas){ //implementacion del ejericicio 8
@@ -52,10 +52,16 @@ public class App {
         promedio de edad de las personas censadas */
             
         for (CargarFamilias fam : cargarFamilias.getFamilias()){
-            fam.contarPersonas();
-            fam.contarPersonasTrabajan(); /*    cuenta la cantidad de personas que trabajan */
-            fam.promedioEdad();
+            //fam.contarPersonas();
+           // fam.contarPersonasTrabajan(); /*    cuenta la cantidad de personas que trabajan */
+            //fam.promedioEdad();
+            fam.PuedenTrabajar();
+            fam.PuedenManejar();
         }
-    
+    /*10. Usando lo desarrollado en el ejercicio 9, implemente la lógica necesaria para que sea posible consultar a las personas, en base a su edad:
+    a. sí tienen permitido trabajar
+    b. Si tienen permitido manejar un vehículo particular
+    En Argentina, si bien necesitan permiso, las personas están habilitadas para trabajar a partir de los 16 años. Respecto a la licencia B para vehículos particulares, es posible obtenerla a partir de los 17 años.*/ 
+
 }
 }
