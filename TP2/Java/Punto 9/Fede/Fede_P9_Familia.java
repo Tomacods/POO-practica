@@ -10,11 +10,15 @@ public class Fede_P9_Familia {
         this.flia = flia;
     }
 
-    public void addFamilia(Fede_P9_Familia persona){
+    public void addFamilia(Fede_P9_Familia persona, Integer cantidad){
         this.personas.add(persona);
-        cantidad = cantidad + 1;
+        this.cantidad += 1;
     }
 
+    public Integer getCantidad(){
+        return cantidad;
+    }
+    
     public String getFlia() {
         return flia;
     }
