@@ -21,6 +21,6 @@ public class Fede_P9_Censo{
             ArrayList<Fede_P9_Familia> familia = new ArrayList<>();
             System.out.print("Ingrese el apellido de la familia: ");
         }
-
+        
     }
 }
