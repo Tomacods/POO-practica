@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fede_P9_Censo",
+            "request": "launch",
+            "mainClass": "Fede_P9_Censo",
+            "projectName": "POO-practica_d46e3a"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

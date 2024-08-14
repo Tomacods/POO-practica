@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.temporal.ChronoUnit;
+//import java.time.temporal.ChronoUnit;
 //import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
@@ -66,9 +66,15 @@ public class Fede_P9_Censo {
             System.out.println("Esta familia tiene " + fam.cantidad() + " integrantes:");
             for(Fede_P9_Persona per: fam.getPersonas()){
                 per.imprimir();
-                totalEdad = totalEdad + ChronoUnit.YEARS.between(per.getNacimiento(), LocalDate.now());
+                totalEdad = totalEdad + LocalDate.now().compareTo(per.getNacimiento());
                 if (per.getTrabaja() == true){
                     trabajan = trabajan + 1;
+                }
+                if (LocalDate.now().compareTo(per.getNacimiento()) >= 16){
+                    System.out.print("Tiene permitido trabajar.");
+                }
+                if (LocalDate.now().compareTo(per.getNacimiento()) >= 17){
+                    System.out.print("Tiene permitido manejar con licencia B.");
                 }
             }
         }

@@ -1,5 +1,5 @@
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+//import java.time.temporal.ChronoUnit;
 
 public class Fede_P9_Persona {
 
@@ -21,7 +21,7 @@ public class Fede_P9_Persona {
 
     public void imprimir(){
         System.out.println("Nombre y apellido: " + getNombre() + " " + getApellido());
-        System.out.println("Fecha de nacimiento: " + getNacimiento() + "    Edad: "+ ChronoUnit.YEARS.between(getNacimiento(), LocalDate.now()));
+        System.out.println("Fecha de nacimiento: " + getNacimiento() + "    Edad: "+ LocalDate.now().compareTo(getNacimiento()));
         System.out.println("Sexo: " + getSexo());
         System.out.println("Trabaja? " + getTrabaja());
         System.out.println("Estudia? " + getEstudia());
