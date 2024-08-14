@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App11",
+            "request": "launch",
+            "mainClass": "App11",
+            "projectName": "POO-practica_eb703e11"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

@@ -48,6 +48,7 @@ public class PersonaCenso {
     }
     public int getEdad() { //parte del ejercicio 7 del trabajo practico 2
         return LocalDate.now().getYear() - fechaNacimiento.getYear();
+        //return LocalDate.now().compareTo(fechaNacimiento)
     }
     public void imprimir() {
         System.out.println("Nombre: " + nombre + " apellido: " + apellido); 
