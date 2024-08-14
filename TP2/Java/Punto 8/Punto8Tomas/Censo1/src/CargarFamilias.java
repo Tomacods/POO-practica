@@ -46,6 +46,7 @@ public class CargarFamilias {
     public void addFamilia(CargarFamilias familia) { //carga de familias para el ejercicio 9 del trabajo practico 2
         familias.add(familia);
     }
+    
     public ArrayList<CargarFamilias> getFamilias() { //parte del ejercicio 9 del trabajo practico 2
         return familias;
     }
