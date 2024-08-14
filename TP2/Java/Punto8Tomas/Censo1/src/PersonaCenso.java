@@ -1,4 +1,5 @@
-package Censo.src;
+
+
 import java.time.LocalDate;
 
 public class PersonaCenso {
@@ -47,5 +48,15 @@ public class PersonaCenso {
     }
     public int getEdad() { //parte del ejercicio 7 del trabajo practico 2
         return LocalDate.now().getYear() - fechaNacimiento.getYear();
+    }
+    public void imprimir() {
+        System.out.println("Nombre: " + nombre + " apellido: " + apellido); 
+        System.out.println("Fecha de nacimiento: " + fechaNacimiento);
+        System.out.println("Sexo: " + sexo);
+        if (estudia_Trabaja) {
+            System.out.println("Trabaja");
+        } else {
+            System.out.println("No trabaja");
+        }
     }
 }
