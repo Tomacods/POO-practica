@@ -38,8 +38,9 @@ class Persona:
         print("nombre: " + self.__nombre + " apellido: " + self.__apellido + " fecha de nacimiento: " + str(self.__fechaNac))
     
     def getEdad (self): 
-        hoy = date.today
+        hoy = date.today()
         fnac = self.__fechaNac
-        edad = hoy.year() - fnac.year()
-        print(edad)
+        edad = (hoy - fnac)
+        edad = edad.days/365
+        return int(edad)
         #NO SE PQ NO ANDA
