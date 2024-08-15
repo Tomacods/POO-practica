@@ -1,15 +1,13 @@
-
-
 import java.time.LocalDate;
 
-public class PersonaCenso {
+public class PersonaTomas11 {
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
     private String sexo;
     private boolean estudia_Trabaja;
 
-    public PersonaCenso(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja) {
+    public PersonaTomas11(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -48,7 +46,6 @@ public class PersonaCenso {
     }
     public int getEdad() { //parte del ejercicio 7 del trabajo practico 2
         return LocalDate.now().getYear() - fechaNacimiento.getYear();
-        //return LocalDate.now().compareTo(fechaNacimiento)
     }
     public void imprimir() {
         System.out.println("Nombre: " + nombre + " apellido: " + apellido); 
