@@ -20,7 +20,11 @@ public class Fede_P12_Persona {
         System.out.println("Nombre y apellido: " + getNombre() + " " + getApellido());
         System.out.println("Fecha de nacimiento: " + getNacimiento() + "    Edad: "+ getEdad());
         System.out.println("Sexo: " + getSexo());
-        System.out.println("Puesto: " + puesto.getPuesto())
+        System.out.println("Puesto: " + puesto.getNombre());
+    }
+
+    public String toString(){
+        return ("Nombre y apellido: " + getNombre() + " " + getApellido() + ". Fecha de nacimiento: " + getNacimiento() + ". Edad: " + getEdad() + ". Sexo: " + getSexo() + ". Puesto: " + puesto.getNombre());
     }
 
     public Integer getEdad(){
@@ -59,11 +63,11 @@ public class Fede_P12_Persona {
         this.sexo = sexo;
     }
 
-    public String getPuesto() {
+    public Fede_P12_Puesto getPuesto() {
         return puesto;
     }
 
-    public void setPuesto(String puesto) {
+    public void setPuesto(Fede_P12_Puesto puesto) {
         this.puesto = puesto;
     }
 }
