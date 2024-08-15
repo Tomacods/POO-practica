@@ -41,7 +41,7 @@ public class Fede_P11_App {
                 }
             }
         }
-        System.out.println("La empresa tiene " + emp.cantidad() + "empleados.");
+        System.out.println("La empresa tiene " + emp.cantidad() + " empleados.");
         emp.imprimir();
         scanner.close();
     }
