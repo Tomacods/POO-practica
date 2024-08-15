@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class EmpresaTomas {
+public class EmpresaTomas11 {
     private String nombre;
     private String direccion;
-    private ArrayList<PersonaTomas11> empleados = new ArrayList<>();
+    private final ArrayList<PersonaTomas11> empleados = new ArrayList<>();
 
-    public EmpresaTomas(String nombre, String direccion) {
+    public EmpresaTomas11(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
     }

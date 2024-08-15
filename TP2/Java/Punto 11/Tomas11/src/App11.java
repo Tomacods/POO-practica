@@ -16,7 +16,7 @@ public class App11 {
     PersonaTomas11 persona5 = new PersonaTomas11("Maria", "Da silva", LocalDate.of(1999, 10, 10), "Femenino", false);   
 
     
-    EmpresaTomas empresa = new EmpresaTomas("Empresa", "Direccion");   
+    EmpresaTomas11 empresa = new EmpresaTomas11("Empresa", "Direccion");   
     empresa.addEmpleado(persona);
     empresa.addEmpleado(persona2);
     empresa.addEmpleado(persona3);

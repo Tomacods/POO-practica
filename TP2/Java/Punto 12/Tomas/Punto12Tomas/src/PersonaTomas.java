@@ -58,6 +58,7 @@ public class PersonaTomas {
         } else {
             System.out.println("No trabaja");
         }
+        System.out.println("Puesto: " + puesto.getNombre());
     }
 
     public Puesto getPuesto() {

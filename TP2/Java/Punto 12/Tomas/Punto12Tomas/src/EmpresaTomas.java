@@ -54,7 +54,20 @@ public class EmpresaTomas {
     public void AñadirEmpleadoPorTeclado (PersonaTomas empleado) {
         empleados.add(empleado);
     }
+    public String imprimirPorPuesto() {
+        String resultado = "";
+        for (PersonaTomas empleado : empleados) {
+            resultado += empleado.getNombre() + " " + empleado.getApellido() + " " + empleado.getPuesto().getNombre() + "\n";
+        }
+        return resultado;
+            
+        
+    }
 }
+
+
+
+
 
 
 //strign decicion = (numero <20) ? "menor a 20" : "mayor a 20";
