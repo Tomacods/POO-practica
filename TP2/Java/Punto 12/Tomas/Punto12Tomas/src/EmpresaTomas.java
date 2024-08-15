@@ -4,7 +4,7 @@ import java.util.List;
 public class EmpresaTomas {
     private String nombre;
     private String direccion;
-    private List<PersonaTomas> empleados;
+    private  final List<PersonaTomas> empleados;
 
     public EmpresaTomas(String nombre, String direccion) {
         this.nombre = nombre;

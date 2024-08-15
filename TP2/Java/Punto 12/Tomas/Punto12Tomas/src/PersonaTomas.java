@@ -6,13 +6,15 @@ public class PersonaTomas {
     private LocalDate fechaNacimiento;
     private String sexo;
     private boolean estudia_Trabaja;
+    private Puesto puesto;
 
-    public PersonaTomas(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja) {
+    public PersonaTomas(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja, Puesto puesto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
         this.estudia_Trabaja = estudia_Trabaja;
+        this.puesto = puesto;
     }
     public String getNombre() {
         return nombre;
@@ -56,5 +58,17 @@ public class PersonaTomas {
         } else {
             System.out.println("No trabaja");
         }
+    }
+
+    public Puesto getPuesto() {
+        return puesto;
+    }
+    public void setPuesto(Puesto puesto) {
+        this.puesto = puesto;
+    }
+    
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " Apellido: " + apellido + " Fecha de nacimiento: " + fechaNacimiento + " Sexo: " + sexo + " Estudia o trabaja: " + estudia_Trabaja + " Puesto: " + puesto.getNombre();
     }
 }

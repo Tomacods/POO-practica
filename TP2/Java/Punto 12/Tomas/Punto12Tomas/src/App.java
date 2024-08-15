@@ -1,6 +1,6 @@
 
-import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 
 public class App {
@@ -39,14 +39,19 @@ public class App {
             System.out.println("Ingrese el apellido del empleado: ");
             String apellido = scanner.nextLine();
             System.out.println("Ingrese la fecha de nacimiento del empleado: ");
-            String fechaNacimiento = scanner.nextLine();
+            String fechaNacimientoCade = scanner.nextLine();
+            LocalDate fechaNacimiento = LocalDate.parse(fechaNacimientoCade);
+            
             System.out.println("Ingrese el sexo del empleado: ");
             String sexo = scanner.nextLine();
             System.out.println("Ingrese si el empleado trabaja o estudia: ");
             boolean estudia_Trabaja = scanner.nextBoolean();
             System.out.println("Ingrese el puesto del empleado: ");
             String puesto = scanner.nextLine();
-            PersonaTomas11 persona = new PersonaTomas11(nombre, apellido,LocalDate.parse(fechaNacimiento), sexo, estudia_Trabaja, puesto);
+
+            Puesto puestoObj = new Puesto(puesto);
+            PersonaTomas persona = new PersonaTomas(nombre, apellido, fechaNacimiento, sexo, estudia_Trabaja, puestoObj);
+
             empresa.addEmpleado(persona);
             empresa.imprimirEmpleados();
             empresa.ContarEmpleados();

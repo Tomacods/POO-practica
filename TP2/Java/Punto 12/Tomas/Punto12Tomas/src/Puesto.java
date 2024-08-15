@@ -16,4 +16,5 @@ public class Puesto {
         this.nombre = nombre;
     }
     
+    
 }
