@@ -27,8 +27,8 @@ public class App {
             empresa.ContarEmpleados();
             empresa.imprimirPorPuesto();
             
-
-           /* while (true) {
+            /*esto es por si quiero agregar una persona por teclado */
+            /* while (true) {
                 System .out.println("desea agregar un empleado? (s/n)");
                 String respuesta = scanner.nextLine();
                 if (respuesta.equals("n")) {
@@ -61,7 +61,5 @@ public class App {
                 empresa.ContarEmpleados();
             }*/
         }
-
-
     }
 
