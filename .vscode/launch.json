@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Fede_P9_Censo",
             "request": "launch",
             "mainClass": "Fede_P9_Censo",
             "projectName": "POO-practica_d46e3a"
+=======
+            "name": "App11",
+            "request": "launch",
+            "mainClass": "App11",
+            "projectName": "POO-practica_eb703e11"
+>>>>>>> 83e1972fe6dacb7cff013f1db93f07fe0fc86c84
         },
         {
             "type": "java",
