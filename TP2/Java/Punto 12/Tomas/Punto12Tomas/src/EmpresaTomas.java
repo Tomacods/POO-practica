@@ -1,14 +1,17 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmpresaTomas {
     private String nombre;
     private String direccion;
-    private ArrayList<PersonaTomas11> empleados = new ArrayList<>();
+    private List<PersonaTomas> empleados;
 
     public EmpresaTomas(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
+        this.empleados = new ArrayList<>();
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -21,13 +24,20 @@ public class EmpresaTomas {
     public String getDireccion() {
         return direccion;
     }
-    public void addEmpleado(PersonaTomas11 empleado) {
+    public void addEmpleado(PersonaTomas empleado) {
         empleados.add(empleado);
     }
-    public ArrayList<PersonaTomas11> getEmpleados() {
-        return empleados;
+    public void getEmpleados() {
+        for (PersonaTomas empleado : empleados) {
+            System.out.println(empleado.getNombre());
+        }
     }
-    public void AñadirEmpleado(PersonaTomas11 empleado) {
+    public void imprimirEmpleados() {
+        for (PersonaTomas empleado : empleados) {
+            empleado.imprimir();
+        }
+    }
+    public void AñadirEmpleado(PersonaTomas empleado) {
         empleados.add(empleado);
     }
     public void ContarEmpleados() {
@@ -37,11 +47,11 @@ public class EmpresaTomas {
         System.out.println("Nombre de la empresa: " + nombre);
         System.out.println("Direccion de la empresa: " + direccion);
         System.out.println("Empleados: ");
-        for (PersonaTomas11 empleado : empleados) {
+        for (PersonaTomas empleado : empleados) {
             empleado.imprimir();
         }
     }
-    public void AñadirEmpleadoPorTeclado (PersonaTomas11 empleado) {
+    public void AñadirEmpleadoPorTeclado (PersonaTomas empleado) {
         empleados.add(empleado);
     }
 }

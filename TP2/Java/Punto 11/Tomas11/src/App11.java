@@ -9,11 +9,11 @@ public class App11 {
     Scanner sc = new Scanner(System.in);
     
 
-    PersonaTomas persona = new PersonaTomas("Tomas", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);    
-    PersonaTomas persona2 = new PersonaTomas("Martina", "Da silva", LocalDate.of(1999, 10, 10), "Femenino", false);     
-    PersonaTomas persona3 = new PersonaTomas("Juan", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);
-    PersonaTomas persona4 = new PersonaTomas("Pedro", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);   
-    PersonaTomas persona5 = new PersonaTomas("Maria", "Da silva", LocalDate.of(1999, 10, 10), "Femenino", false);   
+    PersonaTomas11 persona = new PersonaTomas11("Tomas", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);    
+    PersonaTomas11 persona2 = new PersonaTomas11("Martina", "Da silva", LocalDate.of(1999, 10, 10), "Femenino", false);     
+    PersonaTomas11 persona3 = new PersonaTomas11("Juan", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);
+    PersonaTomas11 persona4 = new PersonaTomas11("Pedro", "Da silva", LocalDate.of(1999, 10, 10), "Masculino", true);   
+    PersonaTomas11 persona5 = new PersonaTomas11("Maria", "Da silva", LocalDate.of(1999, 10, 10), "Femenino", false);   
 
     
     EmpresaTomas empresa = new EmpresaTomas("Empresa", "Direccion");   
@@ -41,7 +41,7 @@ public class App11 {
             LocalDate fechaNacimiento = LocalDate.parse(fechaNacimientoCade);
 
 
-            System.out.println("Ingrese el sexo del empleado");
+            System.out.println("Ingrese el sexo del empleado (masculino o femenino)");
             String sexo = sc.nextLine();
 
             System.out.println("Ingrese si el empleado trabaja o no");
@@ -51,7 +51,7 @@ public class App11 {
             if (estudia_Trabaja.equals("si")) {
                 estudia_TrabajaBoolean = true;
             }
-            PersonaTomas NuevoEmpleado = new PersonaTomas(nombre, apellido, fechaNacimiento, sexo, estudia_TrabajaBoolean);
+            PersonaTomas11 NuevoEmpleado = new PersonaTomas11(nombre, apellido, fechaNacimiento, sexo, estudia_TrabajaBoolean);
             empresa.addEmpleado(NuevoEmpleado);
             empresa.Imprimir();
             empresa.ContarEmpleados();
