@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
-public class PersonaTomas {
+public class PersonaTomas11 {
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
     private String sexo;
     private boolean estudia_Trabaja;
 
-    public PersonaTomas(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja) {
+    public PersonaTomas11(String nombre, String apellido, LocalDate fechaNacimiento, String sexo, boolean estudia_Trabaja) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
