@@ -11,6 +11,22 @@ public class Fede_P11_Empresa {
         this.direccion = direccion;
     }
 
+    public Integer cantidad(){
+        return personas.size();
+    } 
+
+    public void imprimir(){
+        System.out.println("Empresa: " + getNombre());
+        System.out.println("Dirección: " + getDireccion());
+        for (Fede_P11_Persona per:personas){
+            per.imprimir();
+        }
+    }
+
+    public void addPersona(Fede_P11_Persona persona){
+        this.personas.add(persona);
+    }
+
     public String getNombre() {
         return nombre;
     }
