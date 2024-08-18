@@ -42,6 +42,14 @@ public class Familia {
         return acc;
     }
 
+    public int personasTrabajan(){
+        int acc_trabajo= 0;
+        for (PersonaCenso persona: personas){
+            acc_trabajo+= persona.getOcupacion();
+        }
+        return acc_trabajo;
+
+}
 }
 
 

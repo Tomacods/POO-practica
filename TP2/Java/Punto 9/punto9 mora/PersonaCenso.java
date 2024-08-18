@@ -3,10 +3,10 @@ public class PersonaCenso {
     private String nombre;
     private int edad;
     private String sexo;
-    private String ocupacion;
+    private int ocupacion;
     
     //constructor
-    public PersonaCenso(String nombre, int edad, String sexo, String ocupacion){
+    public PersonaCenso(String nombre, int edad, String sexo, int ocupacion){
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -24,7 +24,7 @@ public class PersonaCenso {
         return sexo;
     
     }
-    public String getOcupacion(){
+    public int getOcupacion(){
         return ocupacion;
     }
     
@@ -38,7 +38,7 @@ public class PersonaCenso {
     public void setSexo(String sexo){
         this.sexo = sexo;
     }
-    public void setOcupacion(String ocupacion){
+    public void setOcupacion(int ocupacion){
         this.ocupacion = ocupacion;
     }
 
@@ -50,5 +50,5 @@ public class PersonaCenso {
     public int cont_personas (){
         return familia.size();
     }
-    
+
     }
