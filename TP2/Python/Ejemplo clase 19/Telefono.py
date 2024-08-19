@@ -13,5 +13,3 @@ class Telefono:
 
 
 
-
-Class A:
