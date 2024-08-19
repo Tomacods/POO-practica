@@ -4,13 +4,15 @@ public class Persona {
     private int edad;
     private String sexo;
     private String ocupacion;
+    private Puesto puesto;
     
     //constructor
-    public Persona(String nombre, int edad, String sexo, String ocupacion){
+    public Persona(String nombre, int edad, String sexo, String ocupacion, Puesto puesto){
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
         this.ocupacion = ocupacion;
+        this.puesto=puesto;
     }
     
     //getters
@@ -44,7 +46,8 @@ public class Persona {
     
     @Override
         public String toString(){
-            return "Nombre: " + nombre + "\n" +"Edad: " + edad +"\n"+ "Sexo: " + sexo + "\n"+"Trabaja: " + ocupacion;
+            return "Nombre: " + nombre + "\n" +"Edad: " + edad +"\n"+ "Sexo: " + sexo + "\n"+"Trabaja: " + ocupacion + 
+            "\n" + "Puesto: " + puesto.getNombre();
     }
     
     }

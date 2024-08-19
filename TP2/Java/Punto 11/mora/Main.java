@@ -3,11 +3,11 @@ public class Main {
 
         Empresa empresaa = new Empresa("TABLADA", "CODIGO 6569");
 
-        Persona empleado1 = new Persona("Mora", 21, "F", "Oficina");
-        Persona empleado2 = new Persona("Maria", 26, "F", "Oficina");
-        Persona empleado3 = new Persona("Leandro", 34, "M", "Recursos Humanos");
-        Persona empleado4 = new Persona("Victor", 43, "M", "Oficina");
-        Persona empleado5 = new Persona("Rocio", 24, "F", "Atención al cliente");
+        Persona empleado1 = new Persona("Mora", 21, "F", "si");
+        Persona empleado2 = new Persona("Maria", 26, "F", "si");
+        Persona empleado3 = new Persona("Leandro", 34, "M", "si");
+        Persona empleado4 = new Persona("Victor", 43, "M", "si");
+        Persona empleado5 = new Persona("Rocio", 24, "F", "si");
 
         empresaa.addPersona(empleado1);
         empresaa.addPersona(empleado2);
