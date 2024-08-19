@@ -16,10 +16,15 @@ public class Main {
         empresaa.addPersona(empleado5);
 
         System.out.println(empresaa);
+
         
         for (Persona persona : empresaa.getPersonas()){
             System.out.println(persona);
             System.out.println();
         }
+
+        int totalPersonas = 0; 
+        totalPersonas = empresaa.cuentoPersonas();
+        System.out.println("Total de empleados: " + totalPersonas);
     }
 }

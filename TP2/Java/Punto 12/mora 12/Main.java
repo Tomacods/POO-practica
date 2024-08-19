@@ -25,5 +25,8 @@ public class Main {
             System.out.println(persona);
             System.out.println();
         }
+        int totalPersonas;
+        totalPersonas = empresaa.cuentoPersonas();
+        System.out.println("Total de empleados" + totalPersonas);
     }
 }
