@@ -10,26 +10,26 @@ class FedeCancion:
         print(self.__autor)
         print(self.__duracion)
     
-    #@property
-    #def nombre(self):
-        #return self.__nombre
+    @property
+    def nombre(self):
+        return self.__nombre
     
-    #@nombre.setter
-    #def nombre(self, nombre):
-    #    self.__nombre = nombre
+    @nombre.setter
+    def nombre(self, nombre):
+        self.__nombre = nombre
         
-    #@property
-    #def autor(self):
-    #    return self.__autor
+    @property
+    def autor(self):
+        return self.__autor
     
-    #@autor.setter
-    #def autor(self, autor):
-    #    self.__autor = autor
+    @autor.setter
+    def autor(self, autor):
+        self.__autor = autor
         
-    #@property
-    #def duracion(self):
-    #    return self.__duracion
+    @property
+    def duracion(self):
+        return self.__duracion
     
-    #@duracion.setter
-    #def duracion(self, duracion):
-    #    self.__duracion = duracion
+    @duracion.setter
+    def duracion(self, duracion):
+        self.__duracion = duracion
