@@ -1,0 +1,7 @@
+escriba un ejemplo del uso de herencia simple, detallando para cada clase cuál es su
+rol dentro de la herencia y los motivos por los cuales cree que es correcta la
+implementación. El ejemplo debe ser original, se ruega evitar el uso de casos comunes
+como Animal o Vehículo
+
+herencia simple: 
+tenemos una clase Empleado, a su ves de reriva en gerente y desarollador
