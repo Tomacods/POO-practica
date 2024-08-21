@@ -39,4 +39,4 @@ class Fede_Persona7:
         return int(edad)
     
     def __str__(self):
-        return f'{"Nombre:"}{self.nombre}{" -  Apellido:"}{self.apellido}{" -  Fecha de nacimiento:"}{self.nacimiento}{" -  Edad:"}{self.getEdad}'
+        return f'{"Nombre:"}{self.nombre}{" -  Apellido:"}{self.apellido}{" -  Fecha de nacimiento:"}{self.nacimiento}'
