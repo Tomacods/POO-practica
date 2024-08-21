@@ -30,9 +30,13 @@ class Fede_Persona7:
     @nacimiento.setter
     def set_nacimiento(self, nacimiento):
         self.__nacimiento = nacimiento
-    
-    def edad(self):
-        return (date.today - self.__nacimiento)
         
+    def getEdad (self): 
+        hoy = date.today()
+        fnac = self.__nacimiento
+        edad = (hoy - fnac)
+        edad = edad.days/365
+        return int(edad)
+    
     def __str__(self):
-        return f'{"Nombre:"}{self.nombre}{" -  Apellido:"}{self.apellido}{" -  Fecha de nacimiento:"}{self.nacimiento}{" -  Edad:"}{self.edad}'
+        return f'{"Nombre:"}{self.nombre}{" -  Apellido:"}{self.apellido}{" -  Fecha de nacimiento:"}{self.nacimiento}{" -  Edad:"}{self.getEdad}'
