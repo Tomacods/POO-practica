@@ -11,18 +11,15 @@ profesores = []
 profesor1 = Fede_Profesor("Pedro", "Hernandez")
 profesor1.add_materia(poo)
 profesor1.add_materia(algebra)
-profesores.add(profesor1)
+profesores.append(profesor1)
 
 profesor2 = Fede_Profesor("Romina", "ALvarez")
 profesor2.add_materia(introduccion)
 profesor2.add_materia(algoritmica)
-profesores.add(profesor2)
+profesores.append(profesor2)
 
 profesor3 = Fede_Profesor("Laura", "Perez")
-profesores.add(profesor3)
+profesores.append(profesor3)
 
 for pro in profesores:
-    print(f'{"Profesor: "}{pro.get_nombre}{", "}{pro.get_apellido}')
-    print("Materias:")
-    for mat in pro.get_materia:
-        print(mat.get_nombre)
+    pro.imprimir()
