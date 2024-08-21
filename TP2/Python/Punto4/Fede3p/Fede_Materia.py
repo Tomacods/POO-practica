@@ -1,4 +1,4 @@
-class Materia:
+class Fede_Materia:
     __nombre = ""
     __codigo = ""
     
