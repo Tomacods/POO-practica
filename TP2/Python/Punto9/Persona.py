@@ -57,3 +57,4 @@ class Persona:
 
     def Imprimir(self):
         print("Nombre: {} Apellido: {} Edad: {} Estudia:{} Trabaja :{} Sexo: {}".format(self.__nombre,self.__apellido,self.__edad,self.__estudio,self.__trabaja,self.__sexo))
+
