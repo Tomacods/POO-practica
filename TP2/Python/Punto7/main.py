@@ -8,4 +8,4 @@ persona3 = Persona("Fernando", "Perez", date(2007, 12, 14))
 persona1.toString()
 persona2.toString()
 persona3.toString()
-print("Edad: ",persona1.getEdad()) #NO SE PQ NO ANDA
+print("Edad: ",persona1.getEdad()) #NO SE PQ NO ANDA #Ya anda atte: Csar
