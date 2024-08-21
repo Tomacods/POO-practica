@@ -3,25 +3,28 @@ class Fede_Profesor:
     __nombre = ""
     __apellido = ""
     
+    
     def __init__(self, nombre, apellido):
         self.__nombre = nombre
         self.__apellido = apellido
-    
-    @property
-    def nombre(self):
+        self.__materia = []  
+    def get_nombre(self):
         return self.__nombre
     
-    @nombre.setter
     def set_nombre(self, nombre):
         self.__nombre = nombre
         
-    @property
-    def Apellido(self):
+    def get_apellido(self):
         return self.__apellido
     
-    @apellido.setter
     def set_apellido(self, apellido):
         self.__apellido = apellido
         
     def add_materia(self, materia):
-        self.__materia.add(materia)
+        self.__materia.append(materia)
+        
+    def imprimir(self):
+        print(f'{"Profesor: "}{self.__nombre}{", "}{self.__apellido}')
+        print("Materias:")
+        for mat in self.__materia:
+            mat.imprimir_materia()
