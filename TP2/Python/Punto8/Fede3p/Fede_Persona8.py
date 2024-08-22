@@ -70,5 +70,6 @@ class Fede_Persona8:
     
     def imprimirPersona(self):
         print("Nombre y apellido: ", self.__nombre, " ", self.__apellido)
-        print("Fecha de nacimiento: ", self.__nacimiento, "  -  Edad: ", self.getEdad)
+        print("Fecha de nacimiento: ", self.__nacimiento)
+        print("Edad: ", self.getEdad())
         print("Estudia? ", self.__estudia, "  -  Trabaja? ", self.__trabaja)
