@@ -5,7 +5,7 @@ public class PjCesar extends Personaje{
     private static final int VIDA_POR_DEFECTO = 100;
 
     public PjCesar(String nombre, int vida) {
-        super(nombre, vida, 10, 100);
+        super(nombre, vida, 20, 100);
     }
 
     public PjCesar(String nombre) {
