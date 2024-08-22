@@ -6,14 +6,16 @@ Cada clase debe establecer una cantidad de puntos de vida por defecto.
 En un ataque se deben realizar cierta cantidad de puntos de daño y en la defensa se
 debe reducir esa cantidad de puntos de daños. El resultado final de los puntos de ataque
 debe descontar la misma cantidad de puntos de vida del personaje que defiende.*/
-import java.util.Random;
+
+//import java.util.Random;
 public abstract class Personaje {
-    protected String nombre;
+    private String nombre;
     protected int vida;
     protected int nivelAtaque;
     protected int nivelDefensa;
 
     public Personaje(String nombre,int vida, int nivelAtaque, int nivelDefensa){
+        this.nombre = nombre;
         this.vida = vida;
         this.nivelAtaque = nivelAtaque;
         this.nivelDefensa = nivelDefensa;
@@ -41,40 +43,39 @@ public abstract class Personaje {
     }
 
     public void recibirDano(int dano) {
-        vida -= dano;
-        if (vida < 0)
-            vida = 0;
-    }
-    
-    public static void realizarCombate(Personaje p1, Personaje p2) throws VidaNegativaException {
-        Random random = new Random();
-        boolean turnoP1 = random.nextBoolean();
-
-        while (p1.getVida() > 0 && p2.getVida() > 0) {
-            if (turnoP1) {
-                p2.recibirDano(p1.atacar());
-            } else {
-                p1.recibirDano(p2.atacar());
-            }
-            turnoP1 = !turnoP1;
-
-            if (p1.getVida() < 0) {
-                p1.setVida(0);
-                throw new VidaNegativaException("La vida de " + p1.getNombre() + " ha llegado a un valor negativo. Se establece en 0.");
-            }
-            if (p2.getVida() < 0) {
-                p2.setVida(0);
-                throw new VidaNegativaException("La vida de " + p2.getNombre() + " ha llegado a un valor negativo. Se establece en 0.");
-            }
-        }
-
-        System.out.println("Vida de " + p1.getNombre() + ": " + p1.getVida());
-        System.out.println("Vida de " + p2.getNombre() + ": " + p2.getVida());
+    this.vida -= dano;
     }
 }
-    class VidaNegativaException extends Exception { // Se crea una excepción para manejar la vida negativa
-        public VidaNegativaException(String message) {
-            super(message);
-        }
-    }
+    
+//     public static void realizarCombate(Personaje p1, Personaje p2) throws VidaNegativaException {
+//         Random random = new Random();
+//         boolean turnoP1 = random.nextBoolean();
+
+//         while (p1.getVida() > 0 && p2.getVida() > 0) {
+//             if (turnoP1) {
+//                 p2.recibirDano(p1.atacar());
+//             } else {
+//                 p1.recibirDano(p2.atacar());
+//             }
+//             turnoP1 = !turnoP1;
+
+//             if (p1.getVida() < 0) {
+//                 p1.setVida(0);
+//                 throw new VidaNegativaException("La vida de " + p1.getNombre() + " ha llegado a un valor negativo. Se establece en 0.");
+//             }
+//             if (p2.getVida() < 0) {
+//                 p2.setVida(0);
+//                 throw new VidaNegativaException("La vida de " + p2.getNombre() + " ha llegado a un valor negativo. Se establece en 0.");
+//             }
+//         }
+
+//         System.out.println("Vida de " + p1.getNombre() + ": " + p1.getVida());
+//         System.out.println("Vida de " + p2.getNombre() + ": " + p2.getVida());
+//     }
+// }
+//     class VidaNegativaException extends Exception { // Se crea una excepción para manejar la vida negativa
+//         public VidaNegativaException(String message) {
+//             super(message);
+//         }
+//     }
 
