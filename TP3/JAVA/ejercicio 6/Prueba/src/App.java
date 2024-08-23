@@ -21,7 +21,10 @@ public class App {
                 }
                 personas.add(alumno);
     }
+    for (Persona per : personas){
+        System.out.println(per.materia());
 }
     
+}
 }
 }
