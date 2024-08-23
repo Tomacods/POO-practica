@@ -31,7 +31,7 @@ public class App {
                 // Crear un no docente
                 String[] jornadas = {"Completa", "Parcial"};
                 String jornada = jornadas[random.nextInt(jornadas.length)];
-                int horasTrabajadas = generarHorasTrabajadasNoDocente(random);
+                int horasTrabajadas = generarHorasTrabajadasNoDocente(jornada,random);
                 personal[i] = new NoDocente("NoDocente" + i, 1, "Sector" + i, horasTrabajadas, jornada);
             }
         }
@@ -63,15 +63,24 @@ public class App {
 
         return horasTrabajadas;
     }
-    private static int generarHorasTrabajadasNoDocente(Random random) {
+    private static int generarHorasTrabajadasNoDocente(String jornada,Random random) {
         int horasRequeridas = 40; // Ejemplo de horas requeridas
         int horasTrabajadas = horasRequeridas;
         double probabilidadExceder = 0.80;
 
+        switch (jornada) {
+            case "Completa":
+                probabilidadExceder = 0.95;
+                break;
+            case "Parcial":
+                probabilidadExceder = 0.75;
+                break;
+        }
+
+
         if (random.nextDouble() < probabilidadExceder) {
             horasTrabajadas += random.nextInt(21); // Exceder entre 0 y 20 horas
         }
-
         return horasTrabajadas;
     }
 }
