@@ -31,6 +31,6 @@ class Fede_Censo9:
     def cantTrabajan(self):
         cant = 0
         for per in self.__personas:
-            if per.trabajan() == True:
+            if per.trabaja() == True:
                 cant = cant + 1
         print("En esta familia trabajan ", cant, " personas.")
