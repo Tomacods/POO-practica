@@ -1,6 +1,6 @@
 public class Personal extends TarifaProveedor {
-    public Personal(int totalSMS, int totalMinutos, int totalGigas) {
-        super(totalSMS, totalMinutos, totalGigas);
+    public Personal(String nombre,int totalSMS, int totalMinutos, int totalGigas) {
+        super(nombre);
     }
 
     @Override
