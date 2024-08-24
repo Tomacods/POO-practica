@@ -50,22 +50,20 @@ familias.append(familia3)
 
 # código principal
 
+edades = 0
+cant = 0
 print("Se censaron a ", len(familias), " familias.")
+print(" ")
 for fam in familias:
     fam.imprimirFamilia()
-    print(" ")
-    fam.cantidad()
+    fam.cantidad1()
     print(" ")
     fam.cantTrabajan()
-    edad = edad.totalEdad()
-    edades = edades + edad
-    cant = cant + len(fam)
+    edades = edades + fam.totalEdad()
+    cant = cant + fam.cantidad2()
     print(" ")
     print("---------------------")
     print(" ")
-print(" ")
-print("---------------------")
-print(" ")
-total = (edad/cant)
+total = (edades/cant)
 print("La edad promedio es: ", total)
 

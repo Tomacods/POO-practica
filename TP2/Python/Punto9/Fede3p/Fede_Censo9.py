@@ -17,20 +17,27 @@ class Fede_Censo9:
     
     def imprimirFamilia(self):
         print("Familia: ", self.__familia)
+        print(" ")
+        print("Integrantes: ")
         for per in self.__personas:
             per.imprimirPersona()
+            print(" ")
             
-    def cantidad(self):
+    def cantidad1(self):
         print("Esta familia tiene ", len(self.__personas), " integrantes")
     
+    def cantidad2(self):
+        return len(self.__personas)
+    
     def totalEdad(self):
+        edad = 0
         for per in self.__personas:
             edad = edad + per.getEdad()
-        return edad
+        return int(edad)
     
     def cantTrabajan(self):
         cant = 0
         for per in self.__personas:
-            if per.trabaja() == True:
+            if per.trabaja:
                 cant = cant + 1
         print("En esta familia trabajan ", cant, " personas.")
