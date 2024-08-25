@@ -28,3 +28,7 @@ public class Fede_App {
         }
     }
 }
+
+/* Se imprime el listado de profesores con las materias que enseña
+* + el listado de alumnos con las materias que cursan
+ */
