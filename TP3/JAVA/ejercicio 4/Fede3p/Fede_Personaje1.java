@@ -10,7 +10,7 @@ public class Fede_Personaje1 extends Fede_Personaje {
         this(nombre, vida_inicial);
     }
 
-    @Override
+    @Override /* definición de método en padre */
     public void defender(Integer ataque){
         this.vida = vida - ataque;
         if (vida < 0){

@@ -4,18 +4,18 @@ public abstract class Fede_Personaje {
     
     private String nombre;
     protected Integer vida;
-    protected Integer ataque;
-    protected Integer defensa;
+    protected Integer nivelAtaque;
+    protected Integer nivelDefensa;
 
-    public Fede_Personaje(String nombre, Integer vida, Integer ataque, Integer defensa){
+    public Fede_Personaje(String nombre, Integer vida, Integer nivelAtaque, Integer nivelDefensa){
         this.nombre = nombre;
         this.vida = vida;
-        this.ataque = ataque;
-        this.defensa = defensa;
+        this.nivelAtaque = nivelAtaque;
+        this.nivelDefensa = nivelDefensa;
     }
 
     public Integer atacar(){
-        return ataque;
+        return nivelAtaque;
     }
 
     /* Esto se redefine al aplicarse */
