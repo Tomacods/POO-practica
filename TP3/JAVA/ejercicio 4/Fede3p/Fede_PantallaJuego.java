@@ -14,7 +14,6 @@ public class Fede_PantallaJuego {
         Integer turno = random.nextInt(2);
         Integer contador = 0;
 
-        p1.setVida(-1);
         while (p1.getVida() > 0 && p2.getVida() > 0){
             contador = contador + 1;
             System.out.println("     -------     Turno " + contador + ":");
@@ -29,12 +28,6 @@ public class Fede_PantallaJuego {
             System.out.println("Nivel de vida de " + p2.getNombre() + ": " + p2.getVida()); // imprime contador de vida de personaje 2
             turno = random.nextInt(2); // se vuelve a pedir el turno
         }
-        /*if (p1.getVida() <= 0){
-            p1.setVida(0);
-        }
-        if (p2.getVida() <= 0){
-            p2.setVida(0);
-        }*/
         if (p1.getVida() > p2.getVida()){
             System.out.println("El ganador es: " + p1.getNombre());
         } else {
@@ -42,3 +35,6 @@ public class Fede_PantallaJuego {
         }
     }
 }
+/* No es necesario colocar excepciones de vida negativa
+si la vida de algún personaje llega a ser <0, el loop
+del while terminará e imprimirá el nombre del ganador */
