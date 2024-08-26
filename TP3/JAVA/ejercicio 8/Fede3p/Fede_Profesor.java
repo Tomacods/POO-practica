@@ -1,28 +1,18 @@
-public class Fede_ProfesorTitular {
-
+public abstract class Fede_Profesor {
+    
     private String nombre;
     private String apellido;
     private Integer edad;
     private Integer horasTrabajadas;
-    private Integer antiguedad;
-    private Double valorAntiguedad = 1000.00;
-    private Double valorHora = 300.00;
 
-    public Fede_ProfesorTitular(String nombre, String apellido, Integer edad, Integer horasTrabajadas, Integer antiguedad){
+    public Fede_Profesor(String nombre, String apellido, Integer edad, Integer horasTrabajadas){
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.horasTrabajadas = horasTrabajadas;
-        this.antiguedad = antiguedad;
     }
 
-    public Double getRemuneracionAntiguedad(){
-        return this.valorAntiguedad * this.getAntiguedad();
-    }
-
-    public Double getRemuneracionMensual(){
-        return this.valorHora * getHorasTrabajadas() * getRemuneracionAntiguedad();
-    }
+    public abstract Double getRemuneracionMensual();
 
     public String getNombre() {
         return nombre;
@@ -56,11 +46,5 @@ public class Fede_ProfesorTitular {
         this.horasTrabajadas = horasTrabajadas;
     }
 
-    public Integer getAntiguedad() {
-        return antiguedad;
-    }
-
-    public void setAntiguedad(Integer antiguedad) {
-        this.antiguedad = antiguedad;
-    }
+    
 }
