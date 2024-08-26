@@ -17,6 +17,7 @@ public class Fede_Personal extends Fede_TarifaProveedor{
         Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
         return total + min + gb;
     }
+    
 
     @Override
     public String getNombre(){
