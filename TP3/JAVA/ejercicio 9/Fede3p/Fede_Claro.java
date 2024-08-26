@@ -8,8 +8,8 @@ public class Fede_Claro extends Fede_TarifaProveedor{
         this.nombre = nombre;
     }
 
-    public Double totalTarifa(Integer totalSMS, Integer totalMinutos, Integer totalGigas){
-        Double total = (double) calcular(totalSMS, totalMinutos, totalMinutos);
+    public Double totalTarifa(){
+        Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
         return (extra * total / 100.00);
     }
 

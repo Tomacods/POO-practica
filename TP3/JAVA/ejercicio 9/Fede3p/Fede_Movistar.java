@@ -10,14 +10,14 @@ public class Fede_Movistar extends Fede_TarifaProveedor{
         this.nombre = nombre;
     }
 
-    public Double totalTarifa(Integer totalSMS, Integer totalMinutos, Integer totalGigas){
-        Double sms = (double) calcularSMS(totalSMS);
+    public Double totalTarifa(){
+        Double sms = (double) calcularSMS(getTotalSMS());
         sms = (extraSMS * sms / 100.00);
-        Double min = (double) calcularMinutosDeLlamada(totalMinutos);
+        Double min = (double) calcularMinutosDeLlamada(getTotalMinutos());
         min = (extraMin * min / 100.00);
-        Double gb = (double) calcularConsumoGB(totalGigas);
+        Double gb = (double) calcularConsumoGB(getTotalGigas());
         gb = (extraGB * min / 100.00);
-        Double total = (double) calcular(totalSMS, totalMinutos, totalMinutos);
+        Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
         return total + min + gb + sms;
     }
 
