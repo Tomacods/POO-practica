@@ -17,5 +17,9 @@ public class PjMora extends Personaje{
         if (vida < 0)
             vida = 0;
     }
+    @Override
+    public int atacar(){
+        return nivelAtaque + 5;
+    }
     
 }
