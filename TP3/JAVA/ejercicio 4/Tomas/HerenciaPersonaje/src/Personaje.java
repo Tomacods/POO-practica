@@ -23,7 +23,7 @@ public abstract class Personaje {
         return nivelAtaque;
     }
 
-    public abstract void defender(int ataque);
+    public abstract void defender(int ataque) throws VidaNegativaException;
 
     public int getVida() {
         return vida;
@@ -43,22 +43,5 @@ public abstract class Personaje {
     public void recibirDano(int dano) {
     this.vida -= dano;
     }
-//     public void realizarCombate(Personaje p1, Personaje p2)  {
-//         Random random = new Random();
-//         boolean turnoP1 = random.nextBoolean();
-
-//         while (p1.getVida() > 0 && p2.getVida() > 0) {
-//             if (turnoP1) {
-//                 p2.recibirDano(p1.atacar());
-//             } else {
-//                 p1.recibirDano(p2.atacar());
-//             }
-//             turnoP1 = !turnoP1;
-
-
-//         System.out.println("Vida de " + p1.getNombre() + ": " + p1.getVida());
-//         System.out.println("Vida de " + p2.getNombre() + ": " + p2.getVida());
-//     }
-// }
 }
 

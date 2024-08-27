@@ -17,14 +17,14 @@ public class Juego {
             }
             turnoP1 = !turnoP1; //cambia el turnoD
     }
-    if (cesar.getVida() <= 0) { //si la vida de cesar es menor o igual a 0
-        cesar.setVida(0); //la vida de cesar es igual a 0
-    }
-    if (mora.getVida() <= 0) { //si la vida de mora es menor o igual a 0
-        mora.setVida(0); //la vida de mora es igual a 0
-    }
-    // System.out.println("Vida de " + cesar.getNombre() + ": " + cesar.getVida()); //imprime la vida de cesar al final del combate
-    // System.out.println("Vida de " + mora.getNombre() + ": " + mora.getVida()); //imprime la vida de mora al final del combate
+    // if (cesar.getVida() <= 0) { //si la vida de cesar es menor o igual a 0
+    //     cesar.setVida(0); //la vida de cesar es igual a 0
+    // }
+    // if (mora.getVida() <= 0) { //si la vida de mora es menor o igual a 0
+    //     mora.setVida(0); //la vida de mora es igual a 0
+    // }
+    System.out.println("Vida de " + cesar.getNombre() + ": " + cesar.getVida()); //imprime la vida de cesar al final del combate
+    System.out.println("Vida de " + mora.getNombre() + ": " + mora.getVida()); //imprime la vida de mora al final del combate
     
     //mostrar al ganador
     if (cesar.getVida() > mora.getVida()) { //si la vida de cesar es mayor a la vida de mora

@@ -5,7 +5,7 @@ public class PjCesar extends Personaje{
     private static final int VIDA_POR_DEFECTO = 100;
 
     public PjCesar(String nombre, int vida) {
-        super(nombre, vida, 10, 100);
+        super(nombre, vida, 5, 100);
     }
 
     public PjCesar(String nombre) {
@@ -13,10 +13,11 @@ public class PjCesar extends Personaje{
     }
 
     @Override
-    public void defender(int ataque) {
+    public void defender(int ataque) throws VidaNegativaException {
         this.vida -= ataque;   
-        if (vida < 0)
-            vida = 0;
+        if (vida < 0) 
+            throw new VidaNegativaException("La vida no puede ser negativa");
+        
     }
     
 }   
