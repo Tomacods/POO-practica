@@ -1,7 +1,7 @@
 public class Fede_Claro extends Fede_TarifaProveedor{
     
     private String nombre;
-    private Double extra = 20.00;
+    private Double extra = 1.20;
 
     public Fede_Claro(String nombre, Integer totalSMS, Integer totalMinutos, Integer totalGigas) {
         super(totalSMS, totalMinutos, totalGigas);
@@ -9,9 +9,7 @@ public class Fede_Claro extends Fede_TarifaProveedor{
     }
 
     public Double totalTarifa(){
-        Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
-        total = (extra * total / 100.00);
-        return total;
+        return calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas()) * extra;
     }
 
     @Override

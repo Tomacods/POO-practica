@@ -1,8 +1,8 @@
 public class Fede_Personal extends Fede_TarifaProveedor{
     
     private String nombre;
-    private Double extraMin = 20.00;
-    private Double extraGB = 50.00;
+    private Double extraMin = 1.20;
+    private Double extraGB = 1.50;
 
     public Fede_Personal(String nombre, Integer totalSMS, Integer totalMinutos, Integer totalGigas) {
         super(totalSMS, totalMinutos, totalGigas);
@@ -10,13 +10,9 @@ public class Fede_Personal extends Fede_TarifaProveedor{
     }
 
     public Double totalTarifa(){
-        Double min = (double) calcularMinutosDeLlamada(getTotalMinutos());
-        min = (extraMin * min / 100.00);
-        Double gb = (double) calcularConsumoGB(getTotalGigas());
-        gb = (extraGB * min / 100.00);
-        Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
-        total = total + min + gb;
-        return total;
+        Double min = calcularMinutosDeLlamada(getTotalMinutos()) * extraMin;
+        Double gb = calcularConsumoGB(getTotalGigas()) * extraGB;
+        return calcularSMS(getTotalSMS()) + min + gb;
     }
     
 

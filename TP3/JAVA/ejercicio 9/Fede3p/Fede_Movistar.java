@@ -1,9 +1,9 @@
 public class Fede_Movistar extends Fede_TarifaProveedor{
     
     private String nombre;
-    private Double extraSMS = 10.00;
-    private Double extraMin = 20.00;
-    private Double extraGB = 30.00;
+    private Double extraSMS = 1.10;
+    private Double extraMin = 1.20;
+    private Double extraGB = 1.30;
 
     public Fede_Movistar(String nombre, Integer totalSMS, Integer totalMinutos, Integer totalGigas) {
         super(totalSMS, totalMinutos, totalGigas);
@@ -11,15 +11,10 @@ public class Fede_Movistar extends Fede_TarifaProveedor{
     }
 
     public Double totalTarifa(){
-        Double sms = (double) calcularSMS(getTotalSMS());
-        sms = (extraSMS * sms / 100.00);
-        Double min = (double) calcularMinutosDeLlamada(getTotalMinutos());
-        min = (extraMin * min / 100.00);
-        Double gb = (double) calcularConsumoGB(getTotalGigas());
-        gb = (extraGB * min / 100.00);
-        Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
-        total = total + min + gb + sms;
-        return total;
+        Double sms = calcularSMS(getTotalSMS()) * extraSMS;
+        Double min = calcularMinutosDeLlamada(getTotalMinutos()) * extraMin;
+        Double gb = calcularConsumoGB(getTotalGigas()) * extraGB;
+        return sms + min + gb;
     }
 
     @Override
