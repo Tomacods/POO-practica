@@ -4,7 +4,7 @@ public class PjMora extends Personaje{
     private static final int VIDA_POR_DEFECTO = 100;
 
     public PjMora(String nombre, int vida) {
-        super(nombre, vida, 10, 100);
+        super(nombre, vida, 15, 100);
     }
 
     public PjMora(String nombre) {
@@ -12,14 +12,14 @@ public class PjMora extends Personaje{
     }
 
     @Override
-    public void defender(int ataque) {
+    public void defender(int ataque) throws VidaNegativaException {
         this.vida -= ataque;   
         if (vida < 0)
-            vida = 0;
+            throw new VidaNegativaException("La vida no puede ser negativa");
     }
     @Override
     public int atacar(){
-        return nivelAtaque + 5;
+        return nivelAtaque + 10;
     }
     
 }
