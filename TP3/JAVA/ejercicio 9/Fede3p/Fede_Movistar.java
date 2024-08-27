@@ -11,9 +11,9 @@ public class Fede_Movistar extends Fede_TarifaProveedor{
     }
 
     public Double totalTarifa(){
-        Double sms = calcularSMS(getTotalSMS()) * extraSMS;
-        Double min = calcularMinutosDeLlamada(getTotalMinutos()) * extraMin;
-        Double gb = calcularConsumoGB(getTotalGigas()) * extraGB;
+        Double sms = calcularSMS(getTotalSMS()) * extraSMS; // es lo mismo que calcularSMS(getTotalSMS()) * 1.10
+        Double min = calcularMinutosDeLlamada(getTotalMinutos()) * extraMin; // es lo mismo que calcularMinutosDeLlamada(getTotalMinutos()) * 1.20
+        Double gb = calcularConsumoGB(getTotalGigas()) * extraGB;  // es lo mismo que calcularConsumoGB(getTotalGigas()) * 1.30
         return sms + min + gb;
     }
 
