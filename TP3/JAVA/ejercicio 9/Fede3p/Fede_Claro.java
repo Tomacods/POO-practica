@@ -10,7 +10,8 @@ public class Fede_Claro extends Fede_TarifaProveedor{
 
     public Double totalTarifa(){
         Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
-        return (extra * total / 100.00);
+        total = (extra * total / 100.00);
+        return total;
     }
 
     @Override

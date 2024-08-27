@@ -18,7 +18,8 @@ public class Fede_Movistar extends Fede_TarifaProveedor{
         Double gb = (double) calcularConsumoGB(getTotalGigas());
         gb = (extraGB * min / 100.00);
         Double total = (double) calcular(getTotalSMS(), getTotalMinutos(), getTotalGigas());
-        return total + min + gb + sms;
+        total = total + min + gb + sms;
+        return total;
     }
 
     @Override
