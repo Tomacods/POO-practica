@@ -22,14 +22,11 @@ public class Docente extends Personal {
     
     @Override
     public Integer HorasTrabajadas() {
-        switch (this.categoria) {
-            case "Simple":
-                return 10;
-            case "Semiexclusiva":
-                return 20;
-            default:
-                return 40; // Exclusiva
-        }
+        return switch (this.categoria) {
+            case "Simple" -> 10;
+            case "Semiexclusiva" -> 20;
+            default -> 40;
+        }; // Exclusiva
     }
     
     @Override
