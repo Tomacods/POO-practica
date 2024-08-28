@@ -41,9 +41,9 @@ public abstract class Personaje {
     }
 
     public void recibirDano(int dano)throws VidaNegativaException{
-        if(this.vida - dano < 0){
-            throw new VidaNegativaException("La vida no puede ser negativa");
-        }
+       // if(this.vida - dano < 0){
+         //   throw new VidaNegativaException("La vida no puede ser negativa");
+        //}
     this.vida -= dano;
     }
 }

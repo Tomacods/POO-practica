@@ -20,12 +20,10 @@ public class NoDocente extends Personal {
     
     @Override
     public Integer HorasTrabajadas() {
-        switch (this.cargo) {
-            case "Completa":
-                return 30;
-            default:
-                return 20; // Reducida
-        }
+        return switch (this.cargo) {
+            case "Completa" -> 30;
+            default -> 20;
+        }; // Reducida
     }
     
     @Override
