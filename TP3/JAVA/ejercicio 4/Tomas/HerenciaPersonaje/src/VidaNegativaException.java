@@ -1,6 +1,7 @@
 
-public class VidaNegativaException extends Exception {
-    public VidaNegativaException(String mensaje) {
-        super(mensaje);
+
+public class VidaNegativaException extends Exception{
+    public VidaNegativaException(String message) {
+        super(message);
     }
 }

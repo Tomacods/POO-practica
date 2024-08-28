@@ -19,7 +19,7 @@ public class PjMora extends Personaje{
     }
     @Override
     public int atacar(){
-        return nivelAtaque + 10;
+        return nivelAtaque + 15;
     }
     
 }
