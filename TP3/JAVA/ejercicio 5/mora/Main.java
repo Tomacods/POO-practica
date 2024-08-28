@@ -5,16 +5,22 @@ public static void main(String[] args) throws Exception {
     Samurai p2 = new Samurai("Samurai");
     Random random = new Random();
     boolean randomBoolean = random.nextBoolean();
+    while (p1.getVida() > 0 && p2.getVida()> 0){
     if (randomBoolean) {
         p2.defensa(p1.ataque());
     }
+        else{
+            p1.defensa(p2.ataque());
+            }
+    randomBoolean = !randomBoolean;
+    }
+if (p1.getVida() > p2.getVida()){
+    System.out.println("Ganador: " + p1.getNombre);
+    }
     else{
-        p1.defensa(p2.ataque());
+    System.out.println("Ganador: " + p2.getNombre());
         }
-
+    }
     
+}
 
-    p1.defensa(p2.ataque());
-    System.out.println("Nivel de vida de " + p1.getNombre() + ": " + p1.getVida());
-}
-}
