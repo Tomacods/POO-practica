@@ -10,7 +10,7 @@ public class Samurai extends Personaje {
         this(nombre, VIDA_POR_DEFECTO);
     }
     public int ataque(){
-        return (int) (nivelAtaque * 1.2);
+        super(ataque() * 1.2); //arreglar esto
     }
     @Override
     protected Integer defensa(int ataque) {
