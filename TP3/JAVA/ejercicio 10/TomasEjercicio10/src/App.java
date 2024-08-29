@@ -25,49 +25,38 @@ public class App {
                 // Crear un docente
                 String[] categorias = {"Simple", "Semiexclusiva", "Exclusiva"}; // Categorias de docentes
                 String categoria = categorias[random.nextInt(categorias.length)]; // Se elige aleatoriamente una categoria
-                int horasTrabajadas = generarHorasTrabajadasDocente(categoria, random); // Se generan las horas trabajadas
-                personal[i] = new Docente("Docente" + i,1, "Sector" + i, horasTrabajadas, categoria);
+                int horasTrabajadas = generarHorasTrabajadas(categoria, true, random); // Se generan las horas trabajadas
+                personal[i] = new Docente("Docente" + i, 1, "Sector" + i, horasTrabajadas, categoria);
             } else {
                 // Crear un no docente
                 String[] jornadas = {"Completa", "Parcial"}; //declaro las jornadas en forma de array
                 String jornada = jornadas[random.nextInt(jornadas.length)]; // Se elige aleatoriamente una jornada
-                int horasTrabajadas = generarHorasTrabajadasNoDocente(jornada,random); // Se generan las horas trabajadas
+                int horasTrabajadas = generarHorasTrabajadas(jornada, false, random); // Se generan las horas trabajadas
                 personal[i] = new NoDocente("NoDocente" + i, 1, "Sector" + i, horasTrabajadas, jornada);
             }
         }
-        
         Reloj reloj = new Reloj();
         reloj.generarInforme(personal);
-
     }
-    private static int generarHorasTrabajadasDocente(String categoria, Random random) {
+    private static int generarHorasTrabajadas(String tipo, boolean esDocente, Random random) {
         int horasRequeridas = 40; // Ejemplo de horas requeridas
         int horasTrabajadas = horasRequeridas; // Por defecto se trabajan las horas requeridas
         double probabilidadExceder = 0.0;
-        switch (categoria) {
-            case "Simple" -> probabilidadExceder = 0.95;
-            case "Semiexclusiva" -> probabilidadExceder = 0.75;
-            case "Exclusiva" -> probabilidadExceder = 0.60;
+
+        if (esDocente) {
+            switch (tipo) {
+                case "Simple" -> probabilidadExceder = 0.95;
+                case "Semiexclusiva" -> probabilidadExceder = 0.75;
+                case "Exclusiva" -> probabilidadExceder = 0.60;
+            }
+        } else {
+            switch (tipo) {
+                case "Completa" -> probabilidadExceder = 0.95;
+                case "Parcial" -> probabilidadExceder = 0.75;
+            }
         }
 
         if (random.nextDouble() < probabilidadExceder) {
-            horasTrabajadas += random.nextInt(21); // Exceder entre 0 y 20 horas
-        }
-
-        return horasTrabajadas;
-    }
-    private static int generarHorasTrabajadasNoDocente(String jornada,Random random) {
-        int horasRequeridas = 40; // Ejemplo de horas requeridas
-        int horasTrabajadas = horasRequeridas;
-        double probabilidadExceder = 0.80;
-
-        switch (jornada) {
-            case "Completa" -> probabilidadExceder = 0.95;
-            case "Parcial" -> probabilidadExceder = 0.75;
-        }
-
-
-        if (random.nextDouble() < probabilidadExceder) { // 80% de posibilidad de exceder
             horasTrabajadas += random.nextInt(21); // Exceder entre 0 y 20 horas
         }
         return horasTrabajadas;
