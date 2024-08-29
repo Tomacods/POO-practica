@@ -18,7 +18,6 @@ public abstract class Personaje {
         this.nivelAtaque = nivelAtaque;
         this.nivelDefensa = nivelDefensa;
     }
-
     public int atacar(){
         return nivelAtaque;
     }
@@ -39,12 +38,4 @@ public abstract class Personaje {
     public String getNombre() {
         return nombre;
     }
-
-    public void recibirDano(int dano)throws VidaNegativaException{
-       // if(this.vida - dano < 0){
-         //   throw new VidaNegativaException("La vida no puede ser negativa");
-        //}
-    this.vida -= dano;
-    }
 }
-

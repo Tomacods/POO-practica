@@ -13,9 +13,13 @@ public class PjMora extends Personaje{
 
     @Override
     public void defender(int ataque) throws VidaNegativaException {
-        this.vida -= ataque;   
-        if (vida < 0)
-            throw new VidaNegativaException("La vida no puede ser negativa");
+        try {
+            this.vida -= ataque;   
+            if (vida < 0) 
+                throw new VidaNegativaException("La vida no puede ser negativa");
+        } catch (VidaNegativaException e) {
+            setVida(0);
+        }
     }
     @Override
     public int atacar(){
