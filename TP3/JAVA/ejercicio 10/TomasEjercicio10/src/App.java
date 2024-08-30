@@ -41,7 +41,8 @@ public class App {
     private static int generarHorasTrabajadas(String tipo, boolean esDocente, Random random) {
         int horasRequeridas = 40; // Ejemplo de horas requeridas
         int horasTrabajadas = horasRequeridas; // Por defecto se trabajan las horas requeridas
-        double probabilidadExceder = 0.0;
+        double probabilidadExceder = 0.0; // Probabilidad de exceder las horas requeridas
+
 
         if (esDocente) {
             switch (tipo) {
