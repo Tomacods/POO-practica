@@ -12,10 +12,10 @@ public class Fede_App10 {
             if (random.nextInt(2) == 1){
                 String[] categorias = {"Simple", "Semiexclusiva", "Exclusiva"};
                 String categoria = categorias[random.nextInt(categorias.length)];
-                Integer horasMensual
+                Integer horasMensual;
             }
         }
     }
 
-    private static Integer horasTrabajadas
+    private static Integer horasTrabajadas;
 }
