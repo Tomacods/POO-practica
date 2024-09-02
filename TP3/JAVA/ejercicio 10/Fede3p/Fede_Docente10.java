@@ -1,9 +1,9 @@
-public class Fede_Docente extends Fede_Personal_10{
+public class Fede_Docente10 extends Fede_Personal_10{
 
     private String categoria;
 
-    public Fede_Docente(String nombre, String apellido, Integer antiguedad, String sector, Integer horasTrabajadasMensual, String categoria){
-        super(nombre, apellido, antiguedad, sector, horasTrabajadasMensual);
+    public Fede_Docente10(String nombre, String apellido, Integer antiguedad, String sector, Integer horasMensual, String categoria){
+        super(nombre, apellido, antiguedad, sector, horasMensual);
         this.categoria = categoria;
     }
 
