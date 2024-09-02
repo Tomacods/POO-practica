@@ -19,7 +19,7 @@ public abstract class Fede_Personaje {
     }
 
     /* Esto se redefine al aplicarse */
-    public abstract void defender(Integer ataque);
+    public abstract void defender(Integer ataque) throws VidaNegativaException;
 
     public String getNombre() {
         return nombre;
