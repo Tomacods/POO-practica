@@ -2,8 +2,8 @@ public class Fede_NoDocente extends Fede_Personal_10{
     
     private String jornada;
 
-    public Fede_NoDocente(String nombre, String apellido, Integer antiguedad, String sector, Integer horasTrabajadasMensual, String jornada){
-        super(nombre, apellido, antiguedad, sector, horasTrabajadasMensual);
+    public Fede_NoDocente(String nombre, String apellido, Integer antiguedad, String sector, Integer horasMensual, String jornada){
+        super(nombre, apellido, antiguedad, sector, horasMensual);
         this.jornada = jornada;
     }
 

@@ -11,10 +11,14 @@ public class Fede_Personaje2 extends Fede_Personaje {
     }
 
     @Override /* definición de método en padre */
-    public void defender(Integer ataque){
-        this.vida = vida - ataque;
-        if (vida < 0){
-            vida = 0;
+    public void defender(Integer ataque) throws VidaNegativaException{
+        try{
+            this.vida = vida - ataque;
+            if (vida < 0){
+                throw new VidaNegativaException("La vida no puede ser negativa.");
+            }
+        } catch (VidaNegativaException e){
+            setVida(0);
         }
     }
 }
