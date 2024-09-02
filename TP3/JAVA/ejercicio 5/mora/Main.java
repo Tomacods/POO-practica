@@ -17,6 +17,7 @@ public static void main(String[] args) throws Exception {
     System.out.println("Vida Samurai: " + p2.getVida() );
     cont = cont + 1;
     System.out.println("Combate nro: " + cont);
+    System.out.println();
     randomBoolean = !randomBoolean;
     }
 if (p1.getVida() > p2.getVida()){

@@ -4,14 +4,14 @@ public abstract class Fede_Personal_10 {
     protected String apellido;
     protected Integer antiguedad;
     protected String sector;
-    protected Integer horasTrabajadasMensual;
+    protected Integer horasMensual;
 
-    public Fede_Personal_10(String nombre, String apellido, Integer antiguedad, String sector, Integer horasTrabajadasMensual){
+    public Fede_Personal_10(String nombre, String apellido, Integer antiguedad, String sector, Integer horasMensual){
         this.nombre =nombre;
         this.apellido = apellido;
         this.antiguedad = antiguedad;
         this.sector = sector;
-        this.horasTrabajadasMensual = horasTrabajadasMensual;
+        this.horasMensual = horasMensual;
     }
 
     public abstract Integer horas_trabajadas();
