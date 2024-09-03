@@ -1,13 +1,11 @@
-/*Clase padre*/
+public abstract class Personaje {
 
-public abstract class Fede_Personaje {
-    
     private String nombre;
     protected Integer vida;
     protected Integer nivelAtaque;
     protected Integer nivelDefensa;
 
-    public Fede_Personaje(String nombre, Integer vida, Integer nivelAtaque, Integer nivelDefensa){
+    public Personaje(String nombre, Integer vida, Integer nivelAtaque, Integer nivelDefensa) {
         this.nombre = nombre;
         this.vida = vida;
         this.nivelAtaque = nivelAtaque;
@@ -18,8 +16,11 @@ public abstract class Fede_Personaje {
         return nivelAtaque;
     }
 
-    /* Esto se redefine al aplicarse */
-    public abstract void defender(Integer ataque) throws VidaNegativaException;
+    public abstract void  defender(Integer ataque) throws ExcepcionNeg;
+
+    public void recibirDanio (Integer danio){
+        this.vida = vida - danio;
+    }
 
     public String getNombre() {
         return nombre;
@@ -35,9 +36,5 @@ public abstract class Fede_Personaje {
 
     public void setVida(Integer vida) {
         this.vida = vida;
-    }
-
-    public void recibirDanio(Integer danio){
-        this.vida = vida - danio;
     }
 }
