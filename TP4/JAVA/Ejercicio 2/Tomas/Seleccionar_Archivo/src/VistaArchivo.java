@@ -1,4 +1,4 @@
-package Ejercicio;
+
 
 import java.awt.*;
 import java.awt.event.ActionListener;
