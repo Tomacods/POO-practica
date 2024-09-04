@@ -13,7 +13,7 @@ public class Gameplay {
 
         while (pMessi.getVida()> 0 && pFede.getVida() > 0){
             contador = contador + 1;
-            System.out.println("   ------------       Turno" + contador + ":");
+            System.out.println("   -------------       Turno" + contador + ":");
             if (turno == 1) {
                 pFede.recibirDanio(pMessi.atacar());
                 System.out.println(pMessi.getNombre()+" HA ATACADO A "+ pFede.getNombre());
