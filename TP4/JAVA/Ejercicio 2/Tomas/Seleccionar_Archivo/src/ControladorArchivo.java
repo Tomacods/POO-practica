@@ -1,9 +1,9 @@
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.*;
 
 public class ControladorArchivo implements ActionListener {
 	private ModeloArchivo modelo;
@@ -43,10 +43,5 @@ public class ControladorArchivo implements ActionListener {
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-		ModeloArchivo modelo = new ModeloArchivo();
-		VistaArchivo vista = new VistaArchivo();
-		new ControladorArchivo(modelo, vista);
-	}
+	
 }

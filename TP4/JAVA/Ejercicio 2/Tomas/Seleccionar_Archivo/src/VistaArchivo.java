@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class VistaArchivo extends JFrame {
-	private JTextField campoArchivo;
-	private JTextField campoUbicacion;
-	private JButton botonSeleccionarArchivo;
-	private JButton botonSeleccionarUbicacion;
-	private JButton botonCopiar;
+	public  JTextField campoArchivo;
+	public  JTextField campoUbicacion;
+	public JButton botonSeleccionarArchivo;
+	public JButton botonSeleccionarUbicacion;
+	public JButton botonCopiar;
 
 	public VistaArchivo() {
 		setTitle("Copiar Archivo");
@@ -17,17 +17,17 @@ public class VistaArchivo extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridLayout(3, 3));
 
-		campoArchivo = new JTextField();
-		campoUbicacion = new JTextField();
+		//campoArchivo = new JTextField();
+		//campoUbicacion = new JTextField();
 		botonSeleccionarArchivo = new JButton("Seleccionar Archivo");
 		botonSeleccionarUbicacion = new JButton("Seleccionar Ubicación");
 		botonCopiar = new JButton("Copiar Archivo");
 
 		add(new JLabel("Archivo:"));
-		add(campoArchivo);
+		//add(campoArchivo);
 		add(botonSeleccionarArchivo);
 		add(new JLabel("Ubicación:"));
-		add(campoUbicacion);
+		//add(campoUbicacion);
 		add(botonSeleccionarUbicacion);
 		add(new JLabel());
 		add(botonCopiar);
