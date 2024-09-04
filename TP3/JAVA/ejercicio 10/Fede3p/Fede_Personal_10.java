@@ -14,7 +14,11 @@ public abstract class Fede_Personal_10 {
         this.horasMensual = horasMensual;
     }
 
+    // Metodo abstracto
+    
     public abstract Integer horas_trabajadas();
+
+    // Getters y setters
 
     public String getNombre() {
         return nombre;

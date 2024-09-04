@@ -7,6 +7,8 @@ public class Fede_NoDocente extends Fede_Personal_10{
         this.jornada = jornada;
     }
 
+    // Definición método abstracto
+
     @Override
     public Integer horas_trabajadas(){
         switch (this.jornada){
@@ -14,6 +16,15 @@ public class Fede_NoDocente extends Fede_Personal_10{
             default: return 20;
         }
     }
+
+    // Esto también se lo robé a tomi
+
+    @Override
+    public String toString() {
+        return "- Docente: " + nombre + ", " + apellido + "   - Antiguedad: " + antiguedad + "   - Sector: " + sector + "   - Horas trabajadas: " + horasMensual + "   - Jornada: " + jornada;
+    }
+
+    // Getters y setters
 
     public String getJornada() {
         return jornada;

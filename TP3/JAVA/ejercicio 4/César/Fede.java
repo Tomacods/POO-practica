@@ -1,12 +1,12 @@
-public class Messi extends OtroNombre {
+public class Fede extends OtroNombre {
     
     private static final Integer vida_inicial = 100;
 
-    public Messi (String nombre, Integer vida){
-        super(nombre,vida, 10, 5);
+    public Fede (String nombre, Integer vida){
+        super(nombre,vida, 10,5);
     }
 
-    public Messi (String nombre){
+    public Fede (String nombre){
         this(nombre, vida_inicial);
     }
 

@@ -1,11 +1,11 @@
-public abstract class Personaje {
+public abstract class OtroNombre {
 
     private String nombre;
     protected Integer vida;
     protected Integer nivelAtaque;
     protected Integer nivelDefensa;
 
-    public Personaje(String nombre, Integer vida, Integer nivelAtaque, Integer nivelDefensa) {
+    public OtroNombre(String nombre, Integer vida, Integer nivelAtaque, Integer nivelDefensa) {
         this.nombre = nombre;
         this.vida = vida;
         this.nivelAtaque = nivelAtaque;
