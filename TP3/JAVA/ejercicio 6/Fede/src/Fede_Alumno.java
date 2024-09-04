@@ -17,6 +17,10 @@ public class Fede_Alumno extends Fede_Persona {
         this.materias = materias;
     }
 
+    public void agregarMateria(String materia){
+        this.materias.add(materia);
+    }
+
     @Override
     public String materia(){
         String msg = "El alumno se encuentra cursando la siguiente materias \n";
