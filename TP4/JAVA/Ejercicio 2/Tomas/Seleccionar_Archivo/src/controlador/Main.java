@@ -1,20 +1,10 @@
-package controlador;
-
-import java.awt.EventQueue;
-
-
-
+// Main.java
 public class Main {
+	public static void main(String[] args) {
+		Modelo modelo = new Modelo();
+		VIsta vista = new VIsta();
+		Controlador controlador = new Controlador(modelo, vista);
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Controlador controlador = new Controlador();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+		vista.setVisible(true);
+	}
 }
