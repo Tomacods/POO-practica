@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Fede_PantallaJuego {
     
-    public static void main(String[] args) throws VidaNegativaException{
+    public static void main(String[] args) throws Exception{
 
         // Personajes
 
