@@ -16,7 +16,7 @@ public class Fede_PantallaJuego {
 
         while (p1.getVida() > 0 && p2.getVida() > 0){
             contador = contador + 1;
-            System.out.println("     -------     Turno " + contador + ":");
+            System.out.println("     -------------     Turno " + contador + ":");
             if (turno == 1){
                 p2.recibirDanio(p1.atacar()); //si es el turno del personaje 1, el personaje 2 recibe el daño
                 System.out.println(p1.getNombre() + " ha atacado a " + p2.getNombre() + "!");
@@ -35,6 +35,3 @@ public class Fede_PantallaJuego {
         }
     }
 }
-/* No es necesario colocar excepciones de vida negativa
-si la vida de algún personaje llega a ser <0, el loop
-del while terminará e imprimirá el nombre del ganador */
