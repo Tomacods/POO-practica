@@ -6,13 +6,13 @@ public class Fede_App {
     public static void main(String[] args) throws Exception{
 
         Random rnd = new Random();
-        ArrayList<Persona> personas = new ArrayList<>();
+        ArrayList<Fede_Persona> personas = new ArrayList<>();
 
         for (Integer i = 0; i<10; i++){
             if(rnd.nextInt(2) == 1){
-                personas.add(new Docente("NomDoc"+i, "ApeDoc"+i, "Mat"+i));
+                personas.add(new Fede_Docente("NomDoc"+i, "ApeDoc"+i, "Mat"+i));
             } else {
-                Alumno alumno = new Alumno("AluNom"+i, "ApeNom"+i);
+                Fede_Alumno alumno = new Fede_Alumno("AluNom"+i, "ApeNom"+i);
                 Integer limite = rnd.nextInt(10);
                 for(Integer j = 0; j<limite; i++){
                     alumno.agregarMateria("Mat " + j);
@@ -23,7 +23,7 @@ public class Fede_App {
                 personas.add(alumno);
             }
         }
-        for(Persona per: personas){
+        for(Fede_Persona per: personas){
             System.out.println(per.materia());
         }
     }
