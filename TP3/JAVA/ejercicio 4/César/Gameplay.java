@@ -28,7 +28,7 @@ public class Gameplay {
         if (pMessi.getVida() > pFede.getVida()){
             System.out.println("El ganador es: " + pMessi.getNombre());
         } else{
-            System.out.println("La ganadora es: " + pFede.getNombre());
+            System.out.println("La webona es: " + pFede.getNombre());
         }
     }
 }
