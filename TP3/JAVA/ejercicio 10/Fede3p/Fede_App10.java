@@ -5,7 +5,7 @@ public class Fede_App10 {
     
     public static void main(String[] args) throws Exception{
         
-        Personal[] personal = new Personal[10];
+        Fede_Personal_10[] personal = new Fede_Personal_10[10];
         Random random = new Random();
 
         for (Integer i = 0; i <10; i++){
