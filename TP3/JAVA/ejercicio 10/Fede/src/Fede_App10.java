@@ -8,7 +8,7 @@ public class Fede_App10 {
         Fede_Personal_10[] personal = new Fede_Personal_10[10];
         Random random = new Random();
 
-        for (Integer i = 1; i <=10; i++){
+        for (Integer i = 0; i <10; i++){
             if (random.nextInt(2) == 1){
                 // Se crea la lista de categorías aleatorias.
                 String[] categorias = {"Simple", "Semiexclusiva", "Exclusiva"};

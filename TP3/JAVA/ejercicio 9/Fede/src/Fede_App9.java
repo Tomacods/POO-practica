@@ -16,9 +16,11 @@ public class Fede_App9 {
         Fede_Personal personal = new Fede_Personal("Personal", sms, min, gb);
         Fede_Movistar movistar = new Fede_Movistar("Movistar", sms, min, gb);
 
-        System.out.println("El proveedor " + claro.getNombre() + " ofrece una tarifa de $" + claro.totalTarifa());
-        System.out.println("El proveedor " + personal.getNombre() + " ofrece una tarifa de $" + personal.totalTarifa());
-        System.out.println("El proveedor " + movistar.getNombre() + " ofrece una tarifa de $" + movistar.totalTarifa());
+        System.out.printf(claro.getNombre() + "%nOfrece una tarifa de $%.2f" , claro.totalTarifa());
+        System.out.println("  ");
+        System.out.printf(personal.getNombre() + "%nOfrece una tarifa de $%.2f" , personal.totalTarifa());
+        System.out.println("  ");
+        System.out.printf(movistar.getNombre() + "%nOfrece una tarifa de $%.2f" , movistar.totalTarifa());
 
         scanner.close();
     }
