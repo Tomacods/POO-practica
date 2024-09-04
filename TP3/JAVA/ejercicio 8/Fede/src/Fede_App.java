@@ -15,14 +15,16 @@ public class Fede_App {
 
         for(Fede_Titular prof: titulares){
             System.out.println("Nombre y apellido " + prof.getNombre() + ", " + prof.getApellido());
-            System.out.println("Es titular? Si");
-            System.out.println("Remuneracion: " + prof.getRemuneracionMensual());
+            System.out.print("Es titular? Si");
+            System.out.printf("%nRemuneracion: %.2f", prof.getRemuneracionMensual());
+            System.out.println(" ");
         }
 
         for(Fede_Suplente prof: suplentes){
             System.out.println("Nombre y apellido: " + prof.getNombre() + ", " + prof.getApellido());
-            System.out.println("Es titular? No");
-            System.out.println("Remuneracion: " + prof.getRemuneracionMensual());
+            System.out.print("Es titular? No");
+            System.out.printf("%nRemuneracion: %.2f", prof.getRemuneracionMensual());
+            System.out.println(" ");
         }
     }
 }
