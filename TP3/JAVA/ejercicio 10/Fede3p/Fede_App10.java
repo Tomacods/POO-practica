@@ -19,9 +19,15 @@ public class Fede_App10 {
                 // Se carga el personal docente
                 personal[i] = new Fede_Docente10("Nombre " + i, "Apellido " + i, i, "Sector " + i, horasMensual, categoria);
             } else {
-                
+                // Se crea lista de jornadas.
+                String[] jornadas = {"Completa", "Parcial"};
+                String jornada = jornadas[random.nextInt(jornadas.length)];
+                Integer horasMensual = horasTrabajadas(jornada, false, random);
+                personal[i] = new Fede_NoDocente("Nombre " + i, "Apellido " + i, i, "Sector " + i, horasMensual, jornada);
             }
         }
+        Fede_Reloj reloj = new Fede_Reloj();
+        reloj.informe(personal);
     }
 
     private static Integer horasTrabajadas(String tipo, Boolean esDocente, Random random){
