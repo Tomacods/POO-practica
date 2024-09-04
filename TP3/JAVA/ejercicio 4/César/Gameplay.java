@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Gameplay {
 
-    public static void main(String[] args) throws ExcepcionNeg {
+    public static void main(String[] args) throws Exception {
 
         Messi pMessi = new Messi("Messias");
         Fede pFede = new Fede("Roldan");
