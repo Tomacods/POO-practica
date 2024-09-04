@@ -46,11 +46,11 @@ public class App {
 
         selectDestButton.addActionListener(new ActionListener() { // creo un evento para el boton seleccionar destino
             @Override
-            public void actionPerformed(ActionEvent e) { 
-                JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                int result = fileChooser.showSaveDialog(null);
-                if (result == JFileChooser.APPROVE_OPTION) {
+            public void actionPerformed(ActionEvent e) { // cuando se presiona el boton
+                JFileChooser fileChooser = new JFileChooser(); // creo un filechooser
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // hago que solo se puedan seleccionar directorios
+                int result = fileChooser.showSaveDialog(null); // muestro el filechooser
+                if (result == JFileChooser.APPROVE_OPTION) { // si se selecciona un directorio
                     destinationFile[0] = fileChooser.getSelectedFile();
                 }
             }
@@ -61,7 +61,7 @@ public class App {
             public void actionPerformed(ActionEvent e) { // cuando se presiona el boton
                 if (selectedFile[0] != null && destinationFile[0] != null) { // si se selecciona un archivo y una ubicacion de destino
                     File destFile = new File(destinationFile[0], selectedFile[0].getName()); 
-                    try (FileInputStream fis = new FileInputStream(selectedFile[0]);
+                    try (FileInputStream fis = new FileInputStream(selectedFile[0]); 
                         FileOutputStream fos = new FileOutputStream(destFile)) {
                         byte[] buffer = new byte[1024];
                         int length;

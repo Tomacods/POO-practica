@@ -7,6 +7,8 @@ public class Fede_Docente10 extends Fede_Personal_10{
         this.categoria = categoria;
     }
 
+    // Definición del método abstracto
+
     @Override
     public Integer horas_trabajadas(){
         switch (this.categoria){
@@ -16,6 +18,14 @@ public class Fede_Docente10 extends Fede_Personal_10{
         }
     }
 
+    // Esto se lo robé a tomi, tomi pq
+
+    @Override
+    public String toString() {
+        return "- Docente: " + nombre + ", " + apellido + "   - Antiguedad: " + antiguedad + "   - Sector: " + sector + "   - Horas trabajadas: " + horasMensual + "   - Categoria: " + categoria;
+    }
+
+    // Getters y setters
     public String getCategoria() {
         return categoria;
     }
