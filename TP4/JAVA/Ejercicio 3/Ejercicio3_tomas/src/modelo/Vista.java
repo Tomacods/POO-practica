@@ -1,5 +1,6 @@
 package modelo;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.*;
 import java.awt.event.*;
@@ -7,22 +8,12 @@ import java.awt.event.*;
 ;
 public class Vista extends JFrame{
 
-    private JPanel panel;
-    private JLabel lblTitulo;
-    private JButton btnSalir;
-    private JTextField txtCantidad;
-    private JTextField txtDia;
-    private JTextField txtMes;
-    private JTextField txtAnio;
-    private JRadioButton rdbtnArgentina;
-    private JRadioButton rdbtnEstadosUnidos;
 
     public Vista () {
         setTitle("Formateador de Datos");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(8, 3));
-
+        setLayout(new GridLayout(9, 2));
         JTextField cantidadfield = new JTextField();
         JTextField diafield = new JTextField();
         JTextField mesfield = new JTextField();
@@ -31,6 +22,7 @@ public class Vista extends JFrame{
         JLabel resultadoFecha = new JLabel();
         JRadioButton formatoUS = new JRadioButton("Formato US");
         JRadioButton formatoAR = new JRadioButton("Formato AR");
+        formatoUS.setSelected(true);
 
         ButtonGroup group = new ButtonGroup();
         group.add(formatoUS);
@@ -39,10 +31,10 @@ public class Vista extends JFrame{
         JButton formatearButton = new JButton("Formatear");
         formatearButton.addActionListener((ActionEvent e) -> {
             try {
-                Double cantidad = Double.parseDouble(cantidadfield.getText());
-                Integer dia = Integer.parseInt(diafield.getText());
-                Integer mes = Integer.parseInt(mesfield.getText());
-                Integer año = Integer.parseInt(añofield.getText());
+                Double cantidad = Double.valueOf(cantidadfield.getText()); // se cambia el tipo de dato de String a Double
+                Integer dia = Integer.valueOf(diafield.getText()); // se cambia el tipo de dato de String a Integer
+                Integer mes = Integer.valueOf(mesfield.getText());
+                Integer año = Integer.valueOf(añofield.getText());
                 
                 Igu formateador;
                 if (formatoUS.isSelected()) {
@@ -58,20 +50,28 @@ public class Vista extends JFrame{
             } 
         });
 
-        add(new JLabel("Cantidad de dinero:"));
+        add(new JLabel(" Cantidad de dinero:"));
         add(cantidadfield);
-        add(new JLabel("Día:"));
+        
+        add(new JLabel(" Día:"));
         add(diafield);
-        add(new JLabel("Mes:"));
+        add(new JLabel(" Mes:"));
         add(mesfield);
-        add(new JLabel("Año:"));
+        add(new JLabel(" Año:"));
         add(añofield);
+        add(formatearButton);
+        add(Box.createRigidArea(new Dimension(0, 1)));
+        add(new JLabel(" Formato de moneda:"));
+        
+        add(Box.createRigidArea(new Dimension(0, 1)));
+        
+        
         add(formatoUS);
         add(formatoAR);
-        add(formatearButton);
-        add(new JLabel("Moneda formateada:"));
+
+        add(new JLabel(" Moneda formateada:"));
         add(resultadoMoneda);
-        add(new JLabel("Fecha formateada:"));
+        add(new JLabel(" Fecha formateada:"));
         add(resultadoFecha);
     }
     
