@@ -12,7 +12,7 @@ public class Cocina extends Electrodomestico{
     }
     @Override
     public String toString() {
-        return "Modelo: " + modelo + "\n"+ "Electrica: " + es_electrica + "\n"+"Precio: $" + precio + "\n" +"Marca: " + marca + "\n"+
+        return  "Cocina" + "\n" + "Modelo: " + modelo + "\n"+ "Electrica: " + es_electrica + "\n"+"Precio: $" + precio + "\n" +"Marca: " + marca + "\n"+
                 "Color:" +  color + "\n";
     }
     

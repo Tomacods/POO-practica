@@ -21,7 +21,7 @@ public class Heladera extends Electrodomestico{
 
     @Override
     public String toString(){
-        return "Marca: " + marca + "\n" +
+        return "Heladera" + "\n" +"Marca " + marca + "\n" +
         "Precio: " + precio + "\n" + "Modelo" + modelo + "\n" +
         "Capacidad en kg: " + capacidad_total + "\n" + "Capacidad en litros: " +
         "\n" + capacidad_freezer + "\n" + "Color: " + color + "\n";
