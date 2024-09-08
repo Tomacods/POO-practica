@@ -6,10 +6,10 @@ public class App {
         Random random = new Random();
         String[] nombres = {"Tomas", "Federica", "Mora", "Cesar", "Javier", "Carlos", "Franco", "Maximiliano", "Mauro", "Ara"};
         String[] apellidos = {"Da Silva", "Molina", "Millavanque", "Lopes", "Lopez", "Roldan", "Berro", "Mansilla", "Aguilar", "Orzanco"};
-        Integer cantFam = random.nextInt(11) +1;
+        Integer cantFam = random.nextInt(10) +1;
         ArrayList<Familia> familias = new ArrayList<>(cantFam);
         for (Integer i = 0; i < cantFam; i++) {
-            Integer cantInteg = random.nextInt(5) + 1;
+            Integer cantInteg = random.nextInt(4) + 1;
             String familia = apellidos[random.nextInt(apellidos.length)];
             Familia fam = new Familia(familia);
             for (Integer j = 0; j < cantInteg; i++) {
@@ -21,7 +21,12 @@ public class App {
             familias.add(fam);
         }
         for(Familia fami:familias){
-            fami.imprimir();
+            System.out.println("Familia " + fami.getFamilia() + ":");
+            System.out.println("Promedio de edad: " + fami.promedioEdad());
+            System.out.println("Integrantes:");
+            for (Persona per: fami.getPersonas()){
+                System.out.println(per.getNombre());
+            }
         }
     }
 }
