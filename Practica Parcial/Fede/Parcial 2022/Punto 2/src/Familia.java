@@ -23,6 +23,15 @@ public class Familia {
         return (double) edad/cant;
     }
 
+    public void imprimir(){
+        System.out.println("Familia " + getFamilia() + ":");
+        System.out.println("Promedio de edad: " + promedioEdad());
+        System.out.println("Integrantes:");
+        for (Persona per: getPersonas()){
+            System.out.println(per.getNombre());
+        }
+    }
+
     public String getFamilia() {
         return familia;
     }
