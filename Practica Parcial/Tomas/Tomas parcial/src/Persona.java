@@ -9,9 +9,12 @@ public class Persona {
         this.apellido = apellido;
         this.edad = edad;
     }
+    public int getEdad() {
+        return edad;
+    }
 
     @Override
     public String toString() {
-        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
-    }
+        return "Nombre: " + nombre + ", Apellido: " + apellido + ", Edad: " + edad;
+}
 }

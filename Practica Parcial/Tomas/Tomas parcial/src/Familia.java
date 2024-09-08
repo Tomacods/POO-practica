@@ -15,12 +15,22 @@ public class Familia {
         personas.add(persona);
     }
 
+    public double calcularPromedioEdad() {
+        int sumaEdades = 0;
+        for (Persona p : personas) {
+            sumaEdades += p.getEdad();
+        }
+        return (double) sumaEdades / personas.size();
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(); //creo un stringbuilder para poder concatenar los datos de la familia
-        sb.append("Familia [apellido=").append(apellido).append(", personas=").append(personas).append("]");
-        for (Persona persona : personas) {
-            sb.append(persona).append("\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append("Familia ").append(apellido).append("\n");
+        sb.append("Promedio de edad: ").append(String.format("%.2f", calcularPromedioEdad())).append("\n");
+        sb.append("Integrantes:\n");
+        for (Persona p : personas) {
+            sb.append(p).append("\n");
         }
         return sb.toString();
     }
