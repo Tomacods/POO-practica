@@ -12,7 +12,7 @@ public class App {
             Integer cantInteg = random.nextInt(4) + 1;
             String familia = apellidos[random.nextInt(apellidos.length)];
             Familia fam = new Familia(familia);
-            for (Integer j = 0; j < cantInteg; i++) {
+            for (Integer j = 0; j < cantInteg; j++) {
                 String nom = nombres[random.nextInt(nombres.length)];
                 Integer edad = random.nextInt(100);
                 Persona persona = new Persona(nom, familia, edad);
@@ -20,7 +20,7 @@ public class App {
             }
             familias.add(fam);
         }
-        for(Familia fami:familias){
+        for(Familia fami: familias){
             System.out.println("Familia " + fami.getFamilia() + ":");
             System.out.println("Promedio de edad: " + fami.promedioEdad());
             System.out.println("Integrantes:");
