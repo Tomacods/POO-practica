@@ -1,3 +1,4 @@
+package familia2022;
 public class Persona {
     
     private String nombre;
