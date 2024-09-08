@@ -1,3 +1,4 @@
+package familia2022;
 /**Desarrolle un sistema que genere un número aleatorio de familias(entre 1 y 10).
 Cada una de ellas debe tener un apellido y un listado de personas que la componen, la
 cantidad de integrantes es aleatoria. De estas personas se debe saber el nombre, el apellido y
