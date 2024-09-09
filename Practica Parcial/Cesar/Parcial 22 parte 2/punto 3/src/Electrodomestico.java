@@ -2,9 +2,9 @@ public abstract class Electrodomestico {
     protected String modelo;
     protected String marca;
     protected String color;
-    protected Double precio;
+    protected Integer precio;
 
-    public Electrodomestico(String modelo, String marca, String color, Double precio) {
+    public Electrodomestico(String modelo, String marca, String color, Integer precio) {
         this.modelo = modelo;
         this.marca = marca;
         this.color = color;
@@ -13,7 +13,6 @@ public abstract class Electrodomestico {
 
     @Override
     public String toString() {
-        return "Electrodomestico [modelo=" + modelo + ", marca=" + marca + ", color=" + color + ", precio=" + precio
-                + "]";
+        return "Modelo= " + modelo + ", Marca= " + marca + ", Color= " + color + ", Precio= " + precio;
     } 
 }
