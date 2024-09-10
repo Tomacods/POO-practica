@@ -1,8 +1,12 @@
+package fifa;
 public class Oro extends Cartas{
 
-    public Oro(String nombre, String club, String pais, int velocidad, int regate, int tiro, int defensa, int pase, int fisico, int nivelQuimica) {
-        super(nombre, club, pais, velocidad, regate, tiro, defensa, pase, fisico);
+    public Oro(String nombre, String club, String pais) {
+        super(nombre, club, pais);
+        this.generarEstadisticas(74, 90);
     }
+
+
 
 
     @Override
@@ -15,7 +19,27 @@ public class Oro extends Cartas{
             return 0;
         }
     }
-        
+    @Override
+    public String toString() {
+        return super.toString() + "Oro{" +
+                '}';
     }
+    /*Debe poder asignar los valores numéricos de velocidad, tiro, regate, defensa,
+pase y físico con un valor aleatorio en el rango de 74 a 90, y a cada valor
+generado se le sumarán 5% sobre el base.
+ */
+    @Override
+    public void generarEstadisticas(int rango1, int rango2) {
+        this.velocidad = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+        this.regate = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+        this.tiro = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+        this.defensa = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+        this.pase = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+        this.fisico = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + (int)(rango1*0.05);
+    }
+
+}
+        
+    
 
     

@@ -1,11 +1,14 @@
+package fifa;
+
 public class BronceEspecial extends Cartas {
 
     private String habilidadEspecial;
     
 
-    public BronceEspecial(String nombre,String club, String pais, int velocidad, int regate, int tiro, int defensa, int pase, int fisico, String habilidadEspecial) {
-        super(nombre,club,pais,velocidad,regate,tiro,defensa,pase,fisico);
+    public BronceEspecial(String nombre,String club, String pais, String habilidadEspecial) {
+        super(nombre,club,pais);
         this.habilidadEspecial = habilidadEspecial;
+        this.generarEstadisticas(49, 65);
     }
 
     public String getHabilidadEspecial() {
@@ -30,6 +33,15 @@ public class BronceEspecial extends Cartas {
         } else {
             return 0;
         }
+    }
+    @Override
+    public void generarEstadisticas(int rango1, int rango2) {
+        this.velocidad = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
+        this.regate = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
+        this.tiro = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
+        this.defensa = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
+        this.pase = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
+        this.fisico = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;
     }
     @Override
     public String toString() {

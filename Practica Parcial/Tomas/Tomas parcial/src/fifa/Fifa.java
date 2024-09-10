@@ -7,6 +7,7 @@ habilidades especiales. Las cartas se almacenarán en una lista que se desordena
 aleatoriamente, y se distribuirán en dos planteles (uno para cada equipo). Finalmente, se
 imprimirá la conformación de ambos equipos.
 */ 
+package fifa;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,11 +24,11 @@ public class Fifa {
         Random random = new Random();
         for (int i = 0; i < 22; i++) {
             switch (random.nextInt(3)) {
-                case 0 -> listaCartas.add(new BronceEspecial("jugador_BronceEspecial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], random.nextInt(49,65)+2, random.nextInt(49,65)+2, random.nextInt(99)+2, random.nextInt(49,65)+2, random.nextInt(49,65)+2, random.nextInt(49,65)+2, habilidadesEspeciales[random.nextInt(3)]));
+                case 0 -> listaCartas.add(new BronceEspecial("jugador_BronceEspecial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], habilidadesEspeciales[random.nextInt(3)]));
                 //genero un numero random entre 49 y 65 y le sumo 2 para las cartas bronce
-                case 1 -> listaCartas.add(new Oro("jugador_Oro"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], (int)(random.nextInt(74,90)*1.05),(int)(random.nextInt(74,90)*1.05), (int)(random.nextInt(74,90)*1.05),(int)(random.nextInt(74,90)*1.05), (int)(random.nextInt(74,90)*1.05), (int)(random.nextInt(74,90)*1.05), (int)(random.nextInt(74,90)*1.05)));
+                case 1 -> listaCartas.add(new Oro("jugador_Oro"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)]));
                 //genero un numero random entre 74 y 90 y le sumo el 5% de ese numero para las cartas oro
-                case 2 -> listaCartas.add(new Especial("jugador_especial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], (int)(random.nextInt(89,99)*1.02), (int)(random.nextInt(89,99)*1.02), (int)(random.nextInt(89,99)*1.02), (int)(random.nextInt(89,99)*1.02), (int)(random.nextInt(89,99)*1.02), (int)(random.nextInt(89,99)*1.02), List.of(habilidadesEspeciales[random.nextInt(3)])));
+                case 2 -> listaCartas.add(new Especial("jugador_especial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], List.of(habilidadesEspeciales[random.nextInt(3)])));
                 //genero un numero random entre 89 y 99 y le sumo el 2% de ese numero para las cartas especiales
         }
     }

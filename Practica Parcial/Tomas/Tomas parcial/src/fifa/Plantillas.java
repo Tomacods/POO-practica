@@ -5,7 +5,7 @@ construirá mediante un método que permita agregar cartas (jugadores) a la plan
 ● El equipo debe ser capaz de calcular su química total y mostrar (imprimir) la
 conformación del plantel.
 */
-
+package fifa;
 import java.util.ArrayList;
 import java.util.List;
 
