@@ -5,8 +5,8 @@ public class Especial extends Carta{
     
     private ArrayList<String> habilidades = new ArrayList<>();
 
-    public Especial(String nombre, String club, String pais, Integer velocidad, Integer tiro, Integer regate, Integer defensa, Integer pase, Integer fisico){
-        super(nombre, club, pais, velocidad, tiro, regate, defensa, pase, fisico);
+    public Especial(String nombre, String club, String pais){
+        super(nombre, club, pais);
     }
 
     public void imprimirHabilidades(){
@@ -14,6 +14,19 @@ public class Especial extends Carta{
         for (String hab: habilidades){
             System.out.println(hab);
         }
+    }
+
+    public void agregarHabilidad(String habilidad){
+        this.habilidades.add(habilidad);
+    }
+
+    public void asignarValores(){
+        this.velocidad = valor();
+        this.tiro = valor();
+        this.regate = valor();
+        this.defensa = valor();
+        this.pase = valor();
+        this.fisico = valor();
     }
 
     @Override

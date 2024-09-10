@@ -10,16 +10,10 @@ public abstract class Carta {
     protected Integer pase;
     protected Integer fisico;
 
-    public Carta (String nombre, String club, String pais, Integer velocidad, Integer tiro, Integer regate, Integer defensa, Integer pase, Integer fisico){
+    public Carta (String nombre, String club, String pais/*, Integer velocidad, Integer tiro, Integer regate, Integer defensa, Integer pase, Integer fisico*/){
         this.nombre = nombre;
         this.club = club;
         this.pais = pais;
-        this.velocidad = velocidad;
-        this.tiro = tiro;
-        this.regate = regate;
-        this.defensa = defensa;
-        this.pase =pase;
-        this.fisico = fisico;
     }
 
     public String toString() {

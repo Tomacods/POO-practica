@@ -4,9 +4,18 @@ public class BronceEspecial extends Carta{
     
     private String habilidad;
 
-    public BronceEspecial(String nombre, String club, String pais, Integer velocidad, Integer tiro, Integer regate, Integer defensa, Integer pase, Integer fisico, String habilidad){
-        super(nombre, club, pais, velocidad, tiro, regate, defensa, pase, fisico);
+    public BronceEspecial(String nombre, String club, String pais, String habilidad){
+        super(nombre, club, pais);
         this.habilidad = habilidad;
+    }
+
+    public void asignarValores(){
+        this.velocidad = valor();
+        this.tiro = valor();
+        this.regate = valor();
+        this.defensa = valor();
+        this.pase = valor();
+        this.fisico = valor();
     }
 
     @Override
