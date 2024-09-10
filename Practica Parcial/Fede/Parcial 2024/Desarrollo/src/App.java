@@ -32,8 +32,8 @@ public class App {
                 case 2: {
                     Especial especial = new Especial("Jugador " + i, clubes[random.nextInt(clubes.length)], paises[random.nextInt(paises.length)]);
                     especial.asignarValores();
-                    for (String hab: habilidades){
-                        especial.agregarHabilidad(hab);
+                    for (Integer k=0; k<3; k++){
+                        especial.agregarHabilidad(habilidades[random.nextInt(habilidades.length)]);
                     }
                     cartas.add(especial);
                 }

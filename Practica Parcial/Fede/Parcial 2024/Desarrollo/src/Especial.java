@@ -9,12 +9,11 @@ public class Especial extends Carta{
         super(nombre, club, pais);
     }
 
-    public void imprimirHabilidades(){
-        System.out.println("Habilidades: ");
+    /*public String imprimirHabilidades(){
         for (String hab: habilidades){
-            System.out.println(hab);
+            return hab;
         }
-    }
+    }*/
 
     public void agregarHabilidad(String habilidad){
         this.habilidades.add(habilidad);
@@ -31,6 +30,10 @@ public class Especial extends Carta{
 
     public Integer quimicaCarta(String paisFav, String equipoFav){
         return 100;
+    }
+
+    public String toString() {
+        return super.toString()+ "    Habilidades: "+ habilidades;
     }
 
     @Override
