@@ -1,19 +1,19 @@
 public class Heladera extends Electrodomestico{
-    private Double capacidadTotal;
-    private Double litro;
-    public Double getCapacidadTotal() {
+    private Integer capacidadTotal;
+    private Integer litro;
+    public Integer getCapacidadTotal() {
         return capacidadTotal;
     }
-    public void setCapacidadTotal(Double capacidadTotal) {
+    public void setCapacidadTotal(Integer capacidadTotal) {
         this.capacidadTotal = capacidadTotal;
     }
-    public Double getLitro() {
+    public Integer getLitro() {
         return litro;
     }
-    public void setLitro(Double litro) {
+    public void setLitro(Integer litro) {
         this.litro = litro;
     }
-    public Heladera(String modelo, String marca, String color, Double precio, Double capacidadTotal, Double litro) {
+    public Heladera(String modelo, String marca, String color, Integer precio, Integer capacidadTotal, Integer litro) {
         super(modelo, marca, color, precio);
         this.capacidadTotal = capacidadTotal;
         this.litro = litro;
@@ -21,6 +21,6 @@ public class Heladera extends Electrodomestico{
     @Override
     public String toString() {
     
-        return super.toString()+ "Capacidad total= " + capacidadTotal + "Litro= "+ litro ;
+        return super.toString()+ " Capacidad total= " + capacidadTotal + "Litro= "+ litro ;
     }
 }
