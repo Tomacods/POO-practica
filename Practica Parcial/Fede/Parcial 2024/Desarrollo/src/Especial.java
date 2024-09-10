@@ -29,6 +29,10 @@ public class Especial extends Carta{
         this.fisico = valor();
     }
 
+    public Integer quimicaCarta(String paisFav, String equipoFav){
+        return 100;
+    }
+
     @Override
     public Integer valor(){
         Random random = new Random();

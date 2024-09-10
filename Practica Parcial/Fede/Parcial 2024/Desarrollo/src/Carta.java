@@ -10,7 +10,7 @@ public abstract class Carta {
     protected Integer pase;
     protected Integer fisico;
 
-    public Carta (String nombre, String club, String pais/*, Integer velocidad, Integer tiro, Integer regate, Integer defensa, Integer pase, Integer fisico*/){
+    public Carta (String nombre, String club, String pais){
         this.nombre = nombre;
         this.club = club;
         this.pais = pais;
@@ -20,17 +20,7 @@ public abstract class Carta {
         return "Nombre: " + nombre + "    Club: " + club + "    País: " + pais + "    Velocidad: " + velocidad + "    Tiro: " + tiro + "    Regate: " + regate + "    Defensa: " + defensa + "    Pase: " + pase + "    Fisico: " + fisico; 
     }
 
-    public Integer quimicaCarta(String paisFav, String equipoFav){
-        if ((paisFav == pais) && (equipoFav == club)){
-            return 100;
-        } else {
-            if ((paisFav == pais) || (equipoFav == club)){
-                return 80;
-            } else {
-                return 0;
-            }
-        }
-    }
+    public abstract Integer quimicaCarta(String paisFav, String equipoFav);
 
     public abstract Integer valor();
 }

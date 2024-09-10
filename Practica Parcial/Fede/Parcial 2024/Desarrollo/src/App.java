@@ -57,10 +57,14 @@ public class App {
 
         System.out.println(plantilla1.toString());
         plantilla1.impirmirPlantel();
+        System.out.println("La quimica del plantel es de: " + plantilla1.quimicaTotal());
 
+        System.out.println("      ");
         System.out.println("---------------");
-        
+        System.out.println("      ");
+
         System.out.println(plantilla2.toString());
         plantilla2.impirmirPlantel();
+        System.out.println("La quimica del plantel es de: " + plantilla2.quimicaTotal());
     }
 }

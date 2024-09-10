@@ -5,7 +5,6 @@ public class Plantilla {
     private String usuario;
     private String paisFav;
     private String equipoFav;
-    //private Integer quimica;
     private ArrayList<Carta> plantel = new ArrayList<>(11);
 
     public Plantilla(String usuario, String paisFav, String equipoFav){
@@ -27,6 +26,14 @@ public class Plantilla {
             System.out.println(car.toString());
             System.out.println("      ");
         }
+    }
+
+    public Integer quimicaTotal(){
+        Integer quimica = 0;
+        for (Carta carta: plantel){
+            quimica = quimica + carta.quimicaCarta(paisFav, equipoFav);
+        }
+        return quimica;
     }
 
 

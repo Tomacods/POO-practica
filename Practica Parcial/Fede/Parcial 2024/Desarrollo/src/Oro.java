@@ -15,6 +15,18 @@ public class Oro extends Carta{
         this.fisico = valor();
     }
 
+    public Integer quimicaCarta(String paisFav, String equipoFav){
+        if ((paisFav == pais) && (equipoFav == club)){
+            return 100;
+        } else {
+            if ((paisFav == pais) || (equipoFav == club)){
+                return 80;
+            } else {
+                return 0;
+            }
+        }
+    }
+
     @Override
     public Integer valor(){
         Random random = new Random();
