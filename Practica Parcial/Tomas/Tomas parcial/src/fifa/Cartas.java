@@ -81,6 +81,7 @@ public abstract class  Cartas {
     public void setFisico(int fisico) {
         this.fisico = fisico;
     }
+    
 
 
 
