@@ -18,7 +18,11 @@ public class Bronce extends Carta {
         return random.nextInt(17) + 49 + 2;
     }
 
-    @Override
+    public int calcular_quimica(String paisFav, String equipoFav){
+        return super.calcular_quimica(paisFav, equipoFav);
+    }
+
+/*   @Override
     public int calcular_quimica(String paisFav, String equipoFav) {
         if (this.pais.equals(paisFav) && this.club.equals(equipoFav)) {
             return 100; // Coinciden tanto el país como el equipo
@@ -27,6 +31,6 @@ public class Bronce extends Carta {
         } else {
             return 0; // Ninguno coincide
         }
-    }
+    }*/
 
 }

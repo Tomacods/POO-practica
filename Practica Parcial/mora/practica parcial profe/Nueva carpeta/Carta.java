@@ -1,6 +1,4 @@
 public abstract class Carta {
-    // nombre, club, país, habilidad especial, velocidad, tiro, regate, defensa,
-    // pase y físico
     protected String nombre;
     protected String club;
     protected String pais;
@@ -28,7 +26,20 @@ public abstract class Carta {
 
     }
 
-    @Override
+   
+
+    public int calcular_quimica(String paisFav, String equipoFav) {
+        if (this.pais.equals(paisFav) && this.club.equals(equipoFav)) {
+            return 100;
+        } else if (this.pais.equals(paisFav) || this.club.equals(equipoFav)) {
+            return 80;
+        } else {
+            return 0;
+        }
+    }
+
+   // public abstract int calcular_quimica(String paisFav, String equipoFav);
+ @Override
     public String toString() {
         return 
                 nombre + " | " +
@@ -42,7 +53,4 @@ public abstract class Carta {
                 "Pase: " + pase + "\n" +
                 "Físico: " + fisico + "\n";
     }
-
-    public abstract int calcular_quimica(String paisFav, String equipoFav);
-
 }
