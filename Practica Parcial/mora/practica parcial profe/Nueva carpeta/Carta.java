@@ -26,7 +26,6 @@ public abstract class Carta {
 
     }
 
-   
 
     public int calcular_quimica(String paisFav, String equipoFav) {
         if (this.pais.equals(paisFav) && this.club.equals(equipoFav)) {
@@ -39,7 +38,7 @@ public abstract class Carta {
     }
 
    // public abstract int calcular_quimica(String paisFav, String equipoFav);
- @Override
+@Override
     public String toString() {
         return 
                 nombre + " | " +
