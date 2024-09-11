@@ -37,9 +37,15 @@ public class Main {
                     break;
 
                 case 2: // Carta Especial
-                    
+                List<String> habilidadesEspecial = new ArrayList();
+                habilidadesEspecial.addAll(habilidades);
+                Collections.shuffle(habilidadesEspecial);
+                //for (int j = 0; j < 2; j++) {
                 
-                    Especial cartaEspecial = new Especial(nombre, club, pais, habilidad);
+                    //cartaEspecial.AddHabilidad(habilidades.get(random.nextInt(habilidades.size())));
+                }
+                
+                    Especial cartaEspecial = new Especial(nombre, club, pais, habilidades);
                     cartas.add(cartaEspecial);
                     
                     break;

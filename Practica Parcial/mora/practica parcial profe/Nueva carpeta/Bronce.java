@@ -14,7 +14,6 @@ public class Bronce extends Carta {
     }
 
     private static int generarValorAleatorio() {
-        // Genera un valor aleatorio en el rango de 49 a 65 y le suma 2 puntos
         return random.nextInt(17) + 49 + 2;
     }
 

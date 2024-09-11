@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
 public class Plantilla {
-    // las cuales tendrán los siguientes atributos: usuario (propietario del
-    // equipo), país favorito, equipo favorito, y un plantel de 11 cartas.
     private String usuario;
     private String pais_fav;
     private String equipo_fav;
