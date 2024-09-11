@@ -11,6 +11,6 @@ public abstract class Persona{
     }
 
     public String toString() {
-        return "Apellido y nombre: " + apellido + ", " + nombre + "     Dni: " + dni;
+        return "Apellido y nombre: " + apellido + ", " + nombre + "\n" + "Dni: " + dni;
     }
 }

@@ -35,6 +35,7 @@ public abstract class  Cartas {
         this.pais = pais;
     }
     public abstract void generarEstadisticas(int rango1,int rango2);
+
     
 @Override
 public String toString() {
@@ -50,7 +51,16 @@ public String toString() {
             ", fisico=" + fisico +
             '}';
 }
-public  abstract int calcularQuimica(String paisfavorito, String equipofavorito);
+// public  abstract int calcularQuimica(String paisfavorito, String equipofavorito);
 
+public  int calcularQuimica(String paisfavorito, String equipofavorito){
+    if (paisfavorito.equals(this.getPais()) && equipofavorito.equals(this.getClub())) { //Si el país favorito y el equipo favorito de la clase plantilla coinciden con los de la carta, la química será 100.
+        return 100;
+    } else if (paisfavorito.equals(this.getPais()) || equipofavorito.equals(this.getClub())) {
+        return 80;
+    } else {
+        return 0;
+    }
+}
 }
 
