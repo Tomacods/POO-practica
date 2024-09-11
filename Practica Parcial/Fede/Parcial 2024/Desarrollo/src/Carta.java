@@ -17,7 +17,7 @@ public abstract class Carta {
     }
 
     public String toString() {
-        return "Nombre: " + nombre + "    Club: " + club + "    País: " + pais + "    Velocidad: " + velocidad + "    Tiro: " + tiro + "    Regate: " + regate + "    Defensa: " + defensa + "    Pase: " + pase + "    Fisico: " + fisico; 
+        return "Nombre: " + nombre + "    Club: " + club + "    País: " + pais + "\n" + "Velocidad: " + velocidad + "    Tiro: " + tiro + "    Regate: " + regate + "\n" + "Defensa: " + defensa + "    Pase: " + pase + "    Fisico: " + fisico; 
     }
 
     public abstract Integer quimicaCarta(String paisFav, String equipoFav);

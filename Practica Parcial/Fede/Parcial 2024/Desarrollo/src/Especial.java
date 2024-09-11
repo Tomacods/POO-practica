@@ -9,12 +9,6 @@ public class Especial extends Carta{
         super(nombre, club, pais);
     }
 
-    /*public String imprimirHabilidades(){
-        for (String hab: habilidades){
-            return hab;
-        }
-    }*/
-
     public void agregarHabilidad(String habilidad){
         this.habilidades.add(habilidad);
     }
@@ -33,7 +27,7 @@ public class Especial extends Carta{
     }
 
     public String toString() {
-        return super.toString()+ "    Habilidades: "+ habilidades;
+        return super.toString() + "\n" + "Habilidades: "+ habilidades;
     }
 
     @Override

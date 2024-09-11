@@ -32,7 +32,7 @@ public class BronceEspecial extends Carta{
 
     @Override
     public String toString() {
-        return "Habilidad especial: " + habilidad + "    " + super.toString();
+        return super.toString() + "\n" + "Habilidad especial: " + habilidad;
     }
 
     @Override
