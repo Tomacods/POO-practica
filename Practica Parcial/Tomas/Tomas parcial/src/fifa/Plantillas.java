@@ -49,7 +49,7 @@ public class Plantillas {
 
     public int calcularQuimicaTotal(){
         int quimicaTotal = 0;
-        for (Cartas carta : plantel) {
+        for (Cartas carta : plantel) { //polimorfismo dinamico porque se llama al metodo calcularQuimica de la clase Cartas
             quimicaTotal += carta.calcularQuimica(paisFavorito, equipoFavorito);
         }
         return quimicaTotal;
