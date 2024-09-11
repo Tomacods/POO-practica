@@ -38,10 +38,7 @@ public class BronceEspecial extends Carta{
     @Override
     public Integer valor(){
         Random random = new Random();
-        Integer num = random.nextInt(66);
-        while (num < 49){
-            num = random.nextInt(66);
-        }
+        Integer num = random.nextInt(49, 66);
         return num + 2;
     }
 }

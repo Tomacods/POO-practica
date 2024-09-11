@@ -33,10 +33,7 @@ public class Especial extends Carta{
     @Override
     public Integer valor(){
         Random random = new Random();
-        Integer num = random.nextInt(100);
-        while (num < 89){
-            num = random.nextInt(100);
-        }
+        Integer num = random.nextInt(89, 100);
         num = (int) (num * 1.02);
         if (num > 99){
             num = 99;
