@@ -34,7 +34,6 @@ public class Main {
                     Oro cartaOro = new Oro(nombre, club, pais, habilidad);
 
                     cartas.add(cartaOro);
-                   
                     break;
 
                 case 2: // Carta Especial

@@ -5,31 +5,33 @@ public class Oro extends Carta {
 
     public Oro(String nombre, String club, String pais, String habilidad) {
         super(nombre, club, pais, habilidad,
-                valor_random(), // Velocidad
-                valor_random(), // Tiro
-                valor_random(), // Regate
-                valor_random(), // Defensa
-                valor_random(), // Pase
-                valor_random()); // Físico
+                valor_random(),
+                valor_random(),
+                valor_random(),
+                valor_random(),
+                valor_random(),
+                valor_random());
     }
 
     public static int valor_random() {
-        // Random random = new Random();
-        // Generar un valor aleatorio en el rango de 74 a 90
         int ran = random.nextInt(17) + 74;
-        // Calcular el valor incrementado en un 5% y truncar a entero
+
         return (int) (ran * 1.05);
     }
 
-    @Override
+    public int calcular_quimica(String paisFav, String equipoFav){
+        return super.calcular_quimica(paisFav, equipoFav);
+    }
+
+/*  @Override
     public int calcular_quimica(String paisFav, String equipoFav) {
         if (this.pais.equals(paisFav) && this.club.equals(equipoFav)) {
-            return 100; // Coinciden tanto el país como el equipo
+            return 100;
         } else if (this.pais.equals(paisFav) || this.club.equals(equipoFav)) {
-            return 80; // Coincide solo uno (país o equipo)
+            return 80;
         } else {
-            return 0; // Ninguno coincide
+            return 0;
         }
-    }
+    } */
 
 }

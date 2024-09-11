@@ -25,8 +25,7 @@ public class Plantilla {
     public int quimica_total() {
         int suma = 0;
         for (Carta carta : cartas) {
-            suma += carta.calcular_quimica(this.pais_fav, this.equipo_fav); // Pasar el país y equipo favoritos de la
-                                                                            // plantilla
+            suma += carta.calcular_quimica(this.pais_fav, this.equipo_fav); 
         }
         return suma;
     }
