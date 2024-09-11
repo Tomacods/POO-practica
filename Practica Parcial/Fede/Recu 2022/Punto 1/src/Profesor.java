@@ -6,15 +6,6 @@ public class Profesor extends Persona {
         super(nombre, apellido, dni);
         this.nroLegajo = nroLegajo;
     }
-
-    /*public Integer getNroLegajo() {
-        return nroLegajo;
-    }
-
-
-    public void setNroLegajo(Integer nroLegajo) {
-        this.nroLegajo = nroLegajo;
-    }*/
     
     @Override
     public String toString() {

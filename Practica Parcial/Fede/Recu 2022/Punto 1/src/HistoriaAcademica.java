@@ -1,18 +1,26 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class HistoriaAcademica {
     
-    private HashMap<String, Integer> historial;
+    private final Map<String, Integer> historial;
 
     public HistoriaAcademica(){
-        HashMap<String, Integer> historial = new HashMap<>();
+        this.historial = new HashMap<>();
     }
 
-    public String imprimirHistoria(){
-        return "Historial del alumno: " + historial;
+    public void imprimirHistorial(String alumno){
+        System.out.println("Historial del alumno: ");
+        for (Map.Entry<String, Integer> entry: historial.entrySet()){
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 
     public void agregarMateria(String mati, Integer nota){
         historial.put(mati, nota);
+    }
+
+    public Map<String, Integer> obtenerNota(){
+        return historial;
     }
 }
