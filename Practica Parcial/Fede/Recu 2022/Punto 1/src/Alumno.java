@@ -1,25 +1,17 @@
-import java.util.ArrayList;
-
 public class Alumno extends Persona {
     
-    private ArrayList<Hashmap> historial = new ArrayList<>();
+    private HistoriaAcademica historial; 
 
     public Alumno(String nombre, String apellido, Integer dni){
         super(nombre, apellido, dni);
     }
 
-    public void agregarHistorial(Hashmap hashmap){
-        this.historial.add(hashmap);
+    public void ingresarNota(String materiaing, Integer nota){
+        historial.agregarMateria(materiaing, nota);
     }
 
-    public void imprimirHistorial(ArrayList<Hashmap> historial){
-        for (Hashmap map: historial){
-            System.out.println(map.toString());
-        }
-    }
-
-    public void imprimirAlumno(){
-        System.out.println(toString());
-        imprimirHistorial(historial);
+    @Override
+    public String toString() {
+        return super.toString() + "\n" + "Historial academico: " + historial.imprimirHistoria();
     }
 }
