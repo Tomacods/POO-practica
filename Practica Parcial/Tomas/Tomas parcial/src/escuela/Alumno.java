@@ -7,9 +7,9 @@ public class Alumno extends Persona {
 Para el historial académico se contará con una clase que contendrá un hashmap de materias
 como clave y una nota de tipo integer */
 
-    private final HistorialAcademico historialAcademico;
+    private HistorialAcademico historialAcademico;
 
-    public Alumno(String nombre, String apellido, int dni, int historialAcademico) {
+    public Alumno(String nombre, String apellido, int dni) {
         super(nombre, apellido, dni);
         this.historialAcademico = new HistorialAcademico();
     }
@@ -22,15 +22,26 @@ como clave y una nota de tipo integer */
 
     public HistorialAcademico getHistorialAcademico() {
         return historialAcademico;
+    }
+
+    public void setHistorialAcademico(HistorialAcademico historialAcademico) {
+        this.historialAcademico = historialAcademico;
         }
 
-        public void ImprimirHistorial() {
-        System.out.println(historialAcademico);
-        System.out.println("Promedio: " + calcularPromedio());
+        public void ImprimirHistorialAcademico (String nombreAlumno) {
+            historialAcademico.imprimirHistorial(nombreAlumno);
         }
 
         private double calcularPromedio() {
         return historialAcademico.calcularPromedio();
+        }
+
+        public void imprimirPromedio() {
+            if (calcularPromedio() == 0) {
+                System.out.println("El alumno no tiene materias aprobadas");
+            } else {
+                System.out.println("Promedio: " + calcularPromedio());
+            }
         }
 
 
