@@ -11,7 +11,7 @@ public class Main {
         //genero 30 alumnos
         Alumno[] alumnos = new Alumno[30];
         for (int i = 0; i < 30; i++) {
-            alumnos[i] = new Alumno("Alumno" + i, "Apellido" + i, 12345678 + i, i);
+            alumnos[i] = new Alumno("Alumno" + i, "Apellido" + i, 12345678 + i);
         }
 
         //genero 5 profesores
@@ -59,8 +59,24 @@ public class Main {
             alumnosAleatorios.add(alumnos[random.nextInt(30)]);
         }
         for (Alumno alumno : alumnosAleatorios) {
-            alumno.ImprimirHistorial();
+            System.out.println(alumno);
+            alumno.ImprimirHistorialAcademico(alumno.getNombre());
+            alumno.imprimirPromedio();
             System.out.println();
         }
+
+        /*Añadir un método para eliminar la inscripción de un alumno a una materia. Debe incluir
+un caso de prueba para validarlo. */
+        Materia materia = materias[0];
+        Alumno alumno = materia.getAlumnos().get(0);
+        System.out.println(materia.inscribirAlumno(alumno));
+        System.out.println(materia.inscribirAlumno(alumno));
+        System.out.println(materia.getAlumnos().size());
+        System.out.println(materia.eliminarAlumno(alumno));
+        System.out.println(materia.getAlumnos().size());
+        System.out.println(materia.eliminarAlumno(alumno));
+        System.out.println(materia.getAlumnos().size());
+
+
     }
 }

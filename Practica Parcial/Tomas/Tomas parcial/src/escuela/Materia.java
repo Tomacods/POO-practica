@@ -42,11 +42,15 @@ public class Materia {
             System.out.println(alumno);
         }
     }
-    public void inscribirAlumno(Alumno alumno) {
-        if (alumnos.contains(alumno)) {
-            System.out.println("El alumno ya se encuentra inscripto en la materia");
-        } else {
+    public String inscribirAlumno(Alumno alumno) {
+        try {
+            if (alumnos.contains(alumno)) {
+                throw new AlumnoInscriptoExeption("El alumno ya está inscripto en la materia");
+            }
             alumnos.add(alumno);
+            return "Alumno inscripto correctamente";
+        } catch (AlumnoInscriptoExeption e) {
+            return e.getMessage();
         }
     }
 
@@ -73,7 +77,18 @@ alumnos y el profesor.*/
     public void setAlumnos(List<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
-    
+    //Añadir un método para eliminar la inscripción de un alumno a una materia. Debe incluir un caso de prueba para validarlo.
 
+    public String eliminarAlumno(Alumno alumno) {
+        try {
+            if (!alumnos.contains(alumno)) {
+                throw new AlumnoInscriptoExeption("El alumno no está inscripto en la materia");
+            }
+            alumnos.remove(alumno);
+            return "Alumno eliminado correctamente";
+        } catch (AlumnoInscriptoExeption e) {
+            return e.getMessage();
+        }
+    }
 
 }
