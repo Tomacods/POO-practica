@@ -12,10 +12,6 @@ public class HistoriaAcademica {
         return "Historial del alumno: " + historial;
     }
 
-    public String imprimirNota(String nombre){
-        return "La nota de la materia " + nombre + " es " + historial.get(nombre);
-    }
-
     public void agregarMateria(String mat, Integer nota){
         historial.put(mat, nota);
     }

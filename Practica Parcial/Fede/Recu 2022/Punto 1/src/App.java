@@ -39,7 +39,7 @@ public class App {
                 while (nota == 0){
                     nota = random.nextInt(11);
                 }
-                alum.ingresarNota(mat[j], nota);
+                alum.ingresarNota(mat[i], nota);
             }
             alumnos.add(alum);
         }

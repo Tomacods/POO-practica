@@ -7,11 +7,11 @@ public class Alumno extends Persona {
     }
 
     public void ingresarNota(String materia, Integer nota){
-        historial.agregarMateria(materia, nota);
+        this.historial.agregarMateria(materia, nota);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\n" + "Historial academico: " + historial;
+        return super.toString() + "\n" + "Historial academico: " + historial.imprimirHistoria();
     }
 }
