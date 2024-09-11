@@ -24,16 +24,18 @@ public class BronceEspecial extends Cartas {
     Si solo uno de ellos coincide, la química será 80.
     Si ninguno coincide, la química será 0.
     */
-    @Override
-    public int calcularQuimica(String paisfavorito, String equipofavorito){
-        if (paisfavorito.equals(this.getPais()) && equipofavorito.equals(this.getClub())) {
-            return 100;
-        } else if (paisfavorito.equals(this.getPais()) || equipofavorito.equals(this.getClub())) {
-            return 80;
-        } else {
-            return 0;
-        }
-    }
+
+    
+    // @Override
+    // public int calcularQuimica(String paisfavorito, String equipofavorito){
+    //     if (paisfavorito.equals(this.getPais()) && equipofavorito.equals(this.getClub())) {
+    //         return 100;
+    //     } else if (paisfavorito.equals(this.getPais()) || equipofavorito.equals(this.getClub())) {
+    //         return 80;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
     @Override
     public void generarEstadisticas(int rango1, int rango2) {
         this.velocidad = (int) (Math.random() * (rango2 - rango1 + 1) + rango1) + 2;

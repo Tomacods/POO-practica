@@ -6,16 +6,16 @@ public class Oro extends Cartas{
         this.generarEstadisticas(74, 90);
     }
 
-    @Override
-    public int calcularQuimica(String paisfavorito, String equipofavorito){
-        if (paisfavorito.equals(this.getPais()) && equipofavorito.equals(this.getClub())) { //Si el país favorito y el equipo favorito de la clase plantilla coinciden con los de la carta, la química será 100.
-            return 100;
-        } else if (paisfavorito.equals(this.getPais()) || equipofavorito.equals(this.getClub())) {
-            return 80;
-        } else {
-            return 0;
-        }
-    }
+    // @Override
+    // public int calcularQuimica(String paisfavorito, String equipofavorito){
+    //     if (paisfavorito.equals(this.getPais()) && equipofavorito.equals(this.getClub())) { //Si el país favorito y el equipo favorito de la clase plantilla coinciden con los de la carta, la química será 100.
+    //         return 100;
+    //     } else if (paisfavorito.equals(this.getPais()) || equipofavorito.equals(this.getClub())) {
+    //         return 80;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
     @Override
     public String toString() {
         return super.toString() + "Oro{" +
