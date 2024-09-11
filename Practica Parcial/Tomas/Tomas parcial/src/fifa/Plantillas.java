@@ -26,6 +26,26 @@ public class Plantillas {
     public void agregarCarta(Cartas carta){
         plantel.add(carta);
     }
+    //getters
+    public String getUsuario() {
+        return usuario;
+    }
+    public String getPaisFavorito() {
+        return paisFavorito;
+    }
+    public String getEquipoFavorito() {
+        return equipoFavorito;
+    }
+    //setters
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public void setPaisFavorito(String paisFavorito) {
+        this.paisFavorito = paisFavorito;
+    }
+    public void setEquipoFavorito(String equipoFavorito) {
+        this.equipoFavorito = equipoFavorito;
+    }
 
     public int calcularQuimicaTotal(){
         int quimicaTotal = 0;
