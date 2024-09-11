@@ -29,33 +29,28 @@ public class App {
         
         // creo alumnos.
         for (Integer i = 1; i <= 30; i++){
-            Integer dni = random.nextInt(48000001);
+            Integer dni = random.nextInt(48000000) + 1;
             while (dni < 45000000){
-                dni = random.nextInt(48000001);
+                dni = random.nextInt(48000000) + 1;
             }
             Alumno alum = new Alumno(nombres[random.nextInt(nombres.length)], apellidos[random.nextInt(apellidos.length)], dni);
-            for (Integer j = 1; j <= 5; j++){
-                Integer nota = random.nextInt(11);
-                while (nota == 0){
-                    nota = random.nextInt(11);
-                }
-                alum.ingresarNota(mat[i], nota);
-            }
             alumnos.add(alum);
         }
 
         // creo materias.
 
         for (Integer i = 1; i<=5; i++){
-            Materia materia = new Materia(mat[i], i, 2024);
+            Materia materia = new Materia("aca", i, 2024);
             materia.agregarProfesor(profesores.get(i));
-            Integer cantAlum = random.nextInt(11);
+            Integer cantAlum = random.nextInt(10) + 1;
+            while (cantAlum < 5){
+                cantAlum = random.nextInt(10) + 1;
+            }
             for (Integer j = 1; j<=cantAlum; i++){
-                Integer indice2 = random.nextInt(6);
-                while (indice2 == 0){
-                    indice2 = random.nextInt(6);
-                }
+                Integer indice2 = random.nextInt(20) + 1;
                 materia.addAlumnos(alumnos.get(indice2));
+                Integer nota = random.nextInt(10) + 1;
+                alumnos.get(indice2).ingresarNota(materia.getNombre(), nota);
             }
             materias.add(materia);
         }
