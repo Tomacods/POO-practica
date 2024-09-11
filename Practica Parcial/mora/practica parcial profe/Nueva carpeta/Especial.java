@@ -1,18 +1,19 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Especial extends Carta {
     private static final Random random = new Random();
-//private ArrayList<String> habilidades = new ArrayList<>();
+private ArrayList<String> habilidades = new ArrayList<>();
 
-    public Especial(String nombre, String club, String pais,String habilidad) {
-        super(nombre, club, pais, habilidad,
-                random.nextInt(30) + 80, // Velocidad
-                random.nextInt(30) + 80, // Tiro
-                random.nextInt(30) + 80, // Regate
-                random.nextInt(30) + 80, // Defensa
-                random.nextInt(30) + 80, // Pase
-                random.nextInt(30) + 80 // Físico
+    public Especial(String nombre, String club, String pais, List<String> habilidades) {
+        super(nombre, club, pais, habilidades,
+                valor_random(), 
+                valor_random(), 
+                valor_random(), 
+                valor_random(), 
+                valor_random(), 
+                valor_random() 
         );
         
     }
@@ -25,7 +26,7 @@ public class Especial extends Carta {
         this.habilidades.add(string);
     }
 
-    public int valor_random() {
+    public static int valor_random() {
         int ran = random.nextInt(11) + 89; // Genera un valor entre 89 y 99
         int ran2 = (int) (ran * 1.02); // Incrementa en un 2%
 
@@ -36,7 +37,7 @@ public class Especial extends Carta {
 
         return ran2;
     }
-
+    @Override
     public int calcular_quimica(String a, String b) {
         return 100;
     }
