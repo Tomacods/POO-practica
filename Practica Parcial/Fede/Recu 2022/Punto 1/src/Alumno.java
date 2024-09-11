@@ -6,8 +6,8 @@ public class Alumno extends Persona {
         super(nombre, apellido, dni);
     }
 
-    public void ingresarNota(String materia, Integer nota){
-        this.historial.agregarMateria(materia, nota);
+    public void ingresarNota(String materiaing, Integer nota){
+        historial.agregarMateria(materiaing, nota);
     }
 
     @Override

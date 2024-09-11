@@ -5,14 +5,14 @@ public class HistoriaAcademica {
     private HashMap<String, Integer> historial;
 
     public HistoriaAcademica(){
-        this.historial = new HashMap<>();
+        HashMap<String, Integer> historial = new HashMap<>();
     }
 
     public String imprimirHistoria(){
         return "Historial del alumno: " + historial;
     }
 
-    public void agregarMateria(String mat, Integer nota){
-        historial.put(mat, nota);
+    public void agregarMateria(String mati, Integer nota){
+        historial.put(mati, nota);
     }
 }
