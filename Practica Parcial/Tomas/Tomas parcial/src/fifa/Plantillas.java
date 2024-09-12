@@ -14,7 +14,7 @@ public class Plantillas {
     private String usuario;
     private String paisFavorito;
     private String equipoFavorito;
-    private List<Cartas> plantel;
+    private final List<Cartas> plantel;
 
     public Plantillas(String usuario, String paisFavorito, String equipoFavorito) {
         this.usuario = usuario;
