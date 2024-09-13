@@ -30,10 +30,7 @@ public class Oro extends Carta{
     @Override
     public Integer valor(){
         Random random = new Random();
-        Integer num = random.nextInt(91);
-        while (num < 74){
-            num = random.nextInt(91);
-        }
+        Integer num = random.nextInt(74, 91);
         num = (int) (num * 1.05);
         return num;
     }
