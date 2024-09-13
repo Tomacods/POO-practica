@@ -6,9 +6,6 @@ public abstract class  Cartas {
     protected String pais;
     protected int velocidad, regate, tiro, defensa, pase, fisico;
 
-
-
-
     public Cartas(String nombre, String club, String pais) {
         this.nombre = nombre;
         this.club = club;

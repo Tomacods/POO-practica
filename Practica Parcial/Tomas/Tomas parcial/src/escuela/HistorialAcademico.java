@@ -3,7 +3,6 @@ package escuela;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class HistorialAcademico {
     private final Map<String, Integer> materiasNotas;
 
@@ -11,7 +10,7 @@ public class HistorialAcademico {
         this.materiasNotas = new HashMap<>();
     }
     public void imprimirHistorial(String nombreAlumno) {
-        System.out.println("Historial académico de " + nombreAlumno + ":");
+        System.out.println("Historial académico de " + nombreAlumno + ":"); 
         for (Map.Entry<String, Integer> entry : materiasNotas.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         } 

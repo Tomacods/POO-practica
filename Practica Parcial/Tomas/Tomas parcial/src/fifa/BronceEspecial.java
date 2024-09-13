@@ -1,6 +1,6 @@
 package fifa;
 
-public class BronceEspecial extends Cartas {
+public final class BronceEspecial extends Cartas {
 
     private String habilidadEspecial;
     

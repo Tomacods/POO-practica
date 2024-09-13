@@ -36,14 +36,12 @@ public void AddAlumno(Alumno alumno) {
 public void inscribirAlumno(Alumno nuevoAlumno) {
     for (Alumno alumno : alumnos) {
         if (alumno.getDni().equals(nuevoAlumno.getDni())) {
-            System.out.println("El alumno"+ nuevoAlumno.getApellido() + "con DNI " + nuevoAlumno.getDni() + " ya se encuentra inscripto en la materia.");}
-            else {
-                AddAlumno(nuevoAlumno);
-                System.out.println("Inscripto.");
-            }
-            
+            return; // esto sale del método para no agregar el alumno nuevamente
         }
     }
+    AddAlumno(nuevoAlumno);
+    
+}
 
     public String imprimirAlumnos() {
         String resultado = "Alumnos inscritos en " + nombre_materia + ":\n";
