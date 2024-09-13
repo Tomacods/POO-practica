@@ -34,8 +34,8 @@ public  abstract class Cuenta {
     public void setNumeroCuenta(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
     }
-    protected abstract void pagarCredito(int monto, int cuotas);
-    protected abstract void pagarDebito(int monto);
+    public abstract void pagarConDebito(double monto);
+    public abstract void pagarConCredito(double monto, int cuotas);
 
     
 }
