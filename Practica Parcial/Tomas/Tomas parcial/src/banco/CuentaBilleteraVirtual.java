@@ -1,11 +1,11 @@
 package banco;
 
-public class BilleteraVirtual extends Cuenta{
+public class CuentaBilleteraVirtual extends Cuenta{
     private String cvu;
     private int monto;
     private int cuotas;
 
-    public BilleteraVirtual(int saldo, String dueño, String numeroCuenta, String cvu) {
+    public CuentaBilleteraVirtual(int saldo, String dueño, String numeroCuenta, String cvu) {
         super(saldo, dueño, numeroCuenta);
         this.cvu = cvu;
     }

@@ -1,11 +1,11 @@
 package banco;
 
-public class Banco extends Cuenta{
+public class CuentaBanco extends Cuenta{
     private String cbu;
 
 
 
-    public Banco(int saldo, String dueño, String numeroCuenta, String cbu) {
+    public CuentaBanco(int saldo, String dueño, String numeroCuenta, String cbu) {
         super(saldo, dueño, numeroCuenta);
         this.cbu = cbu;
     }
