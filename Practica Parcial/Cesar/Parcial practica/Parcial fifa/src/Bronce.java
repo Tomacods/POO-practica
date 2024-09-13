@@ -20,7 +20,6 @@ public Integer valor(){
 }
 @Override
 public String toString() {
-    // TODO Auto-generated method stub
-    return super.toString() + " Habilidad especial "+ hespecial;
+    return super.toString() + " Habilidad especial "+ hespecial+"\n";
 }
 }

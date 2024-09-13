@@ -47,8 +47,10 @@ public class App {
         }for(Integer j = 11;j<22;j++){
         plantilla2.AgregarCarta(cartas.get(j));
     }
+        System.out.println(plantilla1);
         plantilla1.mostrarplantel();
     System.out.println("---------------------------------------");
+    System.out.println(plantilla2);
     plantilla2.mostrarplantel();
 
 }}

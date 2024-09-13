@@ -29,7 +29,10 @@ public class Especial extends Carta {
         }
         return val;
     }
+    public Integer calcularquimica(String club, String pais){
+        return 100;
+    }
     public String toString() {
-        return super.toString() + " Habilidades : " + hespecial;
+        return super.toString() + " Habilidades : " + hespecial+"\n";
     }
 }
