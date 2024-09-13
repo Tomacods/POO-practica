@@ -50,9 +50,21 @@ public abstract class Carta {
         this.reg = valor();
         this.pas = valor();
     }
-
+    public Integer calcularquimica(String club, String pais){
+        Integer quimica= 0;
+        if (club.equals(this.club) && pais.equals(this.pais)){
+            quimica = 100;
+        }else{
+            if(club.equals(this.club) || pais.equals(this.pais)){
+                quimica = 80;
+            }else{
+                quimica = 0;
+            }
+        }
+        return quimica;
+    }
     public String toString() {
-        return "Nombre = " + nombre + " Club = " + club + " pais = " + pais + " Velocidad = " + vel + " Defensa = "
-                + def + " Tiro = " + tir + " Fisico = " + fis + " Regate = " + reg + " Pase = " + pas;
+        return "Nombre = " + nombre +"\n"+ " Club = " + club +"\n"+ " pais = " + pais +"\n"+ " Velocidad = " + vel + " Defensa = "
+                + def + " Tiro = " + tir +"\n"+ " Fisico = " + fis + " Regate = " + reg + " Pase = " + pas+"\n";
     }
 }

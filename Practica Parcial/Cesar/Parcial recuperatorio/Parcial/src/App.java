@@ -37,7 +37,6 @@ public class App {
     }
     for(Integer i=0; i<5;i++){
         Materia mat = lmateria.get(i);
-        mat.listaAlumn
     }
 }
 }

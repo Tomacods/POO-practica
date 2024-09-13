@@ -1,5 +1,5 @@
 package fifa;
-public class Oro extends Cartas{
+public final class Oro extends Cartas{
 
     public Oro(String nombre, String club, String pais) {
         super(nombre, club, pais);
@@ -36,7 +36,3 @@ generado se le sumarán 5% sobre el base.
     }
 
 }
-        
-    
-
-    

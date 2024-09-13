@@ -9,7 +9,7 @@ public final class Especial extends Cartas {
     public Especial(String nombre, String club, String pais, List<String> habilidadesEspeciales) {
         super(nombre, club, pais);
         this.habilidadesEspeciales = habilidadesEspeciales;
-        this.generarEstadisticas(89, 90);
+        this.generarEstadisticas(89, 99);
     }
     public void agregarHabilidad(String habilidad) {
         this.habilidadesEspeciales.add(habilidad);

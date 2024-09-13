@@ -36,22 +36,10 @@ public class Plantilla {
     public void AgregarCarta (Carta carta1){
         this.cartas.add(carta1);
     }
-    public Integer calcularquimica(Carta carta1){
-        Integer quimica= 0;
-        if (carta1.getClub() == this.getClubfav() && carta1.getPais() == this.getPaisfav()){
-            quimica = 100;
-        }else{
-            if(carta1.getClub() == this.getClubfav() || carta1.getPais() == this.getPaisfav()){
-                quimica = 80;
-            }else{
-                quimica = 0;
-            }
-        }
-        return quimica;
-    }
+
     @Override
     public String toString() {
-        return "Usuario= " + usuario + ", Pais favorito = " + paisfav + ", Club favorito = " + clubfav;
+        return "Usuario= " + usuario +"\n"+ "Pais favorito = " + paisfav +"\n"+ "Club favorito = " + clubfav+"\n"+ calcularquimica();
     }
     public void mostrarplantel(){
         this.toString();
@@ -61,5 +49,12 @@ public class Plantilla {
         for (Carta c : cartas){
             System.out.println(c);
         }
+    }
+    public String calcularquimica(){
+        Integer Quimica = 0;
+        for(Carta c: cartas){
+            Quimica = Quimica + c.calcularquimica(this.clubfav,this.paisfav);
+        }
+        return "La quimica del equipo es de :"+ Quimica/cartas.size();
     }
 }
