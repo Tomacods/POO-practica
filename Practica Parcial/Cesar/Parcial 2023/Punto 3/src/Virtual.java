@@ -4,7 +4,7 @@ public class Virtual extends Cuenta {
 
     public Virtual(Double saldo, String dueño, Integer nrocuenta, Integer cvu) {
         super(saldo, dueño, nrocuenta);
-        Cvu = cvu;
+        this.Cvu = cvu;
     }
 
 
