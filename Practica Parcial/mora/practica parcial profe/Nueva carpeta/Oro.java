@@ -1,37 +1,36 @@
 import java.util.Random;
 
 public class Oro extends Carta {
-    private static final Random random = new Random();
 
-    public Oro(String nombre, String club, String pais, String habilidad) {
-        super(nombre, club, pais, habilidad,
-                valor_random(),
-                valor_random(),
-                valor_random(),
-                valor_random(),
-                valor_random(),
-                valor_random());
+    public Oro(String nombre, String club, String pais) {
+        super(nombre, club, pais);
+        asignar_random();
     }
 
-    public static int valor_random() {
-        int ran = random.nextInt(17) + 74;
-
-        return (int) (ran * 1.05);
+    public void asignar_random() {
+        Random random = new Random();
+        this.velocidad = (int) (random.nextInt(74, 91) * 1.05);
+        this.tiro = (int) (random.nextInt(74, 91) * 1.05);
+        this.regate = (int) (random.nextInt(74, 91) * 1.05);
+        this.defensa = (int) (random.nextInt(74, 91) * 1.05);
+        this.pase = (int) (random.nextInt(74, 91) * 1.05);
+        this.fisico = (int) (random.nextInt(74, 91) * 1.05);
     }
 
-    public int calcular_quimica(String paisFav, String equipoFav){
-        return super.calcular_quimica(paisFav, equipoFav);
+    public void imprimir() {
+        System.out.println("Nombre:" + this.nombre + "\n" +
+                "Equipo: " + this.club + "\n" +
+                "País: " + this.pais + "\n" +
+                "Velocidad: " + this.velocidad + "\n" +
+                "Tiro: " + this.tiro + "\n" +
+                "Regate: " + this.regate + "\n" +
+                "Defensa" + this.defensa + "\n" +
+                "Pase: " + this.pase + "\n" +
+                "Físico: " + this.fisico + "\n");
     }
 
-/*  @Override
-    public int calcular_quimica(String paisFav, String equipoFav) {
-        if (this.pais.equals(paisFav) && this.club.equals(equipoFav)) {
-            return 100;
-        } else if (this.pais.equals(paisFav) || this.club.equals(equipoFav)) {
-            return 80;
-        } else {
-            return 0;
-        }
-    } */
+    public Integer calcular_quimica(String pais_fav, String equipo_fav) {
+        return super.calcular_quimica(pais_fav, equipo_fav);
+    }
 
 }

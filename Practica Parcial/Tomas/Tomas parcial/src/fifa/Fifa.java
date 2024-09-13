@@ -25,11 +25,11 @@ public class Fifa {
         for (int i = 0; i < 22; i++) {
             switch (random.nextInt(3)) {
                 case 0 -> listaCartas.add(new BronceEspecial("jugador_BronceEspecial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], habilidadesEspeciales[random.nextInt(3)]));
-                //genero un numero random entre 49 y 65 y le sumo 2 para las cartas bronce
+                
                 case 1 -> listaCartas.add(new Oro("jugador_Oro"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)]));
-                //genero un numero random entre 74 y 90 y le sumo el 5% de ese numero para las cartas oro
+                
                 case 2 -> listaCartas.add(new Especial("jugador_especial"+i, clubes[random.nextInt(4)], paises[random.nextInt(4)], List.of(habilidadesEspeciales[random.nextInt(3)])));
-                //genero un numero random entre 89 y 99 y le sumo el 2% de ese numero para las cartas especiales
+            
         }
     }
 
