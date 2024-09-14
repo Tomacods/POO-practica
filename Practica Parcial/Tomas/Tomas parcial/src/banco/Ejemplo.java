@@ -26,8 +26,7 @@ public class Ejemplo {
             if (cuenta1.getSaldo() <= 0 && cuenta2.getSaldo() <= 0) {
                 break;
             }
-
-            boolean usarBanco = random.nextBoolean();
+            boolean usarBanco = random.nextBoolean(); 
             boolean usarDebito = random.nextBoolean();
 
             if (usarBanco) {
