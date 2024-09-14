@@ -40,8 +40,7 @@ public class App {
         // creo materias.
 
         for (Integer i = 1; i<=5; i++){
-            Materia materia = new Materia(mat[i], i, 2024);
-            materia.agregarProfesor(profesores.get(i));
+            Materia materia = new Materia(mat[i], i, 2024, profesores.get(i));
             Integer cantAlum = random.nextInt(10) + 1;
             while (cantAlum < 5){
                 cantAlum = random.nextInt(10) + 1;
