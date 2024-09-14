@@ -37,20 +37,22 @@ public class App {
 
         }
 
-    Plantilla plantilla1 = new Plantilla("Luana", Paises[random.nextInt(Paises.length)],
-            Clubes[random.nextInt(Clubes.length)]);
-    Plantilla plantilla2 = new Plantilla("Santino", Paises[random.nextInt(Paises.length)],
-            Clubes[random.nextInt(Clubes.length)]);
-            Collections.shuffle(cartas);
-            for(Integer k = 0;k<10;k++){
+        Plantilla plantilla1 = new Plantilla("Luana", Paises[random.nextInt(Paises.length)],
+                Clubes[random.nextInt(Clubes.length)]);
+        Plantilla plantilla2 = new Plantilla("Santino", Paises[random.nextInt(Paises.length)],
+                Clubes[random.nextInt(Clubes.length)]);
+        Collections.shuffle(cartas);
+        for (Integer k = 0; k < 10; k++) {
             plantilla1.AgregarCarta(cartas.get(k));
-        }for(Integer j = 11;j<22;j++){
-        plantilla2.AgregarCarta(cartas.get(j));
-    }
+        }
+        for (Integer j = 11; j < 22; j++) {
+            plantilla2.AgregarCarta(cartas.get(j));
+        }
         System.out.println(plantilla1);
         plantilla1.mostrarplantel();
-    System.out.println("---------------------------------------");
-    System.out.println(plantilla2);
-    plantilla2.mostrarplantel();
+        System.out.println("---------------------------------------");
+        System.out.println(plantilla2);
+        plantilla2.mostrarplantel();
 
-}}
+    }
+}
