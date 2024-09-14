@@ -37,9 +37,9 @@ public class App {
 
         }
 
-    Plantilla plantilla1 = new Plantilla("César", Paises[random.nextInt(Paises.length)],
+    Plantilla plantilla1 = new Plantilla("Luana", Paises[random.nextInt(Paises.length)],
             Clubes[random.nextInt(Clubes.length)]);
-    Plantilla plantilla2 = new Plantilla("Tomas", Paises[random.nextInt(Paises.length)],
+    Plantilla plantilla2 = new Plantilla("Santino", Paises[random.nextInt(Paises.length)],
             Clubes[random.nextInt(Clubes.length)]);
             Collections.shuffle(cartas);
             for(Integer k = 0;k<10;k++){

@@ -2,6 +2,7 @@ public abstract class Cuenta {
     protected Double saldo;
     protected String dueño;
     protected Integer nrocuenta;
+
     public Double getSaldo() {
         return saldo;
     }
@@ -14,5 +15,5 @@ public abstract class Cuenta {
         this.nrocuenta = nrocuenta;
     }
 
-    public abstract void pago();
+    public abstract void pago(Integer fpago,Double deuda, Integer mes);
 }
