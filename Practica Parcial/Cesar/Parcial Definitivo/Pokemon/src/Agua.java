@@ -19,9 +19,12 @@ public class Agua extends Pokemon {
             daño = daño-(int)(daño*0.5);
         }
         daño = daño - this.defensa;
-        if(daño>0){
+        if(daño<0){
             daño=0;
         }
-        this.vida = this.getVida() - daño;
+        this.setVida(this.getVida() - daño); 
+        if(this.vida < 0){
+            this.vida = 0;
+            }
     }
 }
