@@ -3,13 +3,14 @@ public class Entrenador {
     private String nombre;
     private Integer nivel;
     private Pokemon principal;
+    private ArrayList<Pokemon> pokedex = new ArrayList<>();
     public Pokemon getPrincipal() {
         return principal;
     }
     public void setPrincipal(Pokemon principal) {
         this.principal = principal;
     }
-    private ArrayList<Pokemon> pokedex = new ArrayList<>();
+    
     
     public String getNombre() {
         return nombre;
@@ -32,10 +33,14 @@ public class Entrenador {
         System.out.println("-------------------");
         Integer i = 1;
         Boolean noatrapado = true;
-        while (i<=3 && noatrapado && atrapado.getVida() > 0){
+        Boolean convida = true;
+        while (i<=3 && noatrapado && convida ){
             atrapado.salvajismo = atrapado.salvajismo - (int)(atrapado.salvajismo*0.1);
             atrapado.Defensa(this.principal.Ataque(atrapado));
-            if (atrapado.salvajismo < this.nivel){
+            if(atrapado.getVida() == 0){
+                convida = false;
+            }
+            if (atrapado.salvajismo < this.nivel && convida){
                 noatrapado = false;
                 System.out.println("Pokemon atrapado en el intento "+ i +" !");
                 System.out.println("-------------------");
@@ -43,9 +48,10 @@ public class Entrenador {
             }else{
                 System.out.println("Fallo el intento "+i+" para atraparlo..");
             }
+            
             i = i+1;
         }
-        if  (atrapado.getVida() > 0){
+        if  (atrapado.getVida() == 0){
             System.out.println("El pokemon se debilitó!");
             System.out.println("-------------------");
         }

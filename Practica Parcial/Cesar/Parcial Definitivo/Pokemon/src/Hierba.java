@@ -21,9 +21,12 @@ public class Hierba extends Pokemon {
             daño = 0;
         }
         daño = daño - this.defensa;
-        if(daño>0){
+        if(daño<0){
             daño=0;
         }
         this.vida = this.getVida() - daño;
+        if(this.vida < 0){
+        this.vida = 0;
+        }
     }
 }

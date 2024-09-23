@@ -76,7 +76,7 @@ public abstract class Pokemon {
     }
 
     public String toString() {
-        return "Pokemon "+"\n"+"Nombre: " + nombre +" Tipo: "+tipo+"\n"+ "Ataque= " + ataque + " Defensa= " + defensa +"\n"+ "Velocidad= " + velocidad+ " Salvajismo= " + salvajismo;
+        return "Pokemon "+"\n"+"Nombre: " + nombre +" Tipo: "+tipo+"\n"+ "Ataque= " + ataque + " Defensa= " + defensa +"\n"+ "Velocidad= " + velocidad+ " Salvajismo= " + salvajismo+"\n"+"Vida: "+vida;
     }
     public abstract Integer Ataque(Pokemon atacado);//Devuelve un Integer que seria el numero de daño que enviaria al metodo de Defensa del Pokemon Atacado
     public abstract void Defensa(Integer daño); //Devuelve un Integer que se le descontaria a la Vida del pokemon si tuviera que usar el metodo.
