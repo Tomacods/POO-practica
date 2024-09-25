@@ -2,12 +2,22 @@
 
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.awt.FlowLayout;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,13 +42,6 @@ public class Main {
     empresa2.addPersona(new Persona("Rocio", 24, "F", "Si", tesorero));
     empresas.add(empresa2);
 
-    for (Empresa empresa : empresas){
-        System.out.println(empresa);
-        for (Persona persona : empresa.getPersonas()){
-            System.out.println(persona);
-        }
-    }
-
     JFrame frame = new JFrame("listado de empresas y empleados");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(800, 200);
@@ -50,15 +53,50 @@ public class Main {
         for (Persona persona : empresa.getPersonas()){
             String [] fila = {persona.getNombre(), String.valueOf(persona.getEdad()), persona.getSexo(), persona.getOcupacion(),persona.getPuesto().getNombre()
             };
-            modelo.addRow(fila);
+            modelo.addRow(fila); // Agregar fila al modelo de datos
         }
     }
-
+    // Crear JTable con el modelo de datos
     JTable tabla = new JTable(modelo);
+    tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Permitir seleccionar solo una fila a la vez
     JScrollPane scrollPane = new JScrollPane(tabla);
-    frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
     frame.add(scrollPane);
-    frame.setVisible(true);
     
+    JButton botonEliminar = new JButton("Eliminar");
+    botonEliminar.setEnabled(false);
+
+    // Añadir ActionListener al botón "Eliminar"
+    tabla.getSelectionModel().addListSelectionListener(new ListSelectionListener() { // genera un evento al hacer click
+        @Override
+        public void valueChanged(ListSelectionEvent e) { // metodo que se ejecuta al hacer click
+            if (!e.getValueIsAdjusting() && tabla.getSelectedRow() != -1) { // si hay una fila seleccionada
+                botonEliminar.setEnabled(true); // habilita el botón
+            } else {
+                botonEliminar.setEnabled(false); // deshabilita el botón
+            }
+        }
+    });
+
+    // Añadir ActionListener al botón "Eliminar"
+    botonEliminar.addActionListener(new ActionListener() { // genera un evento al hacer click
+        @Override
+        public void actionPerformed(ActionEvent e) { // metodo que se ejecuta al hacer click
+            int selectedRow = tabla.getSelectedRow(); // obtiene la fila seleccionada
+            if (selectedRow != -1) { // si hay una fila seleccionada
+                modelo.removeRow(selectedRow); // elimina la fila del modelo
+                empresas.remove(selectedRow); // Elimina la empresa correspondiente del listado
+                botonEliminar.setEnabled(false); // deshabilita el botón
+            }
+        }
+    });
+   // Crear un panel para el botón y añadirlo al frame
+    JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    panelBoton.add(botonEliminar);
+
+   // Añadir el panel del botón y el scrollPane al frame
+    frame.getContentPane().add(panelBoton, BorderLayout.NORTH);
+    frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+
+    frame.setVisible(true);
 }
 }
