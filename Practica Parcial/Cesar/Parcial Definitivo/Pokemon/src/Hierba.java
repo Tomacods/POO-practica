@@ -1,9 +1,12 @@
 import java.util.Random;
 
 public class Hierba extends Pokemon {
-    public Hierba (String nombre, String tipo, String debilidad) {
-        super(nombre, tipo, debilidad);
+    public Hierba (String nombre) {
+        super(nombre);
+        this.tipo = "Hierba";
+        this.debilidad = "Fuego";
     }
+    
     @Override
     public Integer Ataque(Pokemon atacado){
         Random random = new Random();
