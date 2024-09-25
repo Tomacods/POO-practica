@@ -4,6 +4,7 @@ public class Entrenador {
     private Integer nivel;
     private Pokemon principal;
     private ArrayList<Pokemon> pokedex = new ArrayList<>();
+
     public Pokemon getPrincipal() {
         return principal;
     }
@@ -24,9 +25,10 @@ public class Entrenador {
     public void setNivel(Integer nivel) {
         this.nivel = nivel;
     }
-    public Entrenador(String nombre, Integer nivel) {
+    public Entrenador(String nombre, Integer nivel, Pokemon principal) {
         this.nombre = nombre;
         this.nivel = nivel;
+        this.principal = principal;
     }
     public void atraparpokemon(Pokemon atrapado){
         System.out.println( this.nombre+" Es hora de atrapar Pokemons!!");
@@ -60,9 +62,11 @@ public class Entrenador {
             System.out.println("-------------------");
         }
     }
+    /*
     public void pokeprincipal(){
         this.principal = pokedex.get(1);
-    }
+    }*/
+
     public void Imprimir(){
         System.out.println("-------------------");
         System.out.println(this);

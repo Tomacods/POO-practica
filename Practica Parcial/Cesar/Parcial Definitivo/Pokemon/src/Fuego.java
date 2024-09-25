@@ -1,8 +1,10 @@
 import java.util.Random;
 
 public class Fuego extends Pokemon {
-    public Fuego (String nombre, String tipo, String debilidad) {
-        super(nombre, tipo, debilidad);
+    public Fuego (String nombre) {
+        super(nombre);
+        this.tipo = "Fuego";
+        this.debilidad = "Agua";
     }
     @Override
     public Integer Ataque(Pokemon atacado){

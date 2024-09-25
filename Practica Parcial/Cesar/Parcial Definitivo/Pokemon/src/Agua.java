@@ -1,9 +1,12 @@
 import java.util.Random;
 
 public class Agua extends Pokemon {
-    public Agua (String nombre, String tipo, String debilidad) {
-        super(nombre, tipo, debilidad);
+    public Agua (String nombre) {
+        super(nombre);
+        this.tipo = "Agua";
+        this.debilidad = "Hierba";
     }
+
     @Override
     public Integer Ataque(Pokemon atacado){
         Integer Atacar = this.ataque;

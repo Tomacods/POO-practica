@@ -49,19 +49,19 @@ public abstract class Pokemon {
         this.salvajismo = salvajismo;
     }
 
-    public Pokemon(String nombre, String tipo, String debilidad) {
+    public Pokemon(String nombre) {
         this.nombre = nombre;
-        this.tipo = tipo;
-        this.debilidad = debilidad;
+        this.vida = 100;
+        this.velocidad = asignarAtributos();
+        this.ataque = asignarAtributos();
+        this.defensa = asignarAtributos();
+        this.salvajismo = asignarAtributos();
     }
 
-    public void Asignaratributos(){
+    private Integer asignarAtributos(){
         Random random = new Random();
-        this.vida = 100;
-        this.ataque = random.nextInt(0, 100);
-        this.defensa = random.nextInt(0, 100);
-        this.velocidad = random.nextInt(0, 100);
-        this.salvajismo = random.nextInt(0, 100);
+        Integer valor = random.nextInt(0, 100);
+        return valor;
     }
 
     public  Boolean debilidad(Pokemon poke){

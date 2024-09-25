@@ -1,5 +1,8 @@
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
 
 /*Simulación:
 ● Se crearán 10 Pokémon diferentes de manera aleatoria, para que el entrenador intente
@@ -12,36 +15,41 @@ atraparlos.
 public class App {
     public static void main(String[] args) throws Exception {
         Random random = new Random();
-    
-        Pokemon pokemon1 = new PokemonHierba("Bulbasaur"); // pokemon del entrenador
-        Pokemon pokemon2 = new PokemonHierba("Oddish");
-        Pokemon pokemon3 = new PokemonHierba("Bellsprout");
-        Pokemon pokemon4 = new PokemonHierba("Chikorita");
-        Pokemon pokemon5 = new PokemonHierba("Treecko");
-        Pokemon pokemon6 = new PokemonFuego("Charmander");
-        Pokemon pokemon7 = new PokemonFuego("Vulpix");
-        Pokemon pokemon8 = new PokemonFuego("Growlithe");
-        Pokemon pokemon9 = new PokemonFuego("Cyndaquil");
-        Pokemon pokemon10 = new PokemonFuego("Torchic");
+        //lista vacia de pokemones salvajes
+        List<Pokemon> pokemonSalvaje = new ArrayList<>();
 
-        Entrenador entrenador = new Entrenador("Ash", pokemon1, random.nextInt(100) + 1 );
 
-        entrenador.atraparPokemon(pokemon1);
-        entrenador.atraparPokemon(pokemon2);
-        entrenador.atraparPokemon(pokemon3);
-        entrenador.atraparPokemon(pokemon4);
-        entrenador.atraparPokemon(pokemon5);
-        entrenador.atraparPokemon(pokemon6);
-        entrenador.atraparPokemon(pokemon7);
-        entrenador.atraparPokemon(pokemon8);
-        entrenador.atraparPokemon(pokemon9);
-        entrenador.atraparPokemon(pokemon10);
 
-        System.out.println("Nombre del entrenador: " + entrenador.getNombre());
-        System.out.println("Nivel del entrenador: " + entrenador.getNivelEntrenador());
-        System.out.println("Pokemones atrapados: ");
-        for (Pokemon pokemon : entrenador.getPokemones()) {
-            System.out.println(pokemon.getNombre());
+        String[] tiposPokemon = {"Fuego", "Hierba", "Agua"};
+
+        //GENERO 10 POKEMONES ALEATORIOS
+        for (int i = 0; i < 10; i++) {
+
+            String tipo = tiposPokemon[random.nextInt(3)];
+            String nombre = "Pokemon" + (i + 1);
+
+            if (tipo.equals("Fuego")) {
+                PokemonFuego pokemon = new PokemonFuego(nombre);
+                pokemonSalvaje.add(pokemon);
+            } else if (tipo.equals("Hierba")) {
+                PokemonHierba pokemon = new PokemonHierba(nombre);
+                pokemonSalvaje.add(pokemon);
+            } else {
+                PokemonAgua pokemon = new PokemonAgua(nombre);
+                pokemonSalvaje.add(pokemon);
+            }
+            
         }
+
+        Entrenador entrenador = new Entrenador("Ash", pokemonSalvaje.get(0));
+
+        for (Pokemon pokemon : pokemonSalvaje) {
+            if (entrenador.getNivelEntrenador() > pokemon.getSalvajismo()) {
+                entrenador.atraparPokemon(pokemon);
+
+            }
+        }
+
+        entrenador.imprimir();
     }
 }
