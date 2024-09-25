@@ -53,7 +53,7 @@ public class Main {
         for (Persona persona : empresa.getPersonas()){
             String [] fila = {persona.getNombre(), String.valueOf(persona.getEdad()), persona.getSexo(), persona.getOcupacion(),persona.getPuesto().getNombre()
             };
-            modelo.addRow(fila);
+            modelo.addRow(fila); // Agregar fila al modelo de datos
         }
     }
     // Crear JTable con el modelo de datos
@@ -64,37 +64,28 @@ public class Main {
     
     JButton botonEliminar = new JButton("Eliminar");
     botonEliminar.setEnabled(false);
-    tabla.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-        @Override
-        public void valueChanged(ListSelectionEvent e) {
-            if (!e.getValueIsAdjusting() && tabla.getSelectedRow() != -1) {
-                botonEliminar.setEnabled(true);
-            } else {
-                botonEliminar.setEnabled(false);
-            }
-        }
-    });
+
     // Añadir ActionListener al botón "Eliminar"
-    tabla.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+    tabla.getSelectionModel().addListSelectionListener(new ListSelectionListener() { // genera un evento al hacer click
         @Override
-        public void valueChanged(ListSelectionEvent e) {
-            if (!e.getValueIsAdjusting() && tabla.getSelectedRow() != -1) {
-                botonEliminar.setEnabled(true);
+        public void valueChanged(ListSelectionEvent e) { // metodo que se ejecuta al hacer click
+            if (!e.getValueIsAdjusting() && tabla.getSelectedRow() != -1) { // si hay una fila seleccionada
+                botonEliminar.setEnabled(true); // habilita el botón
             } else {
-                botonEliminar.setEnabled(false);
+                botonEliminar.setEnabled(false); // deshabilita el botón
             }
         }
     });
 
     // Añadir ActionListener al botón "Eliminar"
-    botonEliminar.addActionListener(new ActionListener() {
+    botonEliminar.addActionListener(new ActionListener() { // genera un evento al hacer click
         @Override
-        public void actionPerformed(ActionEvent e) {
-            int selectedRow = tabla.getSelectedRow();
-            if (selectedRow != -1) {
-                modelo.removeRow(selectedRow);
-                empresas.remove(selectedRow); // Eliminar la empresa correspondiente del listado
-                botonEliminar.setEnabled(false);
+        public void actionPerformed(ActionEvent e) { // metodo que se ejecuta al hacer click
+            int selectedRow = tabla.getSelectedRow(); // obtiene la fila seleccionada
+            if (selectedRow != -1) { // si hay una fila seleccionada
+                modelo.removeRow(selectedRow); // elimina la fila del modelo
+                empresas.remove(selectedRow); // Elimina la empresa correspondiente del listado
+                botonEliminar.setEnabled(false); // deshabilita el botón
             }
         }
     });
