@@ -60,12 +60,18 @@ public class App {
                         FileOutputStream fos = new FileOutputStream(destFile)){
                         byte[] buffer = new byte[1024];
                         Integer length;
-                        while ((length.fis.read(buffer) > 0){
-                            
+                        while ((length = fis.read(buffer)) > 0){
+                            fos.write(buffer, 0, length);
                         }
+                        JOptionPane.showMessageDialog(null, "Archivo copiado exitosamente.");
+                    } catch (IOException ex){
+                        JOptionPane.showMessageDialog(null, "Error al copiar el archivo: " + ex.getMessage());
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Seleccione un archivo y una ubicación de destino.");
                 }
             }
         });
+        frame.setVisible(true);
     }
 }
