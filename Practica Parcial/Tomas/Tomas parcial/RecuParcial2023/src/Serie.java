@@ -16,9 +16,12 @@ class Serie extends Contenido {
     @Override
     public void reproducir() {
         System.out.println("Reproduciendo serie: " + nombre);
+        //cambiar el capitulo a visto es decir true
     }
 
     public List<Capitulo> getCapitulos() {
         return capitulos;
     }
+    
 }
+    

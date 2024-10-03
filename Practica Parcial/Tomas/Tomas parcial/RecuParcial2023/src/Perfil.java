@@ -33,9 +33,9 @@ class Perfil {
         System.out.println("Favoritos:");
         for (Contenido contenido : favoritos) {
             System.out.println(" - " + contenido.nombre + " (" + contenido.anioemision + ") " + contenido.calificacion + " estrellas");
-            if (contenido instanceof Serie) {
+            if (contenido instanceof Serie) { // instanceoff  hace 
                 Serie serie = (Serie) contenido;
-                for (Capitulo capitulo : serie.getCapitulos()) {
+                for (Capitulo capitulo : serie.getCapitulos()) { //imprimir el ultimo capitulo visto
                     System.out.println("   * " + capitulo.getNombre() + " (Capítulo " + capitulo.getOrden() + ") " + (capitulo.esVisto() ? "Visto" : "No visto"));
                 }
             } else if (contenido instanceof Pelicula) {
