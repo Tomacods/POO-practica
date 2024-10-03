@@ -9,7 +9,7 @@ public class Perfil {
         this.niño = niño;
     }
     public void imprimirperfil (){
-        System.err.println("Perfil "+this.nombre);
+        System.out.println("Perfil "+this.nombre);
         for (Contenido c : contenidos){
             c.imprimircontenido();
         }

@@ -5,15 +5,26 @@ public class Serie extends Contenido {
     public Serie(String nombre, Integer anio, Integer calificacion) {
         super(nombre, anio, calificacion);
     }
+    @Override
     public void reproducir(){
-
+        System.out.println("Se esta reproduciendo "+this.nombre);
+        this.capitulos.get(ultimocap()).setVisto(true);
     }
+    @Override
     public void imprimircontenido(){
-        System.err.println("Usted se quedo en "+this.nombre+ " capitulo");
+        System.out.println("Usted se quedo en "+this.nombre+ " capitulo " + ultimocap());
     }
-    public void ultimocap (){
-        while(Integer i = 0; i =< this.capitulos.size(); i++){
+    public Integer ultimocap (){
+        Integer i=0;
+        Boolean ultimo = true;
+        while(i <= this.capitulos.size() && ultimo){
+            if (this.capitulos.get(i).getVisto()== false){
+                ultimo = false;
+            }else {
+                i= i+1;
+            }
             
         }
+        return this.capitulos.get(i).getOrden();
     }
 }
