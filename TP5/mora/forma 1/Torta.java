@@ -18,6 +18,6 @@ public class Torta {
 
     public void mostrar() {
         System.out.println("Torta de: " + masa + ", con: " + relleno);
-    }
+    } 
 
 }

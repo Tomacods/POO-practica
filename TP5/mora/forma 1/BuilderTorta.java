@@ -1,4 +1,4 @@
-public abstract class BuilderTorta {
+public abstract class BuilderTorta { //CAMBIAR A INTERFAZ
     protected Torta torta;
 
     public Torta getTorta(){
@@ -9,9 +9,11 @@ public abstract class BuilderTorta {
         torta = new Torta();
     }
 
-    public abstract void tortaVainilla();
-    public abstract void tortaCoco();
-    public abstract void tortaChocolate();
+    public abstract void setRelleno(String relleno);
+    public abstract void setMasa(String masa);
+   // public abstract void tortaVainilla();
+   // public abstract void tortaCoco();
+    //public abstract void tortaChocolate();
 
 
 //public abstract void setRelleno();

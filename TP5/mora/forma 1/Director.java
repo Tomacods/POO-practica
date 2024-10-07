@@ -6,15 +6,19 @@ public class Director {
    }
 
    public void buildTortaVainilla() {
-      builder.tortaVainilla();
+    //  builder.tortaVainilla();
+    builder.setMasa("Vainilla");
+    builder.setRelleno("relleno1");
    }
 
-   public void buildTortaCoco() {
+/*    public void buildTortaCoco() {
       builder.tortaCoco();
    }
 
    public void buildTortaChocolate() {
       builder.tortaChocolate();
-   }
+   }*/
+
+   //receta aca
 
 }
