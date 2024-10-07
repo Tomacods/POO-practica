@@ -6,7 +6,7 @@ public class Especial extends Carta {
 
     public Especial(String nombre, String club, String pais) {
         super(nombre, club, pais);
-        asignar_random();
+        asignar_random(89, 100, 1.02);
     }
 
     public void setHabilidades(ArrayList<String> habilidades) {

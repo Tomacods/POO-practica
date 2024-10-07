@@ -4,18 +4,10 @@ public class Oro extends Carta {
 
     public Oro(String nombre, String club, String pais) {
         super(nombre, club, pais);
-        asignar_random();
+        asignar_random(74, 90, 1.05);
     }
 
-    public void asignar_random() {
-        Random random = new Random();
-        this.velocidad = (int) (random.nextInt(74, 91) * 1.05);
-        this.tiro = (int) (random.nextInt(74, 91) * 1.05);
-        this.regate = (int) (random.nextInt(74, 91) * 1.05);
-        this.defensa = (int) (random.nextInt(74, 91) * 1.05);
-        this.pase = (int) (random.nextInt(74, 91) * 1.05);
-        this.fisico = (int) (random.nextInt(74, 91) * 1.05);
-    }
+
 
     public void imprimir() {
         System.out.println("Nombre:" + this.nombre + "\n" +
