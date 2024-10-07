@@ -7,17 +7,17 @@ public class Bronce extends Carta {
   public Bronce(String nombre, String club, String pais, String habilidad) {
     super(nombre, club, pais);
     this.habilidad = habilidad;
-    asignar_random();
+    asignar_random(49, 66, 2.0);
   }
-
-  public void asignar_random() {
+@Override
+  public void asignar_random(Integer min, Integer max, Double nro) {
     Random random = new Random();
-    this.velocidad = random.nextInt(49, 66) + 2;
-    this.tiro = random.nextInt(49, 66) + 2;
-    this.regate = random.nextInt(49, 66) + 2;
-    this.defensa = random.nextInt(49, 66) + 2;
-    this.pase = random.nextInt(49, 66) + 2;
-    this.fisico = random.nextInt(49, 66) + 2;
+    this.velocidad = (int) (random.nextInt(min, max) + nro);
+    this.tiro =  (int) (random.nextInt(min, max) + nro);
+    this.regate =  (int) (random.nextInt(min, max) + nro);
+    this.defensa =  (int) (random.nextInt(min, max) + nro);
+    this.pase =  (int) (random.nextInt(min, max) + nro);
+    this.fisico =  (int) (random.nextInt(min, max) + nro);
   }
 
   public void imprimir() {
