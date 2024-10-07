@@ -1,6 +1,6 @@
 package banco;
 
-public  abstract class Cuenta {
+public  abstract class Cuenta implements Pagar {
     protected int saldo;
     protected String dueño;
     protected String numeroCuenta;

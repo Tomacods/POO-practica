@@ -2,7 +2,7 @@ public class EmpleadoTemporal extends Persona implements Empleado{
     private Integer horas_trabajadas;
 
     public EmpleadoTemporal(String nombre, Integer sueldo, Integer horas_trabajadas) {
-      super(nombre, sueldo);
+    super(nombre, sueldo);
         this.horas_trabajadas = horas_trabajadas;
     }
 

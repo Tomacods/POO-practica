@@ -3,7 +3,7 @@ la cantidad de horas trabajadas en el mes indicando además si cumplió o no con
 mínimo esperado. */
 public class Reloj {
     
-    public void generarInforme(Personal[] personal) {
+    public void generarInforme(Personal[] personal) { //esto hace referencia a la clase Personal que se encuentra en el archivo Personal.java, recorre
         for (Personal p : personal) {
             Integer horasTrabajadas = p.HorasTrabajadas();
             System.out.println(p.getNombre() + " trabajó " + horasTrabajadas + " horas en el mes.");
