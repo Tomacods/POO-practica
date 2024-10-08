@@ -10,15 +10,5 @@ public abstract class BuilderTorta { //CAMBIAR A INTERFAZ
     }
 
     public abstract void setRelleno(String relleno);
-    public abstract void setMasa(String masa);
-   // public abstract void tortaVainilla();
-   // public abstract void tortaCoco();
-    //public abstract void tortaChocolate();
-
-
-//public abstract void setRelleno();
-  //  public abstract void setMasa();
-
-    
-    
+    public abstract void setMasa(String masa);  
 }

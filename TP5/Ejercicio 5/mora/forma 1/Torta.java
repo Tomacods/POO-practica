@@ -1,4 +1,4 @@
-import java.util.Array;
+
 
 public class Torta {
 
@@ -6,7 +6,7 @@ public class Torta {
     // private ArrayList<String> ingredientes = new ArrayList<>();
 
     public Torta() {
-   }
+    }
 
     public void setRelleno(String relleno) {
         this.relleno = relleno;

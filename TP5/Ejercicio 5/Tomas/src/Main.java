@@ -1,25 +1,21 @@
 public class Main {
         public static void main(String[] args) {
-        Torta tortaVainilla = new Torta.TortaBuilder()
-                .setMasa("Bizcocho")
-                .setRelleno("Crema de Vainilla")
-                .setSabor("Vainilla")
-                .build();
+                Director director = new Director();
 
-        Torta tortaCoco = new Torta.TortaBuilder()
-                .setMasa("Bizcocho de Coco")
-                .setRelleno("Crema de Coco")
-                .setSabor("Coco")
-                .build();
+                Builder vainillaBuilder = new VainillaBuilder();
+                Builder cocoBuilder = new CocoBuilder();
+                Builder chocolateBuilder = new ChocolateBuilder();
 
-        Torta tortaChocolate = new Torta.TortaBuilder()
-                .setMasa("Bizcocho de Chocolate")
-                .setRelleno("Crema de Chocolate")
-                .setSabor("Chocolate")
-                .build();
+                director.setBuilder(vainillaBuilder);
+                Torta tortaVainilla = director.construirTorta();
+                System.out.println(tortaVainilla);
 
-        System.out.println(tortaVainilla);
-        System.out.println(tortaCoco);
-        System.out.println(tortaChocolate);
+                director.setBuilder(cocoBuilder);
+                Torta tortaCoco = director.construirTorta();
+                System.out.println(tortaCoco);
+
+                director.setBuilder(chocolateBuilder);
+                Torta tortaChocolate = director.construirTorta();
+                System.out.println(tortaChocolate);
         }
 }
