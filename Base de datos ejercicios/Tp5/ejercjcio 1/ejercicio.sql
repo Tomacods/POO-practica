@@ -66,11 +66,11 @@ FROM CIUDAD CI
 JOIN EMBARQUE E ON CI.NOMBRE_CIUDAD = E.DESTINO
 WHERE E.PESO > 100;
 
--- h. Indique los choferes que han transportado embarques a cada una de las ciudades.
-SELECT DISTINCT CI.NOMBRE_CIUDAD, CA.NOMBRE_CHOFER
-FROM CIUDAD CI
-JOIN EMBARQUE E ON CI.NOMBRE_CIUDAD = E.DESTINO
-JOIN CAMION CA ON E.ID_CAMION = CA.ID_CAMION;
+-- -- h. Indique los choferes que han transportado embarques a cada una de las ciudades.
+-- SELECT DISTINCT CI.NOMBRE_CIUDAD, CA.NOMBRE_CHOFER
+-- FROM CIUDAD CI
+-- JOIN EMBARQUE E ON CI.NOMBRE_CIUDAD = E.DESTINO
+-- JOIN CAMION CA ON E.ID_CAMION = CA.ID_CAMION;
 
 -- i. Indique el nombre y la renta anual de los clientes que han enviado embarques que pesan más de 100 kg.
 SELECT DISTINCT C.NOMBRE_CLIENTE, C.RENTA_ANUAL
