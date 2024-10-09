@@ -1,9 +1,9 @@
 public class RedVelvetBuilder implements Builder{
     
-    private Torta torta;
+    private TortaBuilder torta;
 
     public RedVelvetBuilder(){
-        this.torta = new Torta();
+        this.torta = new TortaBuilder();
     }
     
     @Override
@@ -17,7 +17,7 @@ public class RedVelvetBuilder implements Builder{
     }
     
     @Override
-    public Torta getTorta() {
+    public TortaBuilder getTorta() {
         return this.torta;
     }
 }
