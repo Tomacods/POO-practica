@@ -1,20 +1,18 @@
-class TortaBuilder implements Builder{
+public class TortaBuilder{
 
-    private Torta torta;
-
-    public TortaBuilder(){
-        this.reset();
-    }
-
-    public void reset(){
-        this.torta = new Torta();
-    }
+    private String gusto;
+    private String relleno;
 
     public void setGusto(String gusto){
-        this.torta.gusto = gusto;
+        this.gusto = gusto;
     }
 
     public void setRelleno(String relleno){
-        this.torta.relleno = relleno;
+        this.relleno = relleno;
+    }
+
+    @Override
+    public String toString() {
+        return "Bizcochuelo: " + gusto + ", Relleno: " + relleno;
     }
 }
