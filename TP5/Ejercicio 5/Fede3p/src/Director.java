@@ -1,9 +1,14 @@
-class Director {
+public class Director {
     
-    public static torta(Builder builder){
-        builder.reset();
-        builder.setGusto("Vainilla");
-        builder.setRelleno("Dulce de leche");
-        
+    private Builder builder;
+
+    public void setBuilder(Builder builder){
+        this.builder = builder;
+    }
+
+    public Torta nuevaTorta(){
+        builder.setGusto();
+        builder.setRelleno();
+        return builder.getTorta();
     }
 }
