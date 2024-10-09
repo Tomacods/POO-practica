@@ -5,17 +5,17 @@ public class App {
 
         Builder vainilla = new VainillaBuilder();
         director.setBuilder(vainilla);
-        Torta tortaVainilla = director.nuevaTorta();
+        TortaBuilder tortaVainilla = director.nuevaTorta();
         System.out.println(tortaVainilla);
 
         Builder coco = new CocoBuilder();
         director.setBuilder(coco);
-        Torta tortaCoco = director.nuevaTorta();
+        TortaBuilder tortaCoco = director.nuevaTorta();
         System.out.println(tortaCoco);
 
         Builder redvelvet = new RedVelvetBuilder();
         director.setBuilder(redvelvet);
-        Torta tortaRedVelvet = director.nuevaTorta();
+        TortaBuilder tortaRedVelvet = director.nuevaTorta();
         System.out.println(tortaRedVelvet);
     }
 }

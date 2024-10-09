@@ -6,7 +6,7 @@ public class Director {
         this.builder = builder;
     }
 
-    public Torta nuevaTorta(){
+    public TortaBuilder nuevaTorta(){
         builder.setGusto();
         builder.setRelleno();
         return builder.getTorta();

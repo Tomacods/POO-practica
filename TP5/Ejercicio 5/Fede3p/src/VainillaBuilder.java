@@ -1,9 +1,9 @@
 public class VainillaBuilder implements Builder{
     
-    private Torta torta;
+    private TortaBuilder torta;
 
     public VainillaBuilder(){
-        this.torta = new Torta();
+        this.torta = new TortaBuilder();
     }
     
     @Override
@@ -17,7 +17,7 @@ public class VainillaBuilder implements Builder{
     }
     
     @Override
-    public Torta getTorta() {
+    public TortaBuilder getTorta() {
         return this.torta;
     }
 }

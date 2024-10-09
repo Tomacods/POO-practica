@@ -1,9 +1,9 @@
 public class CocoBuilder implements Builder {
     
-    private Torta torta;
+    private TortaBuilder torta;
 
     public CocoBuilder(){
-        this.torta = new Torta();
+        this.torta = new TortaBuilder();
     }
 
     @Override
@@ -18,7 +18,7 @@ public class CocoBuilder implements Builder {
     }
 
     @Override
-    public Torta getTorta() {
+    public TortaBuilder getTorta() {
         return this.torta;
     }
 }
