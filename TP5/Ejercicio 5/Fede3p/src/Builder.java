@@ -1,7 +1,6 @@
-interface Builder {
+public interface Builder {
     
-    public abstract void reset();
-    public abstract void setGusto(String gusto);
-    public abstract void setRelleno(String relleno);
-
+    public void setGusto();
+    public void setRelleno();
+    public TortaBuilder getTorta();
 }
