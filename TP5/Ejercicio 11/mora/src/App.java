@@ -9,16 +9,17 @@ public class App {
         clientes.add(c2);
         Caja caja = new Caja("Cajero 1");
         Banco banco = new Banco(caja);
-        // caja.abrir();
+        
         caja.atender(clientes); //default
 
         caja.setState(new StateAbrir());
-        //caja.abrir();
         banco.abrirCaja();
         banco.atenderClientes(clientes);
+
         caja.setState(new StateSuspendida());
         banco.suspenderCaja();
         banco.atenderClientes(clientes);
+
         caja.setState(new StateCerrada());
         banco.cerrarCaja();
         banco.atenderClientes(clientes);
