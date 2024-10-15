@@ -1,55 +1,55 @@
--- Crear tablas
-CREATE TABLE DOCENTE (
-    DNI INT PRIMARY KEY,
-    APELLIDO VARCHAR(50),
-    NOMBRE VARCHAR(50),
-    DOMICILIO VARCHAR(100),
-    TITULO VARCHAR(50)
+-- crear tablas
+create table docente (
+    dni int primary key,
+    apellido varchar(50),
+    nombre varchar(50),
+    domicilio varchar(100),
+    titulo varchar(50)
 );
 
-CREATE TABLE DOCMAT (
-    DNI INT,
-    COD_MAT INT,
-    CARGO VARCHAR(50),
-    SALARIO DECIMAL(10, 2),
-    DEPARTAMENTO VARCHAR(50),
-    PRIMARY KEY (DNI, COD_MAT),
-    FOREIGN KEY (DNI) REFERENCES DOCENTE(DNI)
+create table docmat (
+    dni int,
+    cod_mat int,
+    cargo varchar(50),
+    salario decimal(10, 2),
+    departamento varchar(50),
+    primary key (dni, cod_mat),
+    foreign key (dni) references docente(dni)
 );
 
-CREATE TABLE MATERIA (
-    COD_MAT INT PRIMARY KEY,
-    NOMBRE VARCHAR(50),
-    CARGA_HORARIA INT
+create table materia (
+    cod_mat int primary key,
+    nombre varchar(50),
+    carga_horaria int
 );
 
--- Insertar datos de ejemplo
-INSERT INTO DOCENTE (DNI, APELLIDO, NOMBRE, DOMICILIO, TITULO) VALUES
-(12345678, 'Perez', 'Juan', 'Calle Falsa 123', 'Analista de Sistemas'),
-(87654321, 'Gomez', 'Ana', 'Avenida Siempre Viva 456', 'Licenciado en Matemáticas');
+-- insertar datos de ejemplo
+insert into docente (dni, apellido, nombre, domicilio, titulo) values
+(12345678, 'perez', 'juan', 'calle falsa 123', 'analista de sistemas'),
+(87654321, 'gomez', 'ana', 'avenida siempre viva 456', 'licenciado en matemáticas');
 
-INSERT INTO DOCMAT (DNI, COD_MAT, CARGO, SALARIO, DEPARTAMENTO) VALUES
-(12345678, 1, 'Titular', 15000, 'Matemáticas'),
-(87654321, 2, 'Adjunto', 13000, 'Matemáticas');
+insert into docmat (dni, cod_mat, cargo, salario, departamento) values
+(12345678, 1, 'titular', 15000, 'matemáticas'),
+(87654321, 2, 'adjunto', 13000, 'matemáticas');
 
-INSERT INTO MATERIA (COD_MAT, NOMBRE, CARGA_HORARIA) VALUES
-(1, 'Álgebra', 5),
-(2, 'Cálculo', 4);
+insert into materia (cod_mat, nombre, carga_horaria) values
+(1, 'álgebra', 5),
+(2, 'cálculo', 4);
 
--- a. Listar los nombres y el título de los docentes que trabajan en el departamento de matemáticas.
-SELECT DOCENTE.NOMBRE, DOCENTE.TITULO
-FROM DOCENTE
-JOIN DOCMAT ON DOCENTE.DNI = DOCMAT.DNI
-WHERE DOCMAT.DEPARTAMENTO = 'Matemáticas';
+-- a. listar los nombres y el título de los docentes que trabajan en el departamento de matemáticas.
+select docente.nombre, docente.titulo
+from docente
+join docmat on docente.dni = docmat.dni
+where docmat.departamento = 'matemáticas';
 
--- b. Listar los departamentos en los que se abona más de $12000 en sueldos docentes.
-SELECT DISTINCT DEPARTAMENTO
-FROM DOCMAT
-WHERE SALARIO > 12000;
+-- b. listar los departamentos en los que se abona más de $12000 en sueldos docentes.
+select distinct departamento
+from docmat
+where salario > 12000;
 
--- c. Listar los nombres y carga horaria de las materias y los nombres y apellidos de los docentes cuyo título es Analista de Sistemas.
-SELECT MATERIA.NOMBRE AS Materia, MATERIA.CARGA_HORARIA, DOCENTE.NOMBRE, DOCENTE.APELLIDO
-FROM MATERIA
-JOIN DOCMAT ON MATERIA.COD_MAT = DOCMAT.COD_MAT
-JOIN DOCENTE ON DOCMAT.DNI = DOCENTE.DNI
-WHERE DOCENTE.TITULO = 'Analista de Sistemas';
+-- c. listar los nombres y carga horaria de las materias y los nombres y apellidos de los docentes cuyo título es analista de sistemas.
+select materia.nombre as materia, materia.carga_horaria, docente.nombre, docente.apellido
+from materia
+join docmat on materia.cod_mat = docmat.cod_mat
+join docente on docmat.dni = docente.dni
+where docente.titulo = 'analista de sistemas';
