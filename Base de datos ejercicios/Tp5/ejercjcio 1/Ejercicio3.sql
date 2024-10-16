@@ -1,63 +1,63 @@
--- Crear tablas
-CREATE TABLE ALUMNO (
-    LEGAJO INT PRIMARY KEY,
-    NOMBRE VARCHAR(50),
-    DIRECCIÓN VARCHAR(100),
-    EDAD INT,
-    CONDICIÓN VARCHAR(10)
+-- crear tablas
+create table alumno (
+    legajo int primary key,
+    nombre varchar(50),
+    dirección varchar(100),
+    edad int,
+    condición varchar(10)
 );
 
-CREATE TABLE MATERIA (
-    CÓDIGO INT PRIMARY KEY,
-    NOMBRE VARCHAR(50),
-    CARRERA VARCHAR(50),
-    FACULTAD VARCHAR(50),
-    DURACIÓN VARCHAR(15)
+create table materia (
+    código int primary key,
+    nombre varchar(50),
+    carrera varchar(50),
+    facultad varchar(50),
+    duración varchar(15)
 );
 
-CREATE TABLE EXAMEN (
-    LEGAJO INT,
-    CÓDIGO INT,
-    FECHA DATE,
-    NOTA DECIMAL(3, 2),
-    PRIMARY KEY (LEGAJO, CÓDIGO, FECHA),
-    FOREIGN KEY (LEGAJO) REFERENCES ALUMNO(LEGAJO),
-    FOREIGN KEY (CÓDIGO) REFERENCES MATERIA(CÓDIGO)
+create table examen (
+    legajo int,
+    código int,
+    fecha date,
+    nota decimal(3, 2),
+    primary key (legajo, código, fecha),
+    foreign key (legajo) references alumno(legajo),
+    foreign key (código) references materia(código)
 );
 
--- Insertar datos de ejemplo
-INSERT INTO ALUMNO (LEGAJO, NOMBRE, DIRECCIÓN, EDAD, CONDICIÓN) VALUES
-(1, 'Juan Perez', 'Calle Falsa 123', 20, 'Regular'),
-(2, 'Ana Gomez', 'Avenida Siempre Viva 456', 22, 'Libre');
+-- insertar datos de ejemplo
+insert into alumno (legajo, nombre, dirección, edad, condición) values
+(1, 'juan perez', 'calle falsa 123', 20, 'regular'),
+(2, 'ana gomez', 'avenida siempre viva 456', 22, 'libre');
 
-INSERT INTO MATERIA (CÓDIGO, NOMBRE, CARRERA, FACULTAD, DURACIÓN) VALUES
-(101, 'Estadística', 'Licenciatura en Informática', 'Facultad de Ingeniería', 'Anual'),
-(102, 'Álgebra', 'Licenciatura en Matemáticas', 'Facultad de Ingeniería', 'Cuatrimestral');
+insert into materia (código, nombre, carrera, facultad, duración) values
+(101, 'estadística', 'licenciatura en informática', 'facultad de ingeniería', 'anual'),
+(102, 'álgebra', 'licenciatura en matemáticas', 'facultad de ingeniería', 'cuatrimestral');
 
-INSERT INTO EXAMEN (LEGAJO, CÓDIGO, FECHA, NOTA) VALUES
+insert into examen (legajo, código, fecha, nota) values
 (1, 101, '2023-06-15', 9.0),
 (2, 101, '2023-06-15', 7.5);
 
--- a. Listar los legajos, el nombre y apellido de los alumnos que cursan la materia “Estadística” en la carrera “Licenciatura en Informática” de la Facultad de Ingeniería, ordenado por legajo.
-SELECT ALUMNO.LEGAJO, ALUMNO.NOMBRE
-FROM ALUMNO
-JOIN EXAMEN ON ALUMNO.LEGAJO = EXAMEN.LEGAJO
-JOIN MATERIA ON EXAMEN.CÓDIGO = MATERIA.CÓDIGO
-WHERE MATERIA.NOMBRE = 'Estadística'
-  AND MATERIA.CARRERA = 'Licenciatura en Informática'
-  AND MATERIA.FACULTAD = 'Facultad de Ingeniería'
-ORDER BY ALUMNO.LEGAJO;
+-- a. listar los legajos, el nombre y apellido de los alumnos que cursan la materia “estadística” en la carrera “licenciatura en informática” de la facultad de ingeniería, ordenado por legajo.
+select alumno.legajo, alumno.nombre
+from alumno
+join examen on alumno.legajo = examen.legajo
+join materia on examen.código = materia.código
+where materia.nombre = 'estadística'
+  and materia.carrera = 'licenciatura en informática'
+  and materia.facultad = 'facultad de ingeniería'
+order by alumno.legajo;
 
--- b. Listar la cantidad de materias por carrera, para la Facultad de Ingeniería, ordenada por código de la carrera.
-SELECT CARRERA, COUNT(*) AS Cantidad_Materias
-FROM MATERIA
-WHERE FACULTAD = 'Facultad de Ingeniería'
-GROUP BY CARRERA
-ORDER BY CARRERA;
+-- b. listar la cantidad de materias por carrera, para la facultad de ingeniería, ordenada por código de la carrera.
+select carrera, count(*) as cantidad_materias
+from materia
+where facultad = 'facultad de ingeniería'
+group by carrera
+order by carrera;
 
--- c. Listar la nota promedio por alumno, para aquellos promedios superiores a 8 (ocho).
-SELECT ALUMNO.LEGAJO, ALUMNO.NOMBRE, AVG(EXAMEN.NOTA) AS Promedio
-FROM ALUMNO
-JOIN EXAMEN ON ALUMNO.LEGAJO = EXAMEN.LEGAJO
-GROUP BY ALUMNO.LEGAJO, ALUMNO.NOMBRE
-HAVING AVG(EXAMEN.NOTA) > 8;
+-- c. listar la nota promedio por alumno, para aquellos promedios superiores a 8 (ocho).
+select alumno.legajo, alumno.nombre, avg(examen.nota) as promedio
+from alumno
+join examen on alumno.legajo = examen.legajo
+group by alumno.legajo, alumno.nombre
+having avg(examen.nota) > 8;
