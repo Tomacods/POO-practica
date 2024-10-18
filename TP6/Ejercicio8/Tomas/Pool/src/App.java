@@ -22,6 +22,8 @@ public class App {
         tiempoFin = System.currentTimeMillis();
         System.out.println("Tiempo de suma paralela: " + (tiempoFin - tiempoInicio) + " ms");
     }
+    //lo de abajo genera una matriz aleatoria y suma dos matrices, gracias copilot por hacerme la tarea
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private static int[][] generarMatrizAleatoria(int filas, int columnas) {
         Random random = new Random();
