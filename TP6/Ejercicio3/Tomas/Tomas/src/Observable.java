@@ -8,9 +8,9 @@ public class Observable {
         observers.add(observer);
     }
 
-    public void notificarObservadores() {
+    public void notificarObservadores(Long elapsedTime) {
         for (Observer observer : observers) {
-            observer.actualizar();
+            observer.actualizar(elapsedTime);
         }
     }
 }
