@@ -1,0 +1,9 @@
+cinco
+CREATE PROCEDURE sp_turnos_infect
+@dni_persona int
+AS
+BEGIN
+SELECT p.dni_persona, t.fecha_turno, e.descripcion_especialidad
+FROM personas p INNER JOIN turnos t ON p.dni_persona = t.dni_persona
+INNER JOIN especialidades e ON t.codigo_especialidad = e.codigo_especialidad
+WHERE e.descripcion_especialidad = 'Infectologia' AND p.dni_persona = @dni_persona
