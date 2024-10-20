@@ -1,7 +1,25 @@
 -- Crear un stored procedure que liste todos los horarios de los profesionales
 -- masculinos por especialidad.
 
-
+SELECT DISTINCT 
+        p.nombre_profesional || ' ' || p.apellido_profesional AS profesional, 
+        e.descripcion_especialidad AS especialidad, 
+        EXTRACT(HOUR FROM h.hora_desde) AS Hora, 
+        CASE 
+            WHEN h.codigo_dia_semana = 0 THEN 'Domingo'
+            WHEN h.codigo_dia_semana = 1 THEN 'Lunes'
+            WHEN h.codigo_dia_semana = 2 THEN 'Martes'
+            WHEN h.codigo_dia_semana = 3 THEN 'Miércoles'
+            WHEN h.codigo_dia_semana = 4 THEN 'Jueves'
+            WHEN h.codigo_dia_semana = 5 THEN 'Viernes'
+            WHEN h.codigo_dia_semana = 6 THEN 'Sábado'
+        END AS Dia, 
+        p.genero_profesional
+    FROM profesionales p 
+    JOIN horarios h ON p.dni_profesional = h.dni_profesional
+    JOIN especialidades e ON h.codigo_especialidad = e.codigo_especialidad
+    WHERE p.genero_profesional = 'Masculino'
+    ORDER BY e.descripcion_especialidad;
 
 
 --tablas
