@@ -1,21 +1,21 @@
 public class Main {
     public static void main(String[] args) {
         Cronometro cronometro = new Cronometro();
-        CronometroVista view = new CronometroVista();
-        CronometroController controller = new CronometroController(cronometro, view);
+        CronometroVista vista = new CronometroVista();
+        CronometroController controlador = new CronometroController(cronometro, vista);
 
-        controller.startCronometro();
+        controlador.startCronometro();
         try {
             Thread.sleep(2000); // Esperar 2 segundos
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        controller.createPartial();
+        controlador.createPartial();
         try {
             Thread.sleep(2000); // Esperar 2 segundos más
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        controller.stopCronometro();
+        controlador.stopCronometro();
     }
 }
