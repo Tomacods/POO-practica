@@ -28,7 +28,7 @@ public class CronometroController implements Cronometrar, ActionListener {
         this.vista.getBtn_parar().addActionListener(e->{
 			String[] column = { "N°", "Tiempo", "Parcial" };
 			this.vista.getDefTableModel().setDataVector(null, column);
-			this.vista.getBtn_iniciar().setText("Iniciar");
+			this.vista.getBtn_iniciar().setText("No funco");
 			this.vista.getBtn_parar().setEnabled(false);
 			if (secundario) {
 				this.vista.getCronoPrincipal().setText("00:00:00");
@@ -46,7 +46,7 @@ public class CronometroController implements Cronometrar, ActionListener {
     }
 
     public void update(){
-        if (this.tiempo.getHiloDeEjecucion().getName().equals("Principal")){
+        if (this.tiempo.getHiloDeEjecucion().getName().equals("principal")){
             this.vista.getCronoPrincipal().setText(this.observable.toString());
         }
 
