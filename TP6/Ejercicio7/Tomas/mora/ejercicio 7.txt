@@ -1,0 +1,7 @@
+ejercicio 7
+deadlock
+"un recurso solo puede ser utilizado por un hilo a la vez"
+"Los recursos no se pueden forzar a liberarse; solo el hilo que los retiene puede liberarlos"
+https://oregoom.com/java/deadlock-entre-hilos/
+solución: un hilo(una persona) debería esperar hasta que la otra persona(el otro hilo) termine con la cuchara(recurso/lock creo)
+o sino un recurso compartido, uno la usa, avisa q termino, el otro espera hasta q sea avsiado para usarla
