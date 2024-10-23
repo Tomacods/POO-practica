@@ -44,6 +44,7 @@ CREATE TABLE Escalón (
 );
 
 
+
 -- Tabla Juego
 CREATE TABLE Juego (
     ID_Juego INT PRIMARY KEY,
@@ -70,14 +71,6 @@ CREATE TABLE Empate_Jugador (
     FOREIGN KEY (ID_Jugador) REFERENCES Jugador(ID_Jugador)
 );
 
--- Tabla Escalón
-CREATE TABLE Escalón (
-    ID_Escalon INT PRIMARY KEY,
-    Número_Escalon INT,
-    ID_Temática INT,
-    Estado VARCHAR(20) CHECK (Estado IN ('pendiente', 'completado')),
-    FOREIGN KEY (ID_Temática) REFERENCES Temática(ID_Temática)
-);
 
 -- Tabla Ronda
 CREATE TABLE Ronda (
