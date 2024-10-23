@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.sound.midi.Track;
+//import javax.sound.midi.Track;
 
 public class Cronometro implements Runnable, Observable {
 
