@@ -131,3 +131,68 @@ where extract (year from t.fecha_turno) = 2005 and p.genero_profesional = 'Femen
 select * from personas p
 join turnos t on p.dni_persona = t.dni_persona
 where extract (year from p.fecha_nacimiento) = extract (year from t.fecha_turno);
+
+-- --ejemplo para crear una tabla Historico_persona en microsoft sql server como store procedure
+-- CREATE PROCEDURE CrearTablaHistoricoPersona
+-- AS
+-- BEGIN
+--     CREATE TABLE Historico_persona (
+--         dni_persona int primary key,
+--         nombre_persona varchar(50),
+--         apellido_persona varchar(50),
+--         genero_persona int,
+--         fecha_nacimiento date,
+--         telefono_contacto varchar(20),
+--         fecha_modificacion datetime
+--     );
+-- END;
+
+--iInvestigar sobre Triggers en SQL Server, y presentar la estructura de declaración de un Trigger.
+--Un trigger es un objeto de base de datos que se activa en respuesta a un evento particular en una base de datos o servidor de bases de datos.
+--Los eventos que pueden activar un trigger son los siguientes:
+--INSERT: Se activa después de insertar un registro.
+--UPDATE: Se activa después de actualizar un registro.
+--DELETE: Se activa después de eliminar un registro.
+--CREATE: Se activa después de crear un objeto.
+
+--Estructura de un trigger
+    -- CREATE TRIGGER nombre_trigger
+    -- ON nombre_tabla
+    -- AFTER INSERT, UPDATE, DELETE
+    -- AS
+    -- BEGIN
+    --     --cuerpo del trigger
+    -- END;
+
+--Crear un trigger que al modificar algún dato del cliente genere el histórico del cambio realizado.
+
+-- CREATE TRIGGER trigger_historico_persona
+-- ON personas
+-- AFTER UPDATE
+-- AS
+-- BEGIN
+--     INSERT INTO Historico_persona
+--     SELECT dni_persona, nombre_persona, apellido_persona, genero_persona, fecha_nacimiento, telefono_contacto, getdate()
+--     FROM deleted;
+-- END;
+
+-- CREATE TRIGGER TRG_CLIENTE_MOD ON personas AFTER 
+-- UPDATE AS 
+-- BEGIN
+--  INSERT INTO HISTORICO_CLIENTE
+--  (ID_CLIENTE,  FECHA_MODIFICACION)
+--  SELECT ID_CLIENTE, GETDATE()
+--  FROM INSERTED  
+--  END
+
+--13 Investigar sobre la declaración y uso de Cursores, presentando la declaración genérica de un Cursor.
+--Un cursor es un objeto que permite recorrer los registros de un conjunto de resultados.
+--Los cursores se utilizan para recorrer los registros de una tabla de forma secuencial.
+--Los cursores se utilizan para realizar operaciones en un conjunto de registros fila por fila.
+--Los cursores se utilizan para recuperar registros de una tabla de forma secuencial.
+
+--Declaración de un cursor
+-- DECLARE nombre_cursor CURSOR FOR
+-- SELECT columna1, columna2, columna3
+-- FROM nombre_tabla
+-- WHERE condicion;
