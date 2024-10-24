@@ -40,7 +40,7 @@ public class Carpeta implements Manipular {
     
     private void imprimirIndentacion(Integer nivel) {
         for (Integer i = 0; i < nivel; i++) {
-            System.out.println("    ");
+            System.out.print("    ");
         }
     }
 }
