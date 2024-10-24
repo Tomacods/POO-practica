@@ -19,26 +19,26 @@ public class Carpeta extends Elemento{
         contenidos.add(elemento);
     }
 
-    private void imprimirIndentacion(Integer nivel) {
-        for (Integer i = 0; i < nivel; i++) {
-            System.out.println("    ");
-        }
-    }
-
     public void imprimirElementos() {
-        imprimirElementos(1);
+        imprimirElementos(0);
     }
 
     private void imprimirElementos(Integer nivel) {
         imprimirIndentacion(nivel);
-        System.out.println("📂 " + getNombre());
+        System.out.println("- " + getNombre());
         for (Elemento elemento : contenidos) {
             if (elemento.esCarpeta()) {
                 ((Carpeta) elemento).imprimirElementos(nivel + 1);
             } else {
                 imprimirIndentacion(nivel + 1);
-                System.out.println("📄 "+ elemento.getNombre());
+                System.out.println("+ "+ elemento.getNombre());
             }
+        }
+    }
+    
+    private void imprimirIndentacion(Integer nivel) {
+        for (Integer i = 0; i < nivel; i++) {
+            System.out.println("    ");
         }
     }
 }

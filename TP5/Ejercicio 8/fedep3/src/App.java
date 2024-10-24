@@ -17,7 +17,7 @@ public class App {
         c1.addElemento(a3);
         c3.addElemento(a4);
         raiz.addElemento(c1);
-        raiz.addElemento(c2);
+        raiz.addElemento(c3);
 
         raiz.imprimirElementos();
     }
