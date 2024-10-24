@@ -1,4 +1,4 @@
-abstract class Elemento {
+abstract class Elemento /*implements Manipular*/ {
     
     private String nombre;
 
@@ -11,4 +11,5 @@ abstract class Elemento {
     }
 
     public abstract Boolean esCarpeta();
+    //public abstract void imprimirElementos();
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 //import java.util.List;
 
-public class Carpeta extends Elemento{
+public class Carpeta extends Elemento implements Manipular {
 
     private ArrayList<Elemento> contenidos;
 
@@ -19,6 +19,7 @@ public class Carpeta extends Elemento{
         contenidos.add(elemento);
     }
 
+    @Override
     public void imprimirElementos() {
         imprimirElementos(0);
     }
@@ -31,7 +32,7 @@ public class Carpeta extends Elemento{
                 ((Carpeta) elemento).imprimirElementos(nivel + 1);
             } else {
                 imprimirIndentacion(nivel + 1);
-                System.out.println("+ "+ elemento.getNombre());
+                ((Archivo) elemento).imprimirElementos();
             }
         }
     }
