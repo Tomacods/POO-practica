@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 //import java.util.List;
 
-public class Carpeta extends Elemento implements Manipular {
+public class Carpeta implements Manipular {
 
-    private ArrayList<Elemento> contenidos;
+    private String nombre;
+    private ArrayList<Manipular> contenidos;
 
     public Carpeta(String nombre) {
-        super(nombre);
+        this.nombre = nombre;
         this.contenidos = new ArrayList<>();
     }
 
@@ -15,8 +16,8 @@ public class Carpeta extends Elemento implements Manipular {
         return true;
     }
 
-    public void addElemento(Elemento elemento) {
-        contenidos.add(elemento);
+    public void addElemento(Manipular manipular) {
+        this.contenidos.add(manipular);
     }
 
     @Override
@@ -26,8 +27,8 @@ public class Carpeta extends Elemento implements Manipular {
 
     private void imprimirElementos(Integer nivel) {
         imprimirIndentacion(nivel);
-        System.out.println("- " + getNombre());
-        for (Elemento elemento : contenidos) {
+        System.out.println("- " + nombre);
+        for (Manipular elemento : contenidos) {
             if (elemento.esCarpeta()) {
                 ((Carpeta) elemento).imprimirElementos(nivel + 1);
             } else {

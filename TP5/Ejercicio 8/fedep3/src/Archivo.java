@@ -1,7 +1,9 @@
-public class Archivo extends Elemento implements Manipular{
+public class Archivo implements Manipular{
     
+    private String nombre;
+
     public Archivo (String nombre) {
-        super(nombre);
+        this.nombre = nombre;
     }
 
     @Override
@@ -11,6 +13,6 @@ public class Archivo extends Elemento implements Manipular{
 
     @Override
     public void imprimirElementos() {
-        System.out.println("+ " + getNombre());
+        System.out.println("+ " + nombre);
     }
 }
