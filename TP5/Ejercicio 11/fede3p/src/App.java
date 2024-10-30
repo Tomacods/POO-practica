@@ -10,10 +10,14 @@ public class App {
         banco1.atender(p1);
         banco1.atender(p2);
 
+        System.out.println("--------");
+
         banco1.suspenderCaja();
 
         banco1.atender(p1);
         banco1.atender(p2);
+
+        System.out.println("--------");
 
         banco1.cerrarCaja();
 
