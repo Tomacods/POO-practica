@@ -11,3 +11,5 @@ public class Director {
         return builder.getTorta();
     }
 }
+
+//el director es el encargado de construir el objeto, en este caso la torta, y para eso necesita un builder que le diga como construirlo
