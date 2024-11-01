@@ -228,3 +228,109 @@ where extract (year from p.fecha_nacimiento) = extract (year from t.fecha_turno)
         WHERE extract (month from t.fecha_turno) = 6
         AND extract (year from t.fecha_turno) = 2012
     );
+
+     --Listar las personas que se atendieron los días viernes y sábados, con profesionales especializados en Nefrologia.
+    SELECT pe.nombre_persona, pe.apellido_persona, pr.nombre_profesional, pr.apellido_profesional, e.descripcion_especialidad
+    FROM personas pe
+    JOIN turnos t ON pe.dni_persona = t.dni_persona
+    JOIN profesionales_especialidades pr ON t.dni_profesional = pr.dni_profesional
+    JOIN especialidades e ON t.codigo_especialidad = e.codigo_especialidad
+    JOIN horarios h ON t.dni_profesional = h.dni_profesional
+    WHERE h.codigo_dia_semana = 5 and h.codigo_dia_semana = 6 AND e.descripcion_especialidad = 'Nefrologia';
+
+    -- Listar la cantidad de pacientes atendidos por profesional, especialidad, y por mes (AAAAMM).
+    SELECT pr.nombre_profesional, e.descripcion_especialidad,extract (year from t.fecha_turno)  || '-' || extract (month from t.fecha_turno) as AAAAMM, count(t.dni_persona) as cantidad_pacientes
+    FROM turnos t
+    JOIN profesionales pr ON t.dni_profesional = pr.dni_profesional
+    JOIN especialidades e ON t.codigo_especialidad = e.codigo_especialidad
+    join profesionales_especialidades pro on t.dni_profesional = pro.dni_profesional
+    GROUP BY pr.nombre_profesional, e.descripcion_especialidad, extract (month from t.fecha_turno),extract (year from t.fecha_turno);
+
+
+--Armar una vista que muestre la información (GENERO_SEXUAL, ESPECIALIDAD, PROMEDIO_TURNOS) Ordenada por especialidad, y promedio
+    create view vista_promedio_turnos as
+    SELECT g.descripcion_genero, e.descripcion_especialidad, avg(t.numero_turno) as promedio_turnos
+    FROM turnos t
+    JOIN profesionales pr ON t.dni_profesional = pr.dni_profesional
+    JOIN generos_sexuales g ON pr.genero_profesional = g.genero_sexual
+    JOIN especialidades e ON t.codigo_especialidad = e.codigo_especialidad
+    GROUP BY g.descripcion_genero, e.descripcion_especialidad
+    ORDER BY e.descripcion_especialidad, avg(t.numero_turno);
+
+    -- Armar una función que basándose en el parámetro de entrada @dni_profesional, @codigo_especialidad, devuelva la cantidad de turnos del profesional.
+
+    CREATE FUNCTION cantidad_turnos_profesional (@dni_profesional int, @codigo_especialidad int)
+    RETURNS int
+    AS
+    BEGIN
+        DECLARE @cantidad_turnos int;
+        SELECT @cantidad_turnos = count(*)
+        FROM turnos
+        WHERE dni_profesional = @dni_profesional
+        AND codigo_especialidad = @codigo_especialidad;
+        RETURN @cantidad_turnos;
+    END;
+
+--     Crear un stored procedure que liste para un determinado período (@fecha_desde, @fecha_hasta) la relación de cantidad de turnos del profesional (@dni_profesional) por
+-- especialidad en dicho periodo, con respecto al total de turnos de ese profesional y su
+-- respectiva especialidad. Formato de salida (Profesional, Especialidad, Cantidad Turnos
+-- En Periodo, Cantidad Turnos Total, Porcentaje) Porcentaje = (Cantidad Turnos En
+-- Periodo / Cantidad Turnos Total) * 100
+
+CREATE PROCEDURE cantidad_turnos_profesional_periodo (@dni_profesional int, @fecha_desde date, @fecha_hasta date)
+AS
+BEGIN
+    DECLARE @cantidad_total int;
+    DECLARE @cantidad_periodo int;
+    SELECT @cantidad_total = count(*)
+    FROM turnos
+    WHERE dni_profesional = @dni_profesional;
+
+    SELECT @cantidad_periodo = count(*)
+    FROM turnos
+    WHERE dni_profesional = @dni_profesional
+    AND fecha_turno BETWEEN @fecha_desde AND @fecha_hasta;
+
+    SELECT pr.nombre_profesional, e.descripcion_especialidad, @cantidad_periodo as cantidad_turnos_en_periodo, @cantidad_total as cantidad_turnos_total, ((@cantidad_periodo / @cantidad_total) * 100) as porcentaje
+    FROM profesionales pr
+    JOIN profesionales_especialidades pe ON pr.dni_profesional = pe.dni_profesional
+    JOIN especialidades e ON pe.codigo_especialidad = e.codigo_especialidad
+    WHERE pr.dni_profesional = @dni_profesional;
+END;
+
+--     Crear un stored procedure que liste para un determinado período (@fecha_desde, @fecha_hasta) la relación de cantidad de turnos del profesional (@dni_profesional) por
+-- especialidad en dicho periodo, con respecto al total de turnos de ese profesional y su
+-- respectiva especialidad. Formato de salida (Profesional, Especialidad, Cantidad Turnos
+-- En Periodo, Cantidad Turnos Total, Porcentaje) Porcentaje = (Cantidad Turnos En
+-- Periodo / Cantidad Turnos Total) * 100
+
+create PROCEDURE sp_Dasilva_tomas_ej5e_porcentaje
+(@fecha_desde DATE, @fecha_hasta DATE, @dni int)
+AS
+BEGIN
+SET NOCOUNT ON;
+
+SELECT  p.dni_profesional, p.apellido_profesional,
+
+( SELECT COUNT(*)  FROM turnos t 
+WHERE t.dni_profesional = @dni 
+AND CAST(t.fecha_turno AS DATE) BETWEEN @fecha_desde AND @fecha_hasta ) AS cantidad_periodo,
+
+(SELECT COUNT(*)  FROM turnos t  WHERE t.dni_profesional = @dni) AS cantidad_profesional,
+
+CASE  when ( SELECT COUNT(*)  FROM turnos t 
+WHERE t.dni_profesional = @dni) > 0 
+THEN (
+(SELECT COUNT(*) FROM turnos t 
+WHERE t.dni_profesional = @dni AND CAST(t.fecha_turno AS DATE) BETWEEN @fecha_desde AND @fecha_hasta ) * 100.0 
+/ (SELECT COUNT(*)  FROM turnos t  WHERE t.dni_profesional = @dni)) ELSE 0 END AS porcentaje
+FROM 
+profesionales p where p.dni_profesional = @dni
+END
+-- Listar los horarios disponibles para la especialidad “Medicina de urgencias” de los profesionales femeninos.
+SELECT p.nombre_profesional, e.descripcion_especialidad, d.dia_semana, h.hora_desde
+FROM profesionales p
+JOIN horarios h ON p.dni_profesional = h.dni_profesional
+JOIN especialidades e ON h.codigo_especialidad = e.codigo_especialidad
+JOIN dias_semana d ON h.codigo_dia_semana = d.codigo_dia_semana
+WHERE e.descripcion_especialidad = 'Medicina de urgencias' AND p.genero_profesional = 'Femenino';
