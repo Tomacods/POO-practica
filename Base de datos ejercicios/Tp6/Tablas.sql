@@ -196,3 +196,35 @@ where extract (year from p.fecha_nacimiento) = extract (year from t.fecha_turno)
 -- SELECT columna1, columna2, columna3
 -- FROM nombre_tabla
 -- WHERE condicion;
+
+--Listar las personas que se atendieron los días miércoles y viernes, con profesionales femeninos, y especializados en alergias.
+    select pe.nombre_persona, pe.apellido_persona, pr.nombre_profesional, pr.apellido_profesional, e.descripcion_especialidad
+    from personas pe
+    join turnos t on pe.dni_persona = t.dni_persona
+    join profesionales pr on t.dni_profesional = pr.dni_profesional
+    join horarios h on t.dni_profesional = h.dni_profesional
+    join especialidades e on t.codigo_especialidad = e.codigo_especialidad
+    where h.codigo_dia_semana = 3 or h.codigo_dia_semana = 5 and pr.genero_profesional = 'Femenino' and e.descripcion_especialidad = 'Alerlogia';
+
+--Armar una vista que muestre la información (DNI, NOMBRE_PROFESIONAL,FECHA_TURNO, ESPECIALIDAD, PERSONA) Ordenada por fecha del turno, y persona.
+
+
+    SELECT t.dni_profesional, pr.nombre_profesional, t.fecha_turno, e.descripcion_especialidad, pe.nombre_persona||','||pe.apellido_persona as persona
+    FROM turnos t
+    JOIN profesionales pr ON t.dni_profesional = pr.dni_profesional
+    JOIN especialidades e ON t.codigo_especialidad = e.codigo_especialidad
+    JOIN personas pe ON t.dni_persona = pe.dni_persona
+    ORDER BY t.fecha_turno, pe.nombre_persona;
+
+--Listar los horarios libres de los profesionales en el mes de junio de 2012.
+    SELECT p.nombre_profesional, e.descripcion_especialidad, d.dia_semana, h.hora_desde
+    FROM profesionales p
+    JOIN horarios h ON p.dni_profesional = h.dni_profesional
+    JOIN especialidades e ON h.codigo_especialidad = e.codigo_especialidad
+    JOIN dias_semana d ON h.codigo_dia_semana = d.codigo_dia_semana
+    WHERE h.hora_desde NOT IN (
+        SELECT t.hora_desde
+        FROM turnos t
+        WHERE extract (month from t.fecha_turno) = 6
+        AND extract (year from t.fecha_turno) = 2012
+    );
