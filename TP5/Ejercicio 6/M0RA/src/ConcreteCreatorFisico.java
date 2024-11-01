@@ -6,7 +6,7 @@ public class ConcreteCreatorFisico extends Creator  {
      }*/
      @Override
      public Juego factory_method(String id, Double importe, Double precio) {
-         return new Fisico(id, importe, precio);
+        return new Fisico(id, importe, precio);
      }
      
  }

@@ -1,4 +1,4 @@
-public  abstract class Juego {
+public  abstract class Juego { //Producto
     protected String id;
     protected Double importe;
 
