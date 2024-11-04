@@ -8,13 +8,13 @@ public class HiloProductor extends Thread{
 
     @Override
     public void run() {
-        for (String texto : ("hola desde el hilo "+ this.getName()).split(" ")) {
+        for (String texto : ("hola desde el hilo "+ this.getName()).split(" ")) { //esto separa el string en palabras y las recorre
             try {
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            this.compartido.agregar(this.getName()+": "+texto);
+            this.compartido.agregar(this.getName()+": "+texto); //agrega el texto al array
         }
         
         this.compartido.agregar("");

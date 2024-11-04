@@ -11,7 +11,7 @@ public class App {
         Thread hiloConsumidor = new Thread(consumidor);
         hiloConsumidor.start();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             HiloProductor h = new HiloProductor(compartido);
             hilosProductores.add(h);
             h.start();
