@@ -15,6 +15,7 @@ public class Compartido {
         try {
             while (array.isEmpty()) { //cambien a if y vean que pasa ¿Por qué tiene que ser while?
                 wait(0);
+            wait (1000); //cambien el tiempo de espera y vean que sucede
             }
         } catch (InterruptedException e) {
             //e.printStackTrace();

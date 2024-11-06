@@ -334,3 +334,15 @@ JOIN horarios h ON p.dni_profesional = h.dni_profesional
 JOIN especialidades e ON h.codigo_especialidad = e.codigo_especialidad
 JOIN dias_semana d ON h.codigo_dia_semana = d.codigo_dia_semana
 WHERE e.descripcion_especialidad = 'Medicina de urgencias' AND p.genero_profesional = 'Femenino';
+
+--
+-- Los nombres de todos los profesionales masculinos y horarios para “Medicina del deporte”
+SELECT p.nombre_profesional, h.hora_desde
+FROM profesionales p
+JOIN horarios h ON p.dni_profesional = h.dni_profesional
+JOIN especialidades e ON h.codigo_especialidad = e.codigo_especialidad
+WHERE e.descripcion_especialidad = 'Medicina del deporte' AND p.genero_profesional = 'Masculino';
+
+-- Mostrar los horarios con sus especialidades del profesional cuyo apellido es “Berger”
+-- Listar las personas que tengan turno el mismo año en que nacieron.
+
