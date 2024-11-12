@@ -346,3 +346,38 @@ WHERE e.descripcion_especialidad = 'Medicina del deporte' AND p.genero_profesion
 -- Mostrar los horarios con sus especialidades del profesional cuyo apellido es “Berger”
 -- Listar las personas que tengan turno el mismo año en que nacieron.
 
+
+create view personas_no_atendidas as 
+select 
+    pe.dni_persona, pe.nombre_persona -- seleciono los campos que quiero mostrar
+from 
+    personas pe
+where pe.dni_persona not in ( --las personas que no estan en la tabla de turnos
+        select t.dni_persona --hago un select de la tabla de turnos
+        from turnos t); --la tabla de turnos
+
+--listar los dni de los pacientes que tienen turnos
+select dni_persona from turnos;
+
+
+
+CREATE FUNCTION ObtenerEdad ( @dni INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @edad INT; -- variable para guardar la edad
+
+    SELECT 
+        @edad = DATEDIFF(YEAR, fecha_nacimiento, GETDATE()) -
+                CASE 
+                    WHEN MONTH(fecha_nacimiento) > MONTH(GETDATE()) OR (MONTH(fecha_nacimiento) = MONTH(GETDATE()) AND DAY(fecha_nacimiento) > DAY(GETDATE())) --si el mes de nacimiento es mayor al mes actual o si el mes de nacimiento es igual al mes actual y el dia de nacimiento es mayor al dia actual
+                    THEN 1 --resto 1 a la edad
+                    ELSE 0 --sino no resto nada
+                END
+    FROM 
+        personas --de la tabla personas
+    WHERE 
+        dni_persona = @dni;
+
+    RETURN @edad;
+END;
