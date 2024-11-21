@@ -381,3 +381,11 @@ BEGIN
 
     RETURN @edad;
 END;
+
+--consultas en cypher
+
+MATCH (p:profesionales)-[:TIENE_GENERO]->(g:generos_sexuales)
+RETURN p
+LIMIT 20
+
+-- muestra los turnos de la paciente Lara Lynch
